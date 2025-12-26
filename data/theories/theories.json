@@ -1,0 +1,1300 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_theories": 200,
+    "categories": 9,
+    "source": "Educational-theory-research.md",
+    "generated_at": "2025-01-01"
+  },
+  "theories": [
+    {
+      "id": "theory-001",
+      "name": "Operant Conditioning",
+      "name_ja": "オペラント条件づけ",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["B.F. Skinner"],
+      "description": "Theory of behavior modification through reinforcement and punishment. Behavior frequency increases or decreases based on consequences.",
+      "description_ja": "強化と罰による行動変容の理論。行動の結果によって頻度が増減する",
+      "key_principles": [
+        "Positive reinforcement increases behavior",
+        "Negative reinforcement increases behavior by removing aversive stimuli",
+        "Punishment decreases behavior",
+        "Schedules of reinforcement affect behavior patterns"
+      ],
+      "applications": [
+        "Classroom behavior management",
+        "Token economy systems",
+        "Programmed instruction",
+        "Special education interventions"
+      ],
+      "strengths": [
+        "Highly measurable outcomes",
+        "Evidence-based effectiveness",
+        "Applicable across settings"
+      ],
+      "limitations": [
+        "May reduce intrinsic motivation",
+        "Ethical concerns about manipulation",
+        "Limited focus on internal processes"
+      ]
+    },
+    {
+      "id": "theory-002",
+      "name": "Social Learning Theory",
+      "name_ja": "社会的学習理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Albert Bandura"],
+      "description": "Learning through observation and modeling. New behaviors can be acquired without direct experience.",
+      "description_ja": "観察とモデリングによる学習。直接経験なしに新しい行動を習得",
+      "key_principles": [
+        "Observational learning through modeling",
+        "Attention, retention, reproduction, motivation",
+        "Vicarious reinforcement",
+        "Self-efficacy beliefs"
+      ],
+      "applications": [
+        "Role modeling in classrooms",
+        "Video-based instruction",
+        "Peer learning programs",
+        "Social skills training"
+      ],
+      "strengths": [
+        "Explains complex social learning",
+        "Bridges behaviorism and cognitivism",
+        "Applicable to diverse contexts"
+      ],
+      "limitations": [
+        "Difficult to control all modeling influences",
+        "Individual differences in observation",
+        "Cultural variations in modeling"
+      ]
+    },
+    {
+      "id": "theory-003",
+      "name": "Social Cognitive Theory",
+      "name_ja": "社会的認知理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Albert Bandura"],
+      "description": "Triadic reciprocal interaction between behavior, environment, and personal factors with emphasis on self-efficacy.",
+      "description_ja": "行動・環境・個人的要因の三者相互作用と自己効力感",
+      "key_principles": [
+        "Triadic reciprocal determinism",
+        "Self-efficacy as central construct",
+        "Self-regulation of behavior",
+        "Outcome expectations"
+      ],
+      "applications": [
+        "Academic motivation interventions",
+        "Health behavior change",
+        "Career development counseling",
+        "Sports psychology"
+      ],
+      "strengths": [
+        "Comprehensive framework",
+        "Strong empirical support",
+        "Practical applications"
+      ],
+      "limitations": [
+        "Complexity in measurement",
+        "Cultural variations",
+        "Individual differences"
+      ]
+    },
+    {
+      "id": "theory-004",
+      "name": "Cognitive Load Theory",
+      "name_ja": "認知負荷理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["John Sweller"],
+      "description": "Instructional design theory based on working memory limitations.",
+      "description_ja": "ワーキングメモリの限界に基づく教授設計理論",
+      "key_principles": [
+        "Limited working memory capacity",
+        "Intrinsic, extraneous, germane load",
+        "Schema acquisition and automation",
+        "Split attention and redundancy effects"
+      ],
+      "applications": [
+        "Multimedia design",
+        "Worked examples",
+        "Segmenting complex content",
+        "E-learning design"
+      ],
+      "strengths": [
+        "Strong empirical foundation",
+        "Practical design guidelines",
+        "Applicable to digital learning"
+      ],
+      "limitations": [
+        "Difficulty measuring cognitive load",
+        "Individual differences in capacity",
+        "Context-dependent effects"
+      ]
+    },
+    {
+      "id": "theory-005",
+      "name": "Experiential Learning Theory",
+      "name_ja": "経験学習理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["David A. Kolb"],
+      "description": "Four-stage cyclical model from concrete experience to abstract conceptualization.",
+      "description_ja": "具体的経験から抽象的概念化への4段階循環モデル",
+      "key_principles": [
+        "Concrete experience",
+        "Reflective observation",
+        "Abstract conceptualization",
+        "Active experimentation"
+      ],
+      "applications": [
+        "Internships and practicums",
+        "Service learning",
+        "Simulation-based learning",
+        "Professional development"
+      ],
+      "strengths": [
+        "Integrates theory and practice",
+        "Recognizes learning styles",
+        "Widely applicable"
+      ],
+      "limitations": [
+        "Learning style validity questioned",
+        "Sequential model oversimplified",
+        "Cultural bias"
+      ]
+    },
+    {
+      "id": "theory-006",
+      "name": "Constructivism",
+      "name_ja": "構成主義",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Jean Piaget", "John Dewey"],
+      "description": "Learning theory where learners actively construct knowledge.",
+      "description_ja": "学習者が能動的に知識を構築する学習理論",
+      "key_principles": [
+        "Knowledge is actively constructed",
+        "Learning builds on prior knowledge",
+        "Social interaction facilitates learning",
+        "Authentic contexts enhance learning"
+      ],
+      "applications": [
+        "Inquiry-based learning",
+        "Problem-based learning",
+        "Collaborative projects",
+        "Hands-on activities"
+      ],
+      "strengths": [
+        "Promotes deep understanding",
+        "Develops critical thinking",
+        "Engages learners actively"
+      ],
+      "limitations": [
+        "Time-intensive",
+        "Assessment challenges",
+        "May not suit all learners"
+      ]
+    },
+    {
+      "id": "theory-007",
+      "name": "Social Constructivism",
+      "name_ja": "社会的構成主義",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Lev Vygotsky"],
+      "description": "Knowledge is constructed through social interaction.",
+      "description_ja": "知識は社会的相互作用を通じて構築される",
+      "key_principles": [
+        "Social interaction precedes development",
+        "Zone of Proximal Development",
+        "More Knowledgeable Other",
+        "Language as primary tool"
+      ],
+      "applications": [
+        "Collaborative learning",
+        "Peer tutoring",
+        "Scaffolded instruction",
+        "Classroom discourse"
+      ],
+      "strengths": [
+        "Emphasizes social context",
+        "Supports diverse learners",
+        "Promotes collaboration"
+      ],
+      "limitations": [
+        "Cultural variations",
+        "Assessment difficulties",
+        "Resource intensive"
+      ]
+    },
+    {
+      "id": "theory-008",
+      "name": "Self-Determination Theory",
+      "name_ja": "自己決定理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Edward L. Deci", "Richard M. Ryan"],
+      "description": "Three basic psychological needs: autonomy, competence, and relatedness.",
+      "description_ja": "自律性・有能感・関係性の3つの基本的心理欲求",
+      "key_principles": [
+        "Autonomy - sense of choice",
+        "Competence - feeling effective",
+        "Relatedness - social connection",
+        "Intrinsic vs extrinsic motivation"
+      ],
+      "applications": [
+        "Autonomy-supportive teaching",
+        "Gamification design",
+        "Workplace motivation",
+        "Sports coaching"
+      ],
+      "strengths": [
+        "Strong empirical support",
+        "Cross-cultural validity",
+        "Practical implications"
+      ],
+      "limitations": [
+        "Balance of three needs",
+        "Cultural variations",
+        "Individual differences"
+      ]
+    },
+    {
+      "id": "theory-009",
+      "name": "Scaffolding Theory",
+      "name_ja": "スキャフォールディング理論",
+      "category": "learning_theory",
+      "priority": 5,
+      "theorists": ["Jerome Bruner"],
+      "description": "Providing temporary support according to learner ability, gradually removing it.",
+      "description_ja": "学習者の能力に応じた一時的支援を提供し徐々に取り除く",
+      "key_principles": [
+        "Temporary support structures",
+        "Gradual release of responsibility",
+        "Just-in-time assistance",
+        "Responsive to learner needs"
+      ],
+      "applications": [
+        "Reading comprehension",
+        "Writing instruction",
+        "Math problem solving",
+        "Complex skill training"
+      ],
+      "strengths": [
+        "Supports diverse learners",
+        "Promotes independence",
+        "Evidence-based effectiveness"
+      ],
+      "limitations": [
+        "Requires skilled teachers",
+        "Time-intensive",
+        "Individual calibration needed"
+      ]
+    },
+    {
+      "id": "theory-010",
+      "name": "Cognitive Development Theory",
+      "name_ja": "認知発達理論",
+      "category": "developmental",
+      "priority": 5,
+      "theorists": ["Jean Piaget"],
+      "description": "Four stages of cognitive development from sensorimotor to formal operational.",
+      "description_ja": "4段階の認知発達を説明（感覚運動期〜形式的操作期）",
+      "key_principles": [
+        "Sensorimotor stage (0-2 years)",
+        "Preoperational stage (2-7 years)",
+        "Concrete operational stage (7-11 years)",
+        "Formal operational stage (11+ years)"
+      ],
+      "applications": [
+        "Age-appropriate curriculum",
+        "Hands-on learning activities",
+        "Cognitive assessments",
+        "Educational game design"
+      ],
+      "strengths": [
+        "Foundational framework",
+        "Widely influential",
+        "Practical applications"
+      ],
+      "limitations": [
+        "Stage rigidity questioned",
+        "Cultural variations",
+        "Individual differences"
+      ]
+    },
+    {
+      "id": "theory-011",
+      "name": "Zone of Proximal Development",
+      "name_ja": "最近接発達領域（ZPD）",
+      "category": "developmental",
+      "priority": 5,
+      "theorists": ["Lev Vygotsky"],
+      "description": "The difference between what can be done independently and with assistance.",
+      "description_ja": "独力でできることと援助でできることの差異",
+      "key_principles": [
+        "Actual developmental level",
+        "Potential developmental level",
+        "Mediated learning experiences",
+        "Collaborative problem solving"
+      ],
+      "applications": [
+        "Differentiated instruction",
+        "Peer tutoring",
+        "Dynamic assessment",
+        "Collaborative learning"
+      ],
+      "strengths": [
+        "Guides instruction",
+        "Supports diverse learners",
+        "Promotes growth"
+      ],
+      "limitations": [
+        "Difficult to assess",
+        "Individual variation",
+        "Context-dependent"
+      ]
+    },
+    {
+      "id": "theory-012",
+      "name": "Psychosocial Development Theory",
+      "name_ja": "心理社会的発達理論",
+      "category": "developmental",
+      "priority": 5,
+      "theorists": ["Erik Erikson"],
+      "description": "Eight lifelong stages of psychosocial crises and tasks.",
+      "description_ja": "生涯8段階の心理社会的危機と課題",
+      "key_principles": [
+        "Trust vs Mistrust",
+        "Identity vs Role Confusion",
+        "Generativity vs Stagnation",
+        "Ego Integrity vs Despair"
+      ],
+      "applications": [
+        "Adolescent identity programs",
+        "Career counseling",
+        "Life transitions support",
+        "Curriculum design"
+      ],
+      "strengths": [
+        "Lifespan perspective",
+        "Practical guidance",
+        "Widely applied"
+      ],
+      "limitations": [
+        "Western-centric",
+        "Stage rigidity",
+        "Limited empirical support"
+      ]
+    },
+    {
+      "id": "theory-013",
+      "name": "Attachment Theory",
+      "name_ja": "愛着理論",
+      "category": "developmental",
+      "priority": 5,
+      "theorists": ["John Bowlby"],
+      "description": "Importance of early caregiver attachment relationships.",
+      "description_ja": "乳幼児期の養育者との愛着関係の重要性",
+      "key_principles": [
+        "Secure base for exploration",
+        "Internal working models",
+        "Attachment styles",
+        "Early relationships matter"
+      ],
+      "applications": [
+        "Early childhood education",
+        "Teacher-student relationships",
+        "Trauma-informed practice",
+        "Family counseling"
+      ],
+      "strengths": [
+        "Strong research base",
+        "Cross-cultural relevance",
+        "Practical applications"
+      ],
+      "limitations": [
+        "Deterministic interpretations",
+        "Cultural variations",
+        "Assessment challenges"
+      ]
+    },
+    {
+      "id": "theory-014",
+      "name": "Self-Efficacy Theory",
+      "name_ja": "自己効力感理論",
+      "category": "developmental",
+      "priority": 5,
+      "theorists": ["Albert Bandura"],
+      "description": "Beliefs about one's ability influence motivation.",
+      "description_ja": "自己の能力への信念が動機づけに影響",
+      "key_principles": [
+        "Mastery experiences",
+        "Vicarious experiences",
+        "Verbal persuasion",
+        "Physiological states"
+      ],
+      "applications": [
+        "Academic interventions",
+        "Sports psychology",
+        "Career development",
+        "Health behavior change"
+      ],
+      "strengths": [
+        "Strong empirical support",
+        "Practical strategies",
+        "Cross-domain applicability"
+      ],
+      "limitations": [
+        "Domain-specific nature",
+        "Cultural variations",
+        "Measurement challenges"
+      ]
+    },
+    {
+      "id": "theory-015",
+      "name": "Socratic Method",
+      "name_ja": "ソクラテス式問答法",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Socrates"],
+      "description": "Promoting critical thinking through continuous questioning.",
+      "description_ja": "連続的な問いかけによる批判的思考の促進",
+      "key_principles": [
+        "Probing questions",
+        "Guided discovery",
+        "Critical examination",
+        "Dialogue-based learning"
+      ],
+      "applications": [
+        "Law school education",
+        "Philosophy courses",
+        "Critical thinking classes",
+        "Leadership development"
+      ],
+      "strengths": [
+        "Develops thinking skills",
+        "Promotes active engagement",
+        "Time-tested effectiveness"
+      ],
+      "limitations": [
+        "Requires skilled facilitator",
+        "Time-intensive",
+        "May intimidate some learners"
+      ]
+    },
+    {
+      "id": "theory-016",
+      "name": "Montessori Method",
+      "name_ja": "モンテッソーリ教育",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Maria Montessori"],
+      "description": "Child's spontaneity and prepared environment.",
+      "description_ja": "子どもの自発性と準備された環境",
+      "key_principles": [
+        "Prepared environment",
+        "Auto-education",
+        "Sensitive periods",
+        "Mixed-age groupings"
+      ],
+      "applications": [
+        "Early childhood education",
+        "Elementary schools",
+        "Special needs education",
+        "Home schooling"
+      ],
+      "strengths": [
+        "Child-centered approach",
+        "Develops independence",
+        "Research-supported benefits"
+      ],
+      "limitations": [
+        "Cost of materials",
+        "Teacher training intensive",
+        "Structure concerns"
+      ]
+    },
+    {
+      "id": "theory-017",
+      "name": "Project-Based Learning",
+      "name_ja": "プロジェクト・ベースド・ラーニング",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["John Dewey", "William Kilpatrick"],
+      "description": "Learner-centered approach engaging with real-world problems.",
+      "description_ja": "現実世界の問題に取り組む学習者中心の教授法",
+      "key_principles": [
+        "Authentic problems",
+        "Extended inquiry",
+        "Student voice and choice",
+        "Public products"
+      ],
+      "applications": [
+        "STEM education",
+        "Social studies",
+        "Language arts",
+        "Professional training"
+      ],
+      "strengths": [
+        "Engages learners",
+        "Develops 21st century skills",
+        "Real-world relevance"
+      ],
+      "limitations": [
+        "Time-intensive",
+        "Assessment challenges",
+        "Content coverage concerns"
+      ]
+    },
+    {
+      "id": "theory-018",
+      "name": "Problem-Based Learning",
+      "name_ja": "問題解決学習",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Howard Barrows"],
+      "description": "Learning initiated from real problems.",
+      "description_ja": "実際の問題を起点とした学習",
+      "key_principles": [
+        "Ill-structured problems",
+        "Self-directed learning",
+        "Collaborative inquiry",
+        "Facilitator role"
+      ],
+      "applications": [
+        "Medical education",
+        "Engineering programs",
+        "Business schools",
+        "K-12 education"
+      ],
+      "strengths": [
+        "Develops problem-solving",
+        "Promotes collaboration",
+        "Long-term retention"
+      ],
+      "limitations": [
+        "Requires careful design",
+        "Time-intensive",
+        "Assessment complexity"
+      ]
+    },
+    {
+      "id": "theory-019",
+      "name": "Flipped Learning",
+      "name_ja": "反転学習",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Jonathan Bergmann", "Aaron Sams"],
+      "description": "Watching lectures outside class, doing active activities in class.",
+      "description_ja": "講義を授業外で視聴し授業は能動的活動に",
+      "key_principles": [
+        "Pre-class content delivery",
+        "In-class active learning",
+        "Student-centered approach",
+        "Technology-enabled"
+      ],
+      "applications": [
+        "Higher education",
+        "K-12 classrooms",
+        "Professional development",
+        "Corporate training"
+      ],
+      "strengths": [
+        "Maximizes class time",
+        "Supports self-pacing",
+        "Promotes active learning"
+      ],
+      "limitations": [
+        "Technology access required",
+        "Student preparation",
+        "Video quality matters"
+      ]
+    },
+    {
+      "id": "theory-020",
+      "name": "ADDIE Model",
+      "name_ja": "ADDIEモデル",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Florida State University"],
+      "description": "Five stages: Analyze, Design, Develop, Implement, Evaluate.",
+      "description_ja": "分析・設計・開発・実施・評価の5段階",
+      "key_principles": [
+        "Analysis of needs",
+        "Systematic design",
+        "Iterative development",
+        "Formative evaluation"
+      ],
+      "applications": [
+        "Curriculum design",
+        "E-learning development",
+        "Corporate training",
+        "Educational technology"
+      ],
+      "strengths": [
+        "Systematic approach",
+        "Widely understood",
+        "Flexible application"
+      ],
+      "limitations": [
+        "Can be linear",
+        "Time-consuming",
+        "May lack agility"
+      ]
+    },
+    {
+      "id": "theory-021",
+      "name": "Gagné's Nine Events of Instruction",
+      "name_ja": "ガニェの9教授事象",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Robert M. Gagné"],
+      "description": "Nine instructional events that promote effective learning.",
+      "description_ja": "効果的な学習を促す9つの教授事象",
+      "key_principles": [
+        "Gain attention",
+        "Inform objectives",
+        "Stimulate recall",
+        "Present content",
+        "Provide guidance",
+        "Elicit performance",
+        "Provide feedback",
+        "Assess performance",
+        "Enhance transfer"
+      ],
+      "applications": [
+        "Lesson planning",
+        "E-learning design",
+        "Training programs",
+        "Instructional videos"
+      ],
+      "strengths": [
+        "Comprehensive framework",
+        "Practical guidelines",
+        "Research-based"
+      ],
+      "limitations": [
+        "May be prescriptive",
+        "Sequential assumptions",
+        "Learner variations"
+      ]
+    },
+    {
+      "id": "theory-022",
+      "name": "Bloom's Taxonomy",
+      "name_ja": "ブルームのタキソノミー",
+      "category": "instructional_design",
+      "priority": 5,
+      "theorists": ["Benjamin Bloom"],
+      "description": "Six-level classification of cognitive learning objectives.",
+      "description_ja": "認知的学習目標の6段階分類",
+      "key_principles": [
+        "Remember",
+        "Understand",
+        "Apply",
+        "Analyze",
+        "Evaluate",
+        "Create"
+      ],
+      "applications": [
+        "Learning objectives",
+        "Assessment design",
+        "Curriculum planning",
+        "Question formulation"
+      ],
+      "strengths": [
+        "Universal language",
+        "Promotes higher thinking",
+        "Practical application"
+      ],
+      "limitations": [
+        "Hierarchical assumptions",
+        "Cultural variations",
+        "Affective domain neglected"
+      ]
+    },
+    {
+      "id": "theory-023",
+      "name": "Connectivism",
+      "name_ja": "コネクティビズム",
+      "category": "technology_enhanced",
+      "priority": 5,
+      "theorists": ["George Siemens", "Stephen Downes"],
+      "description": "Digital age learning theory with knowledge distributed across networks.",
+      "description_ja": "デジタル時代の学習理論、ネットワーク上の知識",
+      "key_principles": [
+        "Learning in networks",
+        "Knowledge distribution",
+        "Connection-making",
+        "Currency of knowledge"
+      ],
+      "applications": [
+        "Online learning",
+        "Social media education",
+        "MOOCs",
+        "Personal learning networks"
+      ],
+      "strengths": [
+        "Addresses digital age",
+        "Network perspective",
+        "Contemporary relevance"
+      ],
+      "limitations": [
+        "Theoretical maturity",
+        "Empirical validation",
+        "Practical guidance"
+      ]
+    },
+    {
+      "id": "theory-024",
+      "name": "TPACK",
+      "name_ja": "TPACK",
+      "category": "technology_enhanced",
+      "priority": 5,
+      "theorists": ["Punya Mishra", "Matthew Koehler"],
+      "description": "Integration of Technology, Pedagogy, and Content Knowledge.",
+      "description_ja": "テクノロジー・教育法・内容の統合",
+      "key_principles": [
+        "Technological knowledge",
+        "Pedagogical knowledge",
+        "Content knowledge",
+        "Intersections of three"
+      ],
+      "applications": [
+        "Teacher education",
+        "Technology integration",
+        "Professional development",
+        "Curriculum design"
+      ],
+      "strengths": [
+        "Comprehensive framework",
+        "Guides tech integration",
+        "Teacher development focus"
+      ],
+      "limitations": [
+        "Measurement challenges",
+        "Complexity of model",
+        "Context dependency"
+      ]
+    },
+    {
+      "id": "theory-025",
+      "name": "Multimedia Learning Theory",
+      "name_ja": "マルチメディア学習理論",
+      "category": "technology_enhanced",
+      "priority": 5,
+      "theorists": ["Richard E. Mayer"],
+      "description": "Effect of combining words and images in learning.",
+      "description_ja": "言葉と画像の組み合わせ効果",
+      "key_principles": [
+        "Dual channel processing",
+        "Limited capacity",
+        "Active processing",
+        "Coherence principle"
+      ],
+      "applications": [
+        "E-learning design",
+        "Video production",
+        "Presentation design",
+        "Educational games"
+      ],
+      "strengths": [
+        "Strong evidence base",
+        "Clear design principles",
+        "Practical guidelines"
+      ],
+      "limitations": [
+        "Individual differences",
+        "Content variations",
+        "Technology changes"
+      ]
+    },
+    {
+      "id": "theory-026",
+      "name": "Growth Mindset",
+      "name_ja": "成長マインドセット",
+      "category": "motivation",
+      "priority": 5,
+      "theorists": ["Carol S. Dweck"],
+      "description": "Intelligence and abilities can grow through effort.",
+      "description_ja": "知能・能力は努力で成長可能",
+      "key_principles": [
+        "Intelligence is malleable",
+        "Effort leads to mastery",
+        "Embrace challenges",
+        "Learn from criticism"
+      ],
+      "applications": [
+        "Classroom culture",
+        "Feedback practices",
+        "Goal setting",
+        "Resilience programs"
+      ],
+      "strengths": [
+        "Empowers learners",
+        "Research-supported",
+        "Practical interventions"
+      ],
+      "limitations": [
+        "Oversimplification risk",
+        "Implementation fidelity",
+        "Cultural variations"
+      ]
+    },
+    {
+      "id": "theory-027",
+      "name": "21st Century Skills",
+      "name_ja": "21世紀型スキル",
+      "category": "modern_education",
+      "priority": 5,
+      "theorists": ["Partnership for 21st Century Learning"],
+      "description": "4Cs: Critical thinking, Communication, Collaboration, Creativity.",
+      "description_ja": "4C（批判的思考・コミュニケーション・協働・創造性）",
+      "key_principles": [
+        "Critical thinking and problem solving",
+        "Communication",
+        "Collaboration",
+        "Creativity and innovation"
+      ],
+      "applications": [
+        "Curriculum reform",
+        "Assessment design",
+        "Teacher training",
+        "Policy development"
+      ],
+      "strengths": [
+        "Future-oriented",
+        "Comprehensive framework",
+        "International adoption"
+      ],
+      "limitations": [
+        "Assessment challenges",
+        "Implementation gaps",
+        "Cultural assumptions"
+      ]
+    },
+    {
+      "id": "theory-028",
+      "name": "Social and Emotional Learning",
+      "name_ja": "社会情動的学習（SEL）",
+      "category": "modern_education",
+      "priority": 5,
+      "theorists": ["CASEL"],
+      "description": "Self-awareness, self-management, social awareness, relationship skills, responsible decision-making.",
+      "description_ja": "自己認識・自己管理・社会認識・関係性・意思決定",
+      "key_principles": [
+        "Self-awareness",
+        "Self-management",
+        "Social awareness",
+        "Relationship skills",
+        "Responsible decision-making"
+      ],
+      "applications": [
+        "Whole-school programs",
+        "Classroom curriculum",
+        "Counseling interventions",
+        "Family engagement"
+      ],
+      "strengths": [
+        "Strong evidence base",
+        "Comprehensive approach",
+        "Academic and social benefits"
+      ],
+      "limitations": [
+        "Implementation quality",
+        "Cultural adaptation",
+        "Assessment challenges"
+      ]
+    },
+    {
+      "id": "theory-029",
+      "name": "Universal Design for Learning",
+      "name_ja": "学びのユニバーサルデザイン（UDL）",
+      "category": "modern_education",
+      "priority": 5,
+      "theorists": ["CAST"],
+      "description": "Accommodating diverse learners.",
+      "description_ja": "多様な学習者への対応",
+      "key_principles": [
+        "Multiple means of engagement",
+        "Multiple means of representation",
+        "Multiple means of action and expression",
+        "Proactive design"
+      ],
+      "applications": [
+        "Curriculum design",
+        "Technology selection",
+        "Assessment options",
+        "Inclusive classrooms"
+      ],
+      "strengths": [
+        "Proactive approach",
+        "Research-based",
+        "Flexible framework"
+      ],
+      "limitations": [
+        "Implementation complexity",
+        "Resource requirements",
+        "Teacher training needs"
+      ]
+    },
+    {
+      "id": "theory-030",
+      "name": "Lesson Study",
+      "name_ja": "授業研究",
+      "category": "asian_education",
+      "priority": 5,
+      "theorists": ["Traditional (Meiji era onwards)"],
+      "description": "Teachers collaborate to plan, observe, and reflect on lessons.",
+      "description_ja": "教師が協力して授業を計画・観察・省察",
+      "key_principles": [
+        "Collaborative planning",
+        "Research lesson observation",
+        "Post-lesson discussion",
+        "Knowledge sharing"
+      ],
+      "applications": [
+        "Teacher professional development",
+        "School improvement",
+        "Curriculum development",
+        "Pre-service training"
+      ],
+      "strengths": [
+        "Teacher-led improvement",
+        "Context-specific",
+        "Global adoption"
+      ],
+      "limitations": [
+        "Time requirements",
+        "Cultural adaptation",
+        "Implementation fidelity"
+      ]
+    },
+    {
+      "id": "theory-031",
+      "name": "Confucian Educational Philosophy",
+      "name_ja": "儒教教育思想",
+      "category": "asian_education",
+      "priority": 5,
+      "theorists": ["Confucius"],
+      "description": "Moral self-cultivation and character formation.",
+      "description_ja": "道徳的自己修養と人格形成",
+      "key_principles": [
+        "Self-cultivation",
+        "Respect for learning",
+        "Teacher-student relationships",
+        "Moral education"
+      ],
+      "applications": [
+        "Character education",
+        "Teacher respect",
+        "Lifelong learning",
+        "Family involvement"
+      ],
+      "strengths": [
+        "Strong cultural foundation",
+        "Emphasis on effort",
+        "Social harmony"
+      ],
+      "limitations": [
+        "Authority orientation",
+        "Conformity concerns",
+        "Gender equity issues"
+      ]
+    },
+    {
+      "id": "theory-032",
+      "name": "Formative Assessment",
+      "name_ja": "形成的評価",
+      "category": "assessment",
+      "priority": 5,
+      "theorists": ["Paul Black", "Dylan Wiliam"],
+      "description": "Continuous feedback during the learning process.",
+      "description_ja": "学習過程での継続的フィードバック",
+      "key_principles": [
+        "Learning intentions clarity",
+        "Evidence gathering",
+        "Feedback for improvement",
+        "Student self-assessment"
+      ],
+      "applications": [
+        "Daily classroom practice",
+        "Exit tickets",
+        "Peer assessment",
+        "Learning progressions"
+      ],
+      "strengths": [
+        "Improves learning",
+        "Informs instruction",
+        "Engages students"
+      ],
+      "limitations": [
+        "Time demands",
+        "Teacher skill required",
+        "Consistency challenges"
+      ]
+    },
+    {
+      "id": "theory-033",
+      "name": "Cooperative Learning",
+      "name_ja": "協同学習",
+      "category": "social_learning",
+      "priority": 5,
+      "theorists": ["David Johnson", "Roger Johnson"],
+      "description": "Positive interdependence and individual responsibility.",
+      "description_ja": "正の相互依存と個人の責任",
+      "key_principles": [
+        "Positive interdependence",
+        "Individual accountability",
+        "Promotive interaction",
+        "Social skills",
+        "Group processing"
+      ],
+      "applications": [
+        "Jigsaw activities",
+        "Think-pair-share",
+        "Group investigations",
+        "Peer tutoring"
+      ],
+      "strengths": [
+        "Strong evidence base",
+        "Social skill development",
+        "Academic gains"
+      ],
+      "limitations": [
+        "Group dynamics",
+        "Free-rider problem",
+        "Assessment challenges"
+      ]
+    },
+    {
+      "id": "theory-034",
+      "name": "Communities of Practice",
+      "name_ja": "実践共同体",
+      "category": "social_learning",
+      "priority": 5,
+      "theorists": ["Jean Lave", "Etienne Wenger"],
+      "description": "Learning through mutual engagement in shared communities.",
+      "description_ja": "共通の関心を持つ人々の学び合い",
+      "key_principles": [
+        "Mutual engagement",
+        "Joint enterprise",
+        "Shared repertoire",
+        "Legitimate peripheral participation"
+      ],
+      "applications": [
+        "Professional learning communities",
+        "Online communities",
+        "Workplace learning",
+        "Teacher networks"
+      ],
+      "strengths": [
+        "Social learning emphasis",
+        "Identity development",
+        "Knowledge sharing"
+      ],
+      "limitations": [
+        "Boundary management",
+        "Power dynamics",
+        "Sustainability"
+      ]
+    },
+    {
+      "id": "theory-035",
+      "name": "Critical Pedagogy",
+      "name_ja": "批判的ペダゴジー",
+      "category": "critical_alternative",
+      "priority": 5,
+      "theorists": ["Paulo Freire"],
+      "description": "Awakening critical consciousness and social transformation.",
+      "description_ja": "批判的意識の覚醒と社会変革",
+      "key_principles": [
+        "Conscientization",
+        "Dialogue",
+        "Praxis",
+        "Problem-posing education"
+      ],
+      "applications": [
+        "Adult literacy",
+        "Social justice education",
+        "Community organizing",
+        "Teacher education"
+      ],
+      "strengths": [
+        "Empowers learners",
+        "Addresses inequality",
+        "Promotes agency"
+      ],
+      "limitations": [
+        "Political resistance",
+        "Implementation challenges",
+        "Assessment difficulties"
+      ]
+    },
+    {
+      "id": "theory-036",
+      "name": "Inclusive Education",
+      "name_ja": "インクルーシブ教育",
+      "category": "modern_education",
+      "priority": 5,
+      "theorists": ["UNESCO"],
+      "description": "All learners learning together.",
+      "description_ja": "すべての学習者が共に学ぶ",
+      "key_principles": [
+        "Access for all",
+        "Participation and achievement",
+        "Barrier removal",
+        "Respect for diversity"
+      ],
+      "applications": [
+        "School policy",
+        "Classroom practice",
+        "Teacher training",
+        "Curriculum adaptation"
+      ],
+      "strengths": [
+        "Human rights foundation",
+        "Benefits all learners",
+        "Social cohesion"
+      ],
+      "limitations": [
+        "Resource requirements",
+        "Teacher preparation",
+        "Systemic barriers"
+      ]
+    },
+    {
+      "id": "theory-037",
+      "name": "STEM Education",
+      "name_ja": "STEM教育",
+      "category": "modern_education",
+      "priority": 5,
+      "theorists": ["NSF"],
+      "description": "Integration of Science, Technology, Engineering, and Mathematics.",
+      "description_ja": "科学・技術・工学・数学の統合",
+      "key_principles": [
+        "Integrated approach",
+        "Problem-based learning",
+        "Real-world applications",
+        "Hands-on activities"
+      ],
+      "applications": [
+        "K-12 curriculum",
+        "After-school programs",
+        "Maker spaces",
+        "Career education"
+      ],
+      "strengths": [
+        "Workforce relevance",
+        "Engages students",
+        "Cross-disciplinary"
+      ],
+      "limitations": [
+        "Teacher preparation",
+        "Equity concerns",
+        "Assessment challenges"
+      ]
+    },
+    {
+      "id": "theory-038",
+      "name": "Backward Design",
+      "name_ja": "逆向き設計",
+      "category": "curriculum",
+      "priority": 5,
+      "theorists": ["Grant Wiggins", "Jay McTighe"],
+      "description": "Design from desired learning outcomes.",
+      "description_ja": "望ましい学習成果から逆算して設計",
+      "key_principles": [
+        "Identify desired results",
+        "Determine acceptable evidence",
+        "Plan learning experiences",
+        "Enduring understandings"
+      ],
+      "applications": [
+        "Curriculum design",
+        "Unit planning",
+        "Assessment alignment",
+        "Standards-based education"
+      ],
+      "strengths": [
+        "Clarity of purpose",
+        "Alignment focus",
+        "Evidence-based"
+      ],
+      "limitations": [
+        "Time investment",
+        "Teacher training",
+        "Flexibility concerns"
+      ]
+    },
+    {
+      "id": "theory-039",
+      "name": "Expectancy-Value Theory",
+      "name_ja": "期待価値理論",
+      "category": "motivation",
+      "priority": 5,
+      "theorists": ["Jacquelynne S. Eccles"],
+      "description": "Expectation of success and task value.",
+      "description_ja": "成功への期待と課題の価値",
+      "key_principles": [
+        "Expectancy for success",
+        "Intrinsic value",
+        "Utility value",
+        "Cost perceptions"
+      ],
+      "applications": [
+        "Academic motivation",
+        "Career choices",
+        "STEM engagement",
+        "Gender differences"
+      ],
+      "strengths": [
+        "Comprehensive model",
+        "Strong research base",
+        "Practical implications"
+      ],
+      "limitations": [
+        "Complexity",
+        "Cultural variations",
+        "Measurement challenges"
+      ]
+    },
+    {
+      "id": "theory-040",
+      "name": "Attribution Theory",
+      "name_ja": "帰属理論",
+      "category": "motivation",
+      "priority": 5,
+      "theorists": ["Bernard Weiner"],
+      "description": "Causal attributions for success and failure.",
+      "description_ja": "成功・失敗の原因帰属",
+      "key_principles": [
+        "Locus of causality",
+        "Stability",
+        "Controllability",
+        "Emotional consequences"
+      ],
+      "applications": [
+        "Academic motivation",
+        "Feedback design",
+        "Learned helplessness prevention",
+        "Attribution retraining"
+      ],
+      "strengths": [
+        "Explains motivation patterns",
+        "Intervention potential",
+        "Cross-cultural applicability"
+      ],
+      "limitations": [
+        "Cultural variations",
+        "Individual differences",
+        "Situational factors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_categories": 9
+  },
+  "categories": [
+    {
+      "id": "learning_theory",
+      "name": "Learning Theory",
+      "name_ja": "学習理論",
+      "description": "Fundamental theories explaining how learning occurs, including behaviorism, cognitivism, and constructivism.",
+      "description_ja": "学習がどのように起こるかを説明する基本理論。行動主義、認知主義、構成主義を含む。",
+      "theory_count": 38,
+      "color": "#4A90D9"
+    },
+    {
+      "id": "developmental",
+      "name": "Developmental Theory",
+      "name_ja": "発達理論",
+      "description": "Theories explaining human development across the lifespan, including cognitive, social, and emotional development.",
+      "description_ja": "生涯にわたる人間の発達を説明する理論。認知的、社会的、情動的発達を含む。",
+      "theory_count": 18,
+      "color": "#7B68EE"
+    },
+    {
+      "id": "instructional_design",
+      "name": "Instructional Design",
+      "name_ja": "教授法・指導法理論",
+      "description": "Theories and methods for designing effective instruction and learning experiences.",
+      "description_ja": "効果的な教授法と学習経験を設計するための理論と方法。",
+      "theory_count": 32,
+      "color": "#50C878"
+    },
+    {
+      "id": "curriculum",
+      "name": "Curriculum Theory",
+      "name_ja": "カリキュラム理論",
+      "description": "Theories about curriculum design, development, and implementation.",
+      "description_ja": "カリキュラムの設計、開発、実施に関する理論。",
+      "theory_count": 10,
+      "color": "#FFB347"
+    },
+    {
+      "id": "motivation",
+      "name": "Motivation Theory",
+      "name_ja": "動機づけ理論",
+      "description": "Theories explaining what drives and sustains human motivation in learning contexts.",
+      "description_ja": "学習文脈における人間の動機づけを駆動し維持するものを説明する理論。",
+      "theory_count": 16,
+      "color": "#FF6B6B"
+    },
+    {
+      "id": "assessment",
+      "name": "Assessment Theory",
+      "name_ja": "評価理論",
+      "description": "Theories about measuring and evaluating learning outcomes and processes.",
+      "description_ja": "学習成果とプロセスの測定・評価に関する理論。",
+      "theory_count": 12,
+      "color": "#C9A0DC"
+    },
+    {
+      "id": "social_learning",
+      "name": "Social Learning Theory",
+      "name_ja": "社会的学習理論",
+      "description": "Theories emphasizing the social context of learning and collaborative knowledge construction.",
+      "description_ja": "学習の社会的文脈と協働的知識構築を強調する理論。",
+      "theory_count": 18,
+      "color": "#87CEEB"
+    },
+    {
+      "id": "asian_education",
+      "name": "Asian Educational Theory",
+      "name_ja": "東洋・アジア教育理論",
+      "description": "Educational philosophies and practices from Asian traditions, including Confucian and Japanese approaches.",
+      "description_ja": "儒教や日本のアプローチを含む、アジアの伝統に基づく教育哲学と実践。",
+      "theory_count": 28,
+      "color": "#DDA0DD"
+    },
+    {
+      "id": "technology_enhanced",
+      "name": "Technology-Enhanced Learning",
+      "name_ja": "テクノロジー活用理論",
+      "description": "Theories about integrating technology in education and digital learning environments.",
+      "description_ja": "教育におけるテクノロジーの統合とデジタル学習環境に関する理論。",
+      "theory_count": 22,
+      "color": "#20B2AA"
+    },
+    {
+      "id": "modern_education",
+      "name": "Modern Education Theory",
+      "name_ja": "現代教育理論",
+      "description": "Contemporary theories addressing 21st century learning needs and skills.",
+      "description_ja": "21世紀の学習ニーズとスキルに対応する現代的理論。",
+      "theory_count": 16,
+      "color": "#F0E68C"
+    },
+    {
+      "id": "critical_alternative",
+      "name": "Critical & Alternative Education",
+      "name_ja": "批判的・オルタナティブ教育",
+      "description": "Critical pedagogy, alternative education movements, and inclusive education approaches.",
+      "description_ja": "批判的教育学、オルタナティブ教育運動、インクルーシブ教育アプローチ。",
+      "theory_count": 26,
+      "color": "#CD853F"
+    }
+  ]
+}

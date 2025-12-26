@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_relationships": 80,
+    "relationship_types": [
+      "influences",
+      "extends",
+      "contrasts_with",
+      "complements",
+      "derived_from",
+      "applied_in",
+      "evolved_into",
+      "integrates",
+      "critiques",
+      "supports"
+    ]
+  },
+  "relationships": [
+    {
+      "id": "rel-001",
+      "source_id": "theory-001",
+      "target_id": "theory-002",
+      "relationship_type": "influences",
+      "strength": 0.8,
+      "description": "Operant conditioning influenced the development of social learning theory by providing behavioral foundations."
+    },
+    {
+      "id": "rel-002",
+      "source_id": "theory-002",
+      "target_id": "theory-003",
+      "relationship_type": "evolved_into",
+      "strength": 0.95,
+      "description": "Social learning theory evolved into social cognitive theory with added emphasis on self-efficacy."
+    },
+    {
+      "id": "rel-003",
+      "source_id": "theory-003",
+      "target_id": "theory-014",
+      "relationship_type": "derived_from",
+      "strength": 0.9,
+      "description": "Self-efficacy theory was derived from social cognitive theory as a central construct."
+    },
+    {
+      "id": "rel-004",
+      "source_id": "theory-005",
+      "target_id": "theory-006",
+      "relationship_type": "complements",
+      "strength": 0.85,
+      "description": "Experiential learning theory complements constructivism through emphasis on learning by doing."
+    },
+    {
+      "id": "rel-005",
+      "source_id": "theory-006",
+      "target_id": "theory-007",
+      "relationship_type": "influences",
+      "strength": 0.9,
+      "description": "Piagetian constructivism influenced Vygotsky's social constructivism."
+    },
+    {
+      "id": "rel-006",
+      "source_id": "theory-007",
+      "target_id": "theory-011",
+      "relationship_type": "derived_from",
+      "strength": 0.95,
+      "description": "Zone of Proximal Development is a key concept derived from social constructivism."
+    },
+    {
+      "id": "rel-007",
+      "source_id": "theory-011",
+      "target_id": "theory-009",
+      "relationship_type": "influences",
+      "strength": 0.9,
+      "description": "ZPD influenced Bruner's scaffolding theory."
+    },
+    {
+      "id": "rel-008",
+      "source_id": "theory-010",
+      "target_id": "theory-006",
+      "relationship_type": "influences",
+      "strength": 0.85,
+      "description": "Piaget's cognitive development theory influenced constructivist learning theory."
+    },
+    {
+      "id": "rel-009",
+      "source_id": "theory-004",
+      "target_id": "theory-025",
+      "relationship_type": "influences",
+      "strength": 0.8,
+      "description": "Cognitive load theory influenced multimedia learning theory development."
+    },
+    {
+      "id": "rel-010",
+      "source_id": "theory-008",
+      "target_id": "theory-026",
+      "relationship_type": "complements",
+      "strength": 0.75,
+      "description": "Self-determination theory complements growth mindset through emphasis on intrinsic motivation."
+    },
+    {
+      "id": "rel-011",
+      "source_id": "theory-015",
+      "target_id": "theory-017",
+      "relationship_type": "influences",
+      "strength": 0.7,
+      "description": "Socratic method influenced project-based learning through inquiry emphasis."
+    },
+    {
+      "id": "rel-012",
+      "source_id": "theory-017",
+      "target_id": "theory-018",
+      "relationship_type": "complements",
+      "strength": 0.85,
+      "description": "Project-based learning complements problem-based learning as active learning approaches."
+    },
+    {
+      "id": "rel-013",
+      "source_id": "theory-020",
+      "target_id": "theory-021",
+      "relationship_type": "complements",
+      "strength": 0.8,
+      "description": "ADDIE model complements Gagné's nine events as instructional design frameworks."
+    },
+    {
+      "id": "rel-014",
+      "source_id": "theory-021",
+      "target_id": "theory-022",
+      "relationship_type": "integrates",
+      "strength": 0.75,
+      "description": "Gagné's events integrate well with Bloom's taxonomy for lesson planning."
+    },
+    {
+      "id": "rel-015",
+      "source_id": "theory-022",
+      "target_id": "theory-038",
+      "relationship_type": "influences",
+      "strength": 0.8,
+      "description": "Bloom's taxonomy influenced backward design through outcome-focused approach."
+    },
+    {
+      "id": "rel-016",
+      "source_id": "theory-023",
+      "target_id": "theory-024",
+      "relationship_type": "complements",
+      "strength": 0.7,
+      "description": "Connectivism complements TPACK in understanding digital age learning."
+    },
+    {
+      "id": "rel-017",
+      "source_id": "theory-024",
+      "target_id": "theory-025",
+      "relationship_type": "integrates",
+      "strength": 0.75,
+      "description": "TPACK integrates with multimedia learning theory for technology-enhanced design."
+    },
+    {
+      "id": "rel-018",
+      "source_id": "theory-026",
+      "target_id": "theory-039",
+      "relationship_type": "complements",
+      "strength": 0.8,
+      "description": "Growth mindset complements expectancy-value theory in motivation research."
+    },
+    {
+      "id": "rel-019",
+      "source_id": "theory-039",
+      "target_id": "theory-040",
+      "relationship_type": "complements",
+      "strength": 0.85,
+      "description": "Expectancy-value theory complements attribution theory in explaining motivation."
+    },
+    {
+      "id": "rel-020",
+      "source_id": "theory-031",
+      "target_id": "theory-030",
+      "relationship_type": "influences",
+      "strength": 0.8,
+      "description": "Confucian philosophy influenced the development of lesson study in Japan."
+    },
+    {
+      "id": "rel-021",
+      "source_id": "theory-032",
+      "target_id": "theory-022",
+      "relationship_type": "complements",
+      "strength": 0.75,
+      "description": "Formative assessment complements Bloom's taxonomy in assessment design."
+    },
+    {
+      "id": "rel-022",
+      "source_id": "theory-033",
+      "target_id": "theory-007",
+      "relationship_type": "derived_from",
+      "strength": 0.8,
+      "description": "Cooperative learning derives from social constructivist principles."
+    },
+    {
+      "id": "rel-023",
+      "source_id": "theory-034",
+      "target_id": "theory-007",
+      "relationship_type": "extends",
+      "strength": 0.85,
+      "description": "Communities of practice extends social constructivism to professional contexts."
+    },
+    {
+      "id": "rel-024",
+      "source_id": "theory-035",
+      "target_id": "theory-006",
+      "relationship_type": "critiques",
+      "strength": 0.7,
+      "description": "Critical pedagogy critiques traditional constructivism for lacking political awareness."
+    },
+    {
+      "id": "rel-025",
+      "source_id": "theory-036",
+      "target_id": "theory-029",
+      "relationship_type": "integrates",
+      "strength": 0.85,
+      "description": "Inclusive education integrates with universal design for learning principles."
+    },
+    {
+      "id": "rel-026",
+      "source_id": "theory-037",
+      "target_id": "theory-017",
+      "relationship_type": "integrates",
+      "strength": 0.8,
+      "description": "STEM education integrates with project-based learning methodology."
+    },
+    {
+      "id": "rel-027",
+      "source_id": "theory-027",
+      "target_id": "theory-028",
+      "relationship_type": "complements",
+      "strength": 0.9,
+      "description": "21st century skills complement social emotional learning frameworks."
+    },
+    {
+      "id": "rel-028",
+      "source_id": "theory-029",
+      "target_id": "theory-036",
+      "relationship_type": "supports",
+      "strength": 0.9,
+      "description": "Universal design for learning supports inclusive education implementation."
+    },
+    {
+      "id": "rel-029",
+      "source_id": "theory-019",
+      "target_id": "theory-023",
+      "relationship_type": "applied_in",
+      "strength": 0.75,
+      "description": "Flipped learning applies connectivist principles through technology."
+    },
+    {
+      "id": "rel-030",
+      "source_id": "theory-016",
+      "target_id": "theory-010",
+      "relationship_type": "derived_from",
+      "strength": 0.85,
+      "description": "Montessori method derives insights from cognitive development theory."
+    },
+    {
+      "id": "rel-031",
+      "source_id": "theory-012",
+      "target_id": "theory-013",
+      "relationship_type": "complements",
+      "strength": 0.8,
+      "description": "Psychosocial development complements attachment theory in understanding development."
+    },
+    {
+      "id": "rel-032",
+      "source_id": "theory-001",
+      "target_id": "theory-006",
+      "relationship_type": "contrasts_with",
+      "strength": 0.9,
+      "description": "Operant conditioning contrasts with constructivism on the nature of learning."
+    },
+    {
+      "id": "rel-033",
+      "source_id": "theory-004",
+      "target_id": "theory-019",
+      "relationship_type": "influences",
+      "strength": 0.7,
+      "description": "Cognitive load theory influences flipped learning design principles."
+    },
+    {
+      "id": "rel-034",
+      "source_id": "theory-025",
+      "target_id": "theory-019",
+      "relationship_type": "influences",
+      "strength": 0.75,
+      "description": "Multimedia learning theory influences flipped learning video design."
+    },
+    {
+      "id": "rel-035",
+      "source_id": "theory-008",
+      "target_id": "theory-033",
+      "relationship_type": "supports",
+      "strength": 0.7,
+      "description": "Self-determination theory supports cooperative learning through relatedness need."
+    },
+    {
+      "id": "rel-036",
+      "source_id": "theory-014",
+      "target_id": "theory-026",
+      "relationship_type": "influences",
+      "strength": 0.85,
+      "description": "Self-efficacy theory influences growth mindset through beliefs about ability."
+    },
+    {
+      "id": "rel-037",
+      "source_id": "theory-009",
+      "target_id": "theory-029",
+      "relationship_type": "complements",
+      "strength": 0.8,
+      "description": "Scaffolding theory complements UDL in supporting diverse learners."
+    },
+    {
+      "id": "rel-038",
+      "source_id": "theory-040",
+      "target_id": "theory-026",
+      "relationship_type": "influences",
+      "strength": 0.8,
+      "description": "Attribution theory influenced growth mindset development."
+    },
+    {
+      "id": "rel-039",
+      "source_id": "theory-005",
+      "target_id": "theory-030",
+      "relationship_type": "influences",
+      "strength": 0.65,
+      "description": "Experiential learning influenced lesson study practice development."
+    },
+    {
+      "id": "rel-040",
+      "source_id": "theory-032",
+      "target_id": "theory-009",
+      "relationship_type": "integrates",
+      "strength": 0.75,
+      "description": "Formative assessment integrates with scaffolding for responsive teaching."
+    }
+  ]
+}

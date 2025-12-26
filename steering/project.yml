@@ -1,0 +1,46 @@
+# MUSUBI Project Configuration
+name: TENJIN
+description: 教育理論GraphRAG MCPサーバー - esperantoによるマルチLLM統合
+locale: ja
+version: "0.1.0"
+created: 2025-12-26
+
+# Technology Stack
+tech_stack:
+  approach: clean-architecture-mcp
+  languages:
+    - python
+  primary_language: python
+  python_version: "3.11+"
+  frameworks:
+    - fastmcp
+    - esperanto
+    - pydantic
+  databases:
+    - neo4j
+    - chromadb
+  testing:
+    - pytest
+    - pytest-asyncio
+  tools:
+    - ruff
+    - mypy
+    - docker-compose
+
+# Project Type
+project_type: mcp-server
+domain: education-technology
+
+# Dependencies
+dependencies:
+  llm_integration: esperanto
+  mcp_framework: fastmcp
+  graph_db: neo4j
+  vector_db: chromadb
+  validation: pydantic
+
+# References
+references:
+  tengin_graphrag: ./References/TENGIN-GraphRAG
+  mcp_spec: https://modelcontextprotocol.io/
+  esperanto: https://github.com/lfnovo/esperanto
