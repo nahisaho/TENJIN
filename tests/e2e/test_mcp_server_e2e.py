@@ -3,6 +3,8 @@
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
+from tenjin.domain.entities.theory import Theory
+
 
 class TestMCPServerE2E:
     """End-to-end tests for MCP server."""
@@ -99,18 +101,11 @@ class TestWorkflowE2E:
     """End-to-end tests for common workflows."""
 
     @pytest.fixture
-    def mock_theory_service(self) -> AsyncMock:
+    def mock_theory_service(self, sample_theory: Theory) -> AsyncMock:
         """Create mock theory service."""
         service = AsyncMock()
-        service.get_theory = AsyncMock(
-            return_value=MagicMock(
-                id="theory-001",
-                name="Constructivism",
-                name_ja="構成主義",
-                description="Learning theory...",
-            )
-        )
-        service.list_theories = AsyncMock(return_value=[])
+        service.get_theory = AsyncMock(return_value=sample_theory)
+        service.list_theories = AsyncMock(return_value=[sample_theory])
         return service
 
     @pytest.fixture

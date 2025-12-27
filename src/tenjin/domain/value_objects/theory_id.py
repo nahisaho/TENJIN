@@ -1,7 +1,7 @@
 """TheoryId value object - Immutable identifier for theories."""
 
 from dataclasses import dataclass
-from uuid import UUID, uuid4
+from uuid import uuid4
 
 
 @dataclass(frozen=True)
@@ -9,10 +9,10 @@ class TheoryId:
     """Immutable unique identifier for a Theory.
 
     Attributes:
-        value: The UUID value.
+        value: The string identifier value.
     """
 
-    value: UUID
+    value: str
 
     @classmethod
     def generate(cls) -> "TheoryId":
@@ -21,26 +21,23 @@ class TheoryId:
         Returns:
             New TheoryId instance.
         """
-        return cls(value=uuid4())
+        return cls(value=str(uuid4()))
 
     @classmethod
     def from_string(cls, id_string: str) -> "TheoryId":
         """Create TheoryId from string.
 
         Args:
-            id_string: UUID string.
+            id_string: ID string.
 
         Returns:
             TheoryId instance.
-
-        Raises:
-            ValueError: If string is not a valid UUID.
         """
-        return cls(value=UUID(id_string))
+        return cls(value=id_string)
 
     def __str__(self) -> str:
         """Return string representation."""
-        return str(self.value)
+        return self.value
 
     def __hash__(self) -> int:
         """Return hash of value."""

@@ -1,7 +1,7 @@
 """Pytest configuration and fixtures for TENJIN tests."""
 
 import asyncio
-from collections.abc import AsyncGenerator, Generator
+from collections.abc import Generator
 from pathlib import Path
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock
@@ -11,7 +11,8 @@ import pytest
 from tenjin.domain.entities.theory import Theory
 from tenjin.domain.entities.theorist import Theorist
 from tenjin.domain.entities.category import Category
-from tenjin.domain.value_objects.ids import TheoryId, TheoristId, CategoryId
+from tenjin.domain.value_objects.theory_id import TheoryId
+from tenjin.domain.value_objects.theorist_id import TheoristId
 from tenjin.domain.value_objects.category_type import CategoryType
 from tenjin.domain.value_objects.priority_level import PriorityLevel
 
@@ -28,12 +29,11 @@ def event_loop() -> Generator[asyncio.AbstractEventLoop, None, None]:
 def sample_theory() -> Theory:
     """Create sample theory for testing."""
     return Theory(
-        id=TheoryId("theory-001"),
+        id=TheoryId.from_string("theory-001"),
         name="Constructivism",
         name_ja="構成主義",
-        category=CategoryType.LEARNING_THEORY,
-        priority=PriorityLevel.HIGH,
-        theorist_names=["Jean Piaget", "John Dewey"],
+        category=CategoryType.CONSTRUCTIVIST,
+        priority=PriorityLevel.CRITICAL,
         description="Learning theory where learners actively construct knowledge.",
         description_ja="学習者が能動的に知識を構築する学習理論",
         key_principles=[
@@ -55,12 +55,11 @@ def sample_theory() -> Theory:
 def sample_theory_2() -> Theory:
     """Create second sample theory for testing."""
     return Theory(
-        id=TheoryId("theory-002"),
+        id=TheoryId.from_string("theory-002"),
         name="Social Learning Theory",
         name_ja="社会的学習理論",
-        category=CategoryType.LEARNING_THEORY,
+        category=CategoryType.SOCIAL_LEARNING,
         priority=PriorityLevel.CRITICAL,
-        theorist_names=["Albert Bandura"],
         description="Learning through observation and modeling.",
         description_ja="観察とモデリングによる学習",
         key_principles=[
@@ -82,16 +81,14 @@ def sample_theory_2() -> Theory:
 def sample_theorist() -> Theorist:
     """Create sample theorist for testing."""
     return Theorist(
-        id=TheoristId("theorist-001"),
+        id=TheoristId.from_string("theorist-001"),
         name="Jean Piaget",
         name_ja="ジャン・ピアジェ",
         birth_year=1896,
         death_year=1980,
         nationality="Swiss",
-        primary_field="Developmental Psychology",
+        biography="Swiss psychologist known for cognitive development theory.",
         contributions=["Cognitive Development Theory", "Constructivism"],
-        key_works=["The Language and Thought of the Child"],
-        related_theory_ids=[TheoryId("theory-001")],
     )
 
 
@@ -99,13 +96,12 @@ def sample_theorist() -> Theorist:
 def sample_category() -> Category:
     """Create sample category for testing."""
     return Category(
-        id=CategoryId("learning_theory"),
-        name="Learning Theory",
-        name_ja="学習理論",
+        type=CategoryType.COGNITIVE_DEVELOPMENT,
+        name="Cognitive Development",
+        name_ja="認知発達理論",
         description="Fundamental theories explaining how learning occurs.",
         description_ja="学習がどのように起こるかを説明する基本理論。",
         theory_count=38,
-        color="#4A90D9",
     )
 
 

@@ -1,9 +1,9 @@
 # Product Context
 
 **Project**: TENJIN
-**Last Updated**: 2025-12-26
-**Version**: 1.0
-**Status**: 要件定義中
+**Last Updated**: 2025-12-27
+**Version**: 0.2.0
+**Status**: 本番運用可能（MVP完了）
 
 ---
 

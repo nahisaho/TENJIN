@@ -2,14 +2,16 @@
 name: TENJIN
 description: 教育理論GraphRAG MCPサーバー - esperantoによるマルチLLM統合
 locale: ja
-version: "0.1.0"
+version: "0.2.0"
 created: 2025-12-26
+updated: 2025-12-27
 
 # Technology Stack
 tech_stack:
   approach: clean-architecture-mcp
   languages:
     - python
+    - javascript
   primary_language: python
   python_version: "3.11+"
   frameworks:
@@ -39,8 +41,78 @@ dependencies:
   vector_db: chromadb
   validation: pydantic
 
-# References
+# Sub-Projects
+sub_projects:
+  theory_editor:
+    path: ./tools/theory-editor
+    description: 教育理論データエディター（Web GUI）
+    tech_stack:
+      - vanilla-javascript
+      - html5
+      - css3
+    status: completed
+    specs:
+      requirements: ./storage/specs/REQ-002-theory-editor.md
+      design: ./storage/specs/DESIGN-002-theory-editor.md
+      tasks: ./storage/specs/TASKS-002-theory-editor.md
+    docs:
+      readme: ./tools/theory-editor/README.md
+      api: ./tools/theory-editor/docs/API.md
+      architecture: ./tools/theory-editor/docs/ARCHITECTURE.md
+
+# MCP Server Integration
+mcp_integration:
+  config_file: ./.vscode/mcp.json
+  embedding_provider: ollama
+  embedding_model: nomic-embed-text
+  embedding_dimensions: 768
+  ollama_host: http://192.168.224.1:11434
+  neo4j_url: bolt://localhost:7687
+  theories_loaded: 175
+
+# References (not tracked in git)
 references:
-  tengin_graphrag: ./References/TENGIN-GraphRAG
+  tengin_graphrag: ./References/TENGIN-GraphRAG  # Local only, not pushed
   mcp_spec: https://modelcontextprotocol.io/
   esperanto: https://github.com/lfnovo/esperanto
+
+# Current Sprint
+current_sprint:
+  feature: mcp-integration-complete
+  phase: completed
+  started: 2025-12-27
+  last_updated: 2025-12-27
+  milestones:
+    - name: GraphRAG Implementation
+      status: completed
+      tasks_completed: 30
+      tasks_total: 30
+    - name: Theory Editor
+      status: completed  
+      tasks_completed: 16
+      tasks_total: 16
+    - name: MCP Server VS Code Integration
+      status: completed
+      components:
+        - VS Code MCP configuration (.vscode/mcp.json)
+        - Ollama embedding integration
+        - Neo4j 175 theories loaded
+        - Theory query tools working
+        - Lesson design assistance verified
+    - name: Documentation
+      status: completed
+      artifacts:
+        - Theory Editor README
+        - API Reference
+        - Architecture Documentation
+
+# Completed Sprints Archive
+completed_sprints:
+  - feature: theory-editor
+    phase: completed
+    tasks_completed: 16
+    tasks_total: 16
+    started: 2025-12-27
+    completed: 2025-12-27
+    completed_tasks:
+      - TASK-001 to TASK-016 (all completed)

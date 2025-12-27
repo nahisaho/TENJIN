@@ -1,8 +1,8 @@
 # Project Structure
 
 **Project**: TENJIN
-**Last Updated**: 2025-12-26
-**Version**: 1.0
+**Last Updated**: 2025-12-27
+**Version**: 0.2.0
 
 ---
 
@@ -123,6 +123,9 @@ Domain layer has NO dependencies
 
 ```
 TENJIN/
+├── .vscode/                  # VS Code設定
+│   ├── mcp.json              # MCPサーバー設定
+│   └── settings.json         # VS Code設定
 ├── src/                      # メインソースコード
 │   └── tenjin/               # Pythonパッケージ
 │       ├── __init__.py
@@ -140,6 +143,24 @@ TENJIN/
 │   ├── unit/                 # ユニットテスト
 │   ├── integration/          # 統合テスト
 │   └── e2e/                  # E2Eテスト
+├── tools/                    # 開発支援ツール
+│   └── theory-editor/        # 教育理論データエディター (Web GUI)
+│       ├── index.html        # メインHTML
+│       ├── styles.css        # スタイル
+│       ├── app.js            # メインアプリケーション
+│       ├── sync-server.py    # Neo4j同期サーバー (port 8081)
+│       ├── js/               # モジュール化されたJS
+│       │   ├── validation.js # バリデーション
+│       │   ├── diff.js       # 差分計算
+│       │   ├── storage.js    # ローカルストレージ
+│       │   └── error-handler.js # エラーハンドリング
+│       ├── docs/             # ドキュメント
+│       │   ├── API.md        # APIリファレンス
+│       │   └── ARCHITECTURE.md # アーキテクチャ
+│       └── tests/            # E2Eテスト (Playwright)
+├── scripts/                  # ユーティリティスクリプト
+│   ├── load_data.py          # データローダー
+│   └── generate_*.py         # データ生成スクリプト
 ├── docs/                     # ドキュメント
 ├── storage/                  # SDD アーティファクト
 │   ├── specs/                # 要件、設計、タスク仕様
@@ -151,11 +172,12 @@ TENJIN/
 │   ├── product.ja.md         # プロダクトコンテキスト
 │   └── rules/                # 憲法ガバナンス
 ├── templates/                # ドキュメントテンプレート
-├── References/               # 参照実装
-│   └── TENGIN-GraphRAG/      # 参照実装
+├── .gitignore                # Git除外設定
 ├── pyproject.toml            # Python プロジェクト設定
 ├── docker-compose.yml        # Docker 設定
 └── README.md                 # プロジェクトREADME
+
+# Note: References/ フォルダはローカル開発用（Git追跡外）
 ```
 
 ---

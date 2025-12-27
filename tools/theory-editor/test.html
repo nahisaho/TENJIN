@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENJIN Theory Editor - Unit Tests</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            color: #4a90d9;
+        }
+        h2 {
+            margin: 1.5rem 0 0.5rem;
+            color: #64b5f6;
+            font-size: 1.2rem;
+        }
+        .test-suite {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .test-result {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .test-pass {
+            background: rgba(76, 175, 80, 0.2);
+            color: #81c784;
+        }
+        .test-fail {
+            background: rgba(244, 67, 54, 0.2);
+            color: #e57373;
+        }
+        .test-error {
+            font-size: 0.8rem;
+            color: #ffab91;
+            margin-left: 1.5rem;
+        }
+        .summary {
+            background: #0f3460;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .summary-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .stat-pass .stat-number { color: #81c784; }
+        .stat-fail .stat-number { color: #e57373; }
+        .stat-total .stat-number { color: #64b5f6; }
+        .btn-run {
+            background: #4a90d9;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .btn-run:hover {
+            background: #357abd;
+        }
+        #output {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 TENJIN Theory Editor - Unit Tests</h1>
+    
+    <button class="btn-run" onclick="runAllTests()">▶️ Run All Tests</button>
+    
+    <div id="results"></div>
+    
+    <div id="summary" class="summary" style="display: none;">
+        <h2>📊 Test Summary</h2>
+        <div class="summary-stats">
+            <div class="stat stat-total">
+                <div class="stat-number" id="total-count">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat stat-pass">
+                <div class="stat-number" id="pass-count">0</div>
+                <div class="stat-label">Passed</div>
+            </div>
+            <div class="stat stat-fail">
+                <div class="stat-number" id="fail-count">0</div>
+                <div class="stat-label">Failed</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Load modules -->
+    <script src="js/validation.js"></script>
+    <script src="js/diff.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/error-handler.js"></script>
+    
+    <script>
+        // Simple test runner for browser
+        const BrowserTestRunner = {
+            suites: [],
+            currentSuite: null,
+            
+            describe(name, fn) {
+                this.currentSuite = { name, tests: [] };
+                fn();
+                this.suites.push(this.currentSuite);
+            },
+            
+            test(name, fn) {
+                try {
+                    fn();
+                    this.currentSuite.tests.push({ name, status: 'pass' });
+                } catch (e) {
+                    this.currentSuite.tests.push({ name, status: 'fail', error: e.message });
+                }
+            },
+            
+            assertEqual(actual, expected, message = '') {
+                const actualStr = JSON.stringify(actual);
+                const expectedStr = JSON.stringify(expected);
+                if (actualStr !== expectedStr) {
+                    throw new Error(`${message}\nExpected: ${expectedStr}\nActual: ${actualStr}`);
+                }
+            },
+            
+            assertTrue(value, message = 'Expected true') {
+                if (value !== true) throw new Error(message);
+            },
+            
+            assertFalse(value, message = 'Expected false') {
+                if (value !== false) throw new Error(message);
+            },
+            
+            render() {
+                const resultsDiv = document.getElementById('results');
+                let html = '';
+                let totalPass = 0;
+                let totalFail = 0;
+                
+                for (const suite of this.suites) {
+                    html += `<div class="test-suite"><h2>${suite.name}</h2>`;
+                    for (const test of suite.tests) {
+                        const icon = test.status === 'pass' ? '✓' : '✗';
+                        const className = test.status === 'pass' ? 'test-pass' : 'test-fail';
+                        html += `<div class="test-result ${className}">${icon} ${test.name}</div>`;
+                        if (test.error) {
+                            html += `<div class="test-error">${test.error}</div>`;
+                        }
+                        if (test.status === 'pass') totalPass++;
+                        else totalFail++;
+                    }
+                    html += '</div>';
+                }
+                
+                resultsDiv.innerHTML = html;
+                
+                // Summary
+                document.getElementById('summary').style.display = 'block';
+                document.getElementById('total-count').textContent = totalPass + totalFail;
+                document.getElementById('pass-count').textContent = totalPass;
+                document.getElementById('fail-count').textContent = totalFail;
+            },
+            
+            reset() {
+                this.suites = [];
+            }
+        };
+        
+        function runAllTests() {
+            BrowserTestRunner.reset();
+            localStorage.clear();
+            
+            // ===== Validation Tests =====
+            BrowserTestRunner.describe('Validation Module', () => {
+                const v = window.TheoryValidation;
+                
+                BrowserTestRunner.test('UT-VAL-001: 有効な理論データはisValid: trueを返す', () => {
+                    const result = v.validateTheory({
+                        id: 'theory-001',
+                        name: 'Test Theory',
+                        category: 'learning_theory'
+                    });
+                    BrowserTestRunner.assertTrue(result.isValid);
+                    BrowserTestRunner.assertEqual(result.errors.length, 0);
+                });
+                
+                BrowserTestRunner.test('UT-VAL-002: ID欠落時はエラーを返す', () => {
+                    const result = v.validateTheory({ name: 'Test', category: 'cat' });
+                    BrowserTestRunner.assertFalse(result.isValid);
+                    BrowserTestRunner.assertTrue(result.errors.some(e => e.field === 'id'));
+                });
+                
+                BrowserTestRunner.test('UT-VAL-003: 名前欠落（両方）時はエラーを返す', () => {
+                    const result = v.validateTheory({ id: 'theory-001', category: 'cat' });
+                    BrowserTestRunner.assertFalse(result.isValid);
+                });
+                
+                BrowserTestRunner.test('UT-VAL-004: 英語名のみでも有効', () => {
+                    const result = v.validateTheory({
+                        id: 'theory-001',
+                        name: 'Test',
+                        name_ja: null,
+                        category: 'cat'
+                    });
+                    BrowserTestRunner.assertTrue(result.isValid);
+                });
+                
+                BrowserTestRunner.test('UT-VAL-005: 日本語名のみでも有効', () => {
+                    const result = v.validateTheory({
+                        id: 'theory-001',
+                        name: null,
+                        name_ja: 'テスト',
+                        category: 'cat'
+                    });
+                    BrowserTestRunner.assertTrue(result.isValid);
+                });
+                
+                BrowserTestRunner.test('validateImportData: 有効なデータ', () => {
+                    BrowserTestRunner.assertTrue(v.validateImportData({
+                        theories: [{ id: 't1', name: 'Test' }]
+                    }));
+                });
+                
+                BrowserTestRunner.test('validateImportData: 空のtheories', () => {
+                    BrowserTestRunner.assertFalse(v.validateImportData({ theories: [] }));
+                });
+            });
+            
+            // ===== Diff Tests =====
+            BrowserTestRunner.describe('Diff Module', () => {
+                const d = window.TheoryDiff;
+                const t1 = { id: 't1', name: 'Theory 1', description: 'Desc 1' };
+                const t2 = { id: 't2', name: 'Theory 2', description: 'Desc 2' };
+                const t3 = { id: 't3', name: 'Theory 3', description: 'Desc 3' };
+                const t1mod = { id: 't1', name: 'Theory 1', description: 'Modified' };
+                
+                BrowserTestRunner.test('UT-DIFF-001: 追加検出', () => {
+                    const result = d.computeDiff([t1, t2], [t1, t2, t3]);
+                    BrowserTestRunner.assertEqual(result.added.length, 1);
+                    BrowserTestRunner.assertEqual(result.added[0].id, 't3');
+                });
+                
+                BrowserTestRunner.test('UT-DIFF-002: 削除検出', () => {
+                    const result = d.computeDiff([t1, t2, t3], [t1, t2]);
+                    BrowserTestRunner.assertEqual(result.removed.length, 1);
+                    BrowserTestRunner.assertEqual(result.removed[0].id, 't3');
+                });
+                
+                BrowserTestRunner.test('UT-DIFF-003: 変更検出', () => {
+                    const result = d.computeDiff([t1, t2], [t1mod, t2]);
+                    BrowserTestRunner.assertEqual(result.modified.length, 1);
+                });
+                
+                BrowserTestRunner.test('UT-DIFF-004: 変更なし', () => {
+                    const result = d.computeDiff([t1, t2], [t1, t2]);
+                    BrowserTestRunner.assertEqual(result.added.length, 0);
+                    BrowserTestRunner.assertEqual(result.removed.length, 0);
+                    BrowserTestRunner.assertEqual(result.modified.length, 0);
+                });
+                
+                BrowserTestRunner.test('UT-DIFF-005: 空データ比較', () => {
+                    const result = d.computeDiff([], []);
+                    BrowserTestRunner.assertEqual(result.added.length, 0);
+                });
+            });
+            
+            // ===== Storage Tests =====
+            BrowserTestRunner.describe('Storage Module', () => {
+                const s = window.TheoryStorage;
+                
+                BrowserTestRunner.test('UT-STOR-001: 保存と読み込み', () => {
+                    localStorage.clear();
+                    const versions = [s.createVersion({ theories: [{ id: 't1', name: 'T1' }] }, 'V1')];
+                    s.saveVersionsToStorage(versions);
+                    const loaded = s.loadVersionsFromStorage();
+                    BrowserTestRunner.assertEqual(loaded.length, 1);
+                    BrowserTestRunner.assertEqual(loaded[0].description, 'V1');
+                });
+                
+                BrowserTestRunner.test('UT-STOR-002: 上限超過時の削除', () => {
+                    const versions = [];
+                    for (let i = 0; i < 51; i++) {
+                        versions.push({ id: i, description: `V${i}` });
+                    }
+                    const limited = s.enforceVersionLimit(versions, 50);
+                    BrowserTestRunner.assertEqual(limited.length, 50);
+                });
+                
+                BrowserTestRunner.test('UT-STOR-003: 空の読み込み', () => {
+                    localStorage.clear();
+                    const loaded = s.loadVersionsFromStorage();
+                    BrowserTestRunner.assertEqual(loaded.length, 0);
+                });
+                
+                BrowserTestRunner.test('UT-STOR-004: 不正データ読み込み', () => {
+                    localStorage.setItem(s.CONSTANTS.VERSION_STORAGE_KEY, 'invalid{{{');
+                    const loaded = s.loadVersionsFromStorage();
+                    BrowserTestRunner.assertEqual(loaded.length, 0);
+                });
+            });
+            
+            // ===== Error Handler Tests =====
+            BrowserTestRunner.describe('Error Handler Module', () => {
+                BrowserTestRunner.test('UT-ERR-001: ERROR_CONTEXTS定義確認', () => {
+                    BrowserTestRunner.assertTrue(typeof ERROR_CONTEXTS === 'object');
+                    BrowserTestRunner.assertTrue('import-parse' in ERROR_CONTEXTS);
+                    BrowserTestRunner.assertTrue('save-validate' in ERROR_CONTEXTS);
+                    BrowserTestRunner.assertTrue('storage-quota' in ERROR_CONTEXTS);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-002: getErrorMessage - 既知コンテキスト', () => {
+                    const msg = getErrorMessage(new Error('test'), 'import-parse');
+                    BrowserTestRunner.assertTrue(msg.includes('JSON') || msg.includes('パース'));
+                });
+                
+                BrowserTestRunner.test('UT-ERR-003: getErrorMessage - 未知コンテキスト', () => {
+                    const error = new Error('Custom message');
+                    const msg = getErrorMessage(error, 'unknown-ctx');
+                    BrowserTestRunner.assertTrue(msg.includes('Custom message'));
+                });
+                
+                BrowserTestRunner.test('UT-ERR-004: isRecoverable - 回復可能', () => {
+                    BrowserTestRunner.assertEqual(isRecoverable('save-validate'), true);
+                    BrowserTestRunner.assertEqual(isRecoverable('import-validate'), true);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-005: isRecoverable - 回復不可', () => {
+                    BrowserTestRunner.assertEqual(isRecoverable('storage-access'), false);
+                    BrowserTestRunner.assertEqual(isRecoverable('unknown-context'), false);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-006: tryCatch - 成功時', () => {
+                    const result = tryCatch(() => 'success', 'test');
+                    BrowserTestRunner.assertEqual(result, 'success');
+                });
+                
+                BrowserTestRunner.test('UT-ERR-007: tryCatch - エラー時', () => {
+                    const result = tryCatch(() => { throw new Error('fail'); }, 'test');
+                    BrowserTestRunner.assertEqual(result, undefined);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-008: tryCatch - コールバック呼び出し', () => {
+                    let called = false;
+                    tryCatch(() => { throw new Error('cb'); }, 'test', () => { called = true; });
+                    BrowserTestRunner.assertTrue(called);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-009: handleError - onNotify呼び出し', () => {
+                    let notified = false;
+                    handleError(new Error('notify'), 'save-validate', {
+                        onNotify: () => { notified = true; }
+                    });
+                    BrowserTestRunner.assertTrue(notified);
+                });
+                
+                BrowserTestRunner.test('UT-ERR-010: handleError - onRecovery条件呼び出し', () => {
+                    let recovered = false;
+                    handleError(new Error('recover'), 'save-validate', {
+                        onRecovery: () => { recovered = true; }
+                    });
+                    BrowserTestRunner.assertTrue(recovered); // save-validateは回復可能
+                    
+                    let notRecovered = true;
+                    handleError(new Error('no-recover'), 'storage-access', {
+                        onRecovery: () => { notRecovered = false; }
+                    });
+                    BrowserTestRunner.assertTrue(notRecovered); // storage-accessは回復不可
+                });
+            });
+            
+            BrowserTestRunner.render();
+        }
+    </script>
+</body>
+</html>

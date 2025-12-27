@@ -1,0 +1,1486 @@
+{
+  "priority_5": [
+    {
+      "name_ja": "オペラント条件づけ",
+      "name": "Operant Conditioning",
+      "theorists": "B.F. Skinner",
+      "description_ja": "強化と罰による行動変容の理論。行動の結果によって頻度が増減する",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会的学習理論",
+      "name": "Social Learning Theory",
+      "theorists": "Albert Bandura",
+      "description_ja": "観察とモデリングによる学習。直接経験なしに新しい行動を習得",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会的認知理論",
+      "name": "Social Cognitive Theory",
+      "theorists": "Albert Bandura",
+      "description_ja": "行動・環境・個人的要因の三者相互作用と自己効力感",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "認知負荷理論",
+      "name": "Cognitive Load Theory",
+      "theorists": "John Sweller",
+      "description_ja": "ワーキングメモリの限界に基づく教授設計理論",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "経験学習理論",
+      "name": "Experiential Learning Theory",
+      "theorists": "David A. Kolb",
+      "description_ja": "具体的経験から抽象的概念化への4段階循環モデル",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "構成主義",
+      "name": "Constructivism",
+      "theorists": "Jean Piaget / John Dewey",
+      "description_ja": "学習者が能動的に知識を構築する学習理論",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会的構成主義",
+      "name": "Social Constructivism",
+      "theorists": "Lev Vygotsky",
+      "description_ja": "知識は社会的相互作用を通じて構築される",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "自己決定理論",
+      "name": "Self-Determination Theory",
+      "theorists": "Edward L. Deci & Richard M. Ryan",
+      "description_ja": "自律性・有能感・関係性の3つの基本的心理欲求",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "スキャフォールディング理論",
+      "name": "Scaffolding Theory",
+      "theorists": "Jerome Bruner",
+      "description_ja": "学習者の能力に応じた一時的支援を提供し徐々に取り除く",
+      "category": "learning_theory",
+      "priority": 5
+    },
+    {
+      "name_ja": "認知発達理論",
+      "name": "Cognitive Development Theory",
+      "theorists": "Jean Piaget",
+      "description_ja": "4段階の認知発達を説明（感覚運動期〜形式的操作期）",
+      "category": "developmental",
+      "priority": 5
+    },
+    {
+      "name_ja": "最近接発達領域（ZPD）",
+      "name": "Zone of Proximal Development",
+      "theorists": "Lev Vygotsky",
+      "description_ja": "独力でできることと援助でできることの差異",
+      "category": "developmental",
+      "priority": 5
+    },
+    {
+      "name_ja": "心理社会的発達理論",
+      "name": "Psychosocial Development Theory",
+      "theorists": "Erik Erikson",
+      "description_ja": "生涯8段階の心理社会的危機と課題",
+      "category": "developmental",
+      "priority": 5
+    },
+    {
+      "name_ja": "愛着理論",
+      "name": "Attachment Theory",
+      "theorists": "John Bowlby",
+      "description_ja": "乳幼児期の養育者との愛着関係の重要性",
+      "category": "developmental",
+      "priority": 5
+    },
+    {
+      "name_ja": "自己効力感理論",
+      "name": "Self-Efficacy Theory",
+      "theorists": "Albert Bandura",
+      "description_ja": "自己の能力への信念が動機づけに影響",
+      "category": "developmental",
+      "priority": 5
+    },
+    {
+      "name_ja": "ソクラテス式問答法",
+      "name": "Socratic Method",
+      "theorists": "ソクラテス",
+      "description_ja": "連続的な問いかけによる批判的思考の促進",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "モンテッソーリ教育",
+      "name": "Montessori Method",
+      "theorists": "Maria Montessori",
+      "description_ja": "子どもの自発性と準備された環境",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "プロジェクト・ベースド・ラーニング",
+      "name": "Project-Based Learning",
+      "theorists": "John Dewey / William Kilpatrick",
+      "description_ja": "現実世界の問題に取り組む学習者中心の教授法",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "問題解決学習",
+      "name": "Problem-Based Learning",
+      "theorists": "Howard Barrows",
+      "description_ja": "実際の問題を起点とした学習",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "反転学習",
+      "name": "Flipped Learning",
+      "theorists": "Jonathan Bergmann & Aaron Sams",
+      "description_ja": "講義を授業外で視聴し授業は能動的活動に",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "足場かけ理論",
+      "name": "Scaffolding",
+      "theorists": "Jerome Bruner",
+      "description_ja": "発達水準に応じた一時的支援",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "ADDIEモデル",
+      "name": "ADDIE Model",
+      "theorists": "フロリダ州立大学",
+      "description_ja": "分析・設計・開発・実施・評価の5段階",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "ガニェの9教授事象",
+      "name": "Gagné's Nine Events of Instruction",
+      "theorists": "Robert M. Gagné",
+      "description_ja": "効果的な学習を促す9つの教授事象",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "ブルームのタキソノミー",
+      "name": "Bloom's Taxonomy",
+      "theorists": "Benjamin Bloom",
+      "description_ja": "認知的学習目標の6段階分類",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "構成主義的学習理論",
+      "name": "Constructivist Learning Theory",
+      "theorists": "Jean Piaget / Jerome Bruner",
+      "description_ja": "学習者が能動的に意味を構築",
+      "category": "instructional_design",
+      "priority": 5
+    },
+    {
+      "name_ja": "タイラーの原理",
+      "name": "Tyler's Rationale",
+      "theorists": "Ralph Tyler",
+      "description_ja": "教育目的・学習経験・組織化・評価の4つの問い",
+      "category": "curriculum",
+      "priority": 5
+    },
+    {
+      "name_ja": "スパイラルカリキュラム",
+      "name": "Spiral Curriculum",
+      "theorists": "Jerome Bruner",
+      "description_ja": "同じ主題を徐々に深化させて繰り返す",
+      "category": "curriculum",
+      "priority": 5
+    },
+    {
+      "name_ja": "逆向き設計",
+      "name": "Backward Design",
+      "theorists": "Grant Wiggins & Jay McTighe",
+      "description_ja": "望ましい学習成果から逆算して設計",
+      "category": "curriculum",
+      "priority": 5
+    },
+    {
+      "name_ja": "コンピテンシー基盤型教育",
+      "name": "Competency-Based Education",
+      "theorists": "多数の研究者",
+      "description_ja": "能力の習得度に基づく評価",
+      "category": "curriculum",
+      "priority": 5
+    },
+    {
+      "name_ja": "自己決定理論",
+      "name": "Self-Determination Theory",
+      "theorists": "Edward L. Deci & Richard M. Ryan",
+      "description_ja": "自律性・有能感・関係性の3欲求",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "期待価値理論",
+      "name": "Expectancy-Value Theory",
+      "theorists": "Jacquelynne S. Eccles",
+      "description_ja": "成功への期待と課題の価値",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "達成目標理論",
+      "name": "Achievement Goal Theory",
+      "theorists": "Carol Dweck et al.",
+      "description_ja": "熟達目標と遂行目標",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "帰属理論",
+      "name": "Attribution Theory",
+      "theorists": "Bernard Weiner",
+      "description_ja": "成功・失敗の原因帰属",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "自己効力感理論",
+      "name": "Self-Efficacy Theory",
+      "theorists": "Albert Bandura",
+      "description_ja": "自己の能力への信念",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "成長マインドセット",
+      "name": "Growth Mindset",
+      "theorists": "Carol S. Dweck",
+      "description_ja": "知能・能力は努力で成長可能",
+      "category": "motivation",
+      "priority": 5
+    },
+    {
+      "name_ja": "形成的評価",
+      "name": "Formative Assessment",
+      "theorists": "Paul Black & Dylan Wiliam",
+      "description_ja": "学習過程での継続的フィードバック",
+      "category": "assessment",
+      "priority": 5
+    },
+    {
+      "name_ja": "総括的評価",
+      "name": "Summative Assessment",
+      "theorists": "Michael Scriven",
+      "description_ja": "学習期間終了時の成果判定",
+      "category": "assessment",
+      "priority": 5
+    },
+    {
+      "name_ja": "真正性評価",
+      "name": "Authentic Assessment",
+      "theorists": "Grant Wiggins",
+      "description_ja": "実世界の課題での知識・スキル評価",
+      "category": "assessment",
+      "priority": 5
+    },
+    {
+      "name_ja": "ルーブリック評価",
+      "name": "Rubric Assessment",
+      "theorists": "多数の研究者",
+      "description_ja": "評価基準と達成水準の明示",
+      "category": "assessment",
+      "priority": 5
+    },
+    {
+      "name_ja": "学習のための評価",
+      "name": "Assessment for Learning",
+      "theorists": "Paul Black & Dylan Wiliam",
+      "description_ja": "学習促進ツールとしての評価",
+      "category": "assessment",
+      "priority": 5
+    },
+    {
+      "name_ja": "協調学習",
+      "name": "Cooperative Learning",
+      "theorists": "David & Roger Johnson",
+      "description_ja": "正の相互依存と個人の責任",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会的相互依存理論",
+      "name": "Social Interdependence Theory",
+      "theorists": "Morton Deutsch",
+      "description_ja": "協力・競争の相互作用",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "実践共同体",
+      "name": "Communities of Practice",
+      "theorists": "Jean Lave & Etienne Wenger",
+      "description_ja": "共通の関心を持つ人々の学び合い",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "対話的学習",
+      "name": "Dialogic Learning",
+      "theorists": "Paulo Freire et al.",
+      "description_ja": "対話を通じた知識の共同構築",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "ジグソー法",
+      "name": "Jigsaw Method",
+      "theorists": "Elliot Aronson",
+      "description_ja": "各メンバーが異なる部分を担当して教え合う",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "ピア・インストラクション",
+      "name": "Peer Instruction",
+      "theorists": "Eric Mazur",
+      "description_ja": "概念理解を問う質問後にペアで議論",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "相互教授法",
+      "name": "Reciprocal Teaching",
+      "theorists": "Annemarie Palincsar & Ann Brown",
+      "description_ja": "予測・質問・明確化・要約の4方略",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会的学習理論",
+      "name": "Social Learning Theory",
+      "theorists": "Albert Bandura",
+      "description_ja": "観察学習・モデリング",
+      "category": "social_learning",
+      "priority": 5
+    },
+    {
+      "name_ja": "儒教教育思想",
+      "name": "Confucian Educational Philosophy",
+      "theorists": "孔子",
+      "description_ja": "道徳的自己修養と人格形成",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "知行合一",
+      "name": "Unity of Knowledge and Action",
+      "theorists": "王陽明",
+      "description_ja": "知識と行動の一体性",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "寺子屋教育",
+      "name": "Terakoya Education",
+      "theorists": "伝統的（江戸時代）",
+      "description_ja": "庶民のための私塾教育",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "福沢諭吉の教育思想",
+      "name": "Fukuzawa Yukichi's Philosophy",
+      "theorists": "福沢諭吉",
+      "description_ja": "実学と独立自尊",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "生活教育",
+      "name": "Life Education",
+      "theorists": "陶行知",
+      "description_ja": "生活即教育、社会即学校",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "学びの共同体",
+      "name": "School as Learning Community",
+      "theorists": "佐藤学",
+      "description_ja": "協同的学び、授業研究、民主的学校",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "授業研究",
+      "name": "Lesson Study",
+      "theorists": "伝統的（明治期以降）",
+      "description_ja": "教師が協力して授業を計画・観察・省察",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "タゴールの教育思想",
+      "name": "Tagore's Educational Philosophy",
+      "theorists": "ラビンドラナート・タゴール",
+      "description_ja": "自然の中での創造的な学び",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "ナイ・タリム",
+      "name": "Nai Talim (Basic Education)",
+      "theorists": "マハトマ・ガンディー",
+      "description_ja": "手仕事中心の教育改革",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "クリシュナムルティの教育哲学",
+      "name": "J. Krishnamurti's Philosophy",
+      "theorists": "J. クリシュナムルティ",
+      "description_ja": "自己認識と批判的思考",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "オーロビンドの統合教育",
+      "name": "Sri Aurobindo's Integral Education",
+      "theorists": "シュリ・オーロビンド",
+      "description_ja": "身体・精神・霊性の調和的発達",
+      "category": "asian_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "コネクティビズム",
+      "name": "Connectivism",
+      "theorists": "George Siemens & Stephen Downes",
+      "description_ja": "知識はネットワーク上の接続に分散",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "TPACK",
+      "name": "Technological Pedagogical Content Knowledge",
+      "theorists": "Punya Mishra & Matthew Koehler",
+      "description_ja": "テクノロジー・教育法・内容の統合",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "SAMRモデル",
+      "name": "SAMR Model",
+      "theorists": "Ruben R. Puentedura",
+      "description_ja": "テクノロジー統合の4段階",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "マルチメディア学習理論",
+      "name": "Cognitive Theory of Multimedia Learning",
+      "theorists": "Richard E. Mayer",
+      "description_ja": "言葉と画像の組み合わせ効果",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "ブレンディッドラーニング",
+      "name": "Blended Learning",
+      "theorists": "Michael B. Horn",
+      "description_ja": "対面とオンラインの組み合わせ",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "アダプティブラーニング",
+      "name": "Adaptive Learning",
+      "theorists": "各社",
+      "description_ja": "AIによる個別最適化学習",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "パーソナライズドラーニング",
+      "name": "Personalized Learning",
+      "theorists": "各団体",
+      "description_ja": "学習者のニーズに合わせたカスタマイズ",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "ラーニングアナリティクス",
+      "name": "Learning Analytics",
+      "theorists": "George Siemens / SoLAR",
+      "description_ja": "学習者データの分析と最適化",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "モバイルラーニング",
+      "name": "Mobile Learning",
+      "theorists": "John Traxler",
+      "description_ja": "モバイルデバイスを活用した学習",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "認知負荷理論",
+      "name": "Cognitive Load Theory",
+      "theorists": "John Sweller",
+      "description_ja": "ワーキングメモリの限界を考慮した設計",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "フリップトクラスルーム",
+      "name": "Flipped Classroom",
+      "theorists": "Jonathan Bergmann & Aaron Sams",
+      "description_ja": "授業と宿題の反転",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "AI教育",
+      "name": "Artificial Intelligence in Education",
+      "theorists": "Rose Luckin",
+      "description_ja": "AIによる教育の高度化",
+      "category": "technology_enhanced",
+      "priority": 5
+    },
+    {
+      "name_ja": "21世紀型スキル",
+      "name": "21st Century Skills (P21)",
+      "theorists": "Partnership for 21st Century Learning",
+      "description_ja": "4C（批判的思考・コミュニケーション・協働・創造性）",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "OECD学習フレームワーク2030",
+      "name": "OECD Learning Compass 2030",
+      "theorists": "OECD",
+      "description_ja": "学習者エージェンシー、変革的コンピテンシー",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "社会情動的学習（SEL）",
+      "name": "Social and Emotional Learning",
+      "theorists": "CASEL",
+      "description_ja": "自己認識・自己管理・社会認識・関係性・意思決定",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "学びのユニバーサルデザイン（UDL）",
+      "name": "Universal Design for Learning",
+      "theorists": "CAST",
+      "description_ja": "多様な学習者への対応",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "インクルーシブ教育",
+      "name": "Inclusive Education",
+      "theorists": "UNESCO",
+      "description_ja": "すべての学習者が共に学ぶ",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "STEM教育",
+      "name": "STEM Education",
+      "theorists": "NSF",
+      "description_ja": "科学・技術・工学・数学の統合",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "STEAM教育",
+      "name": "STEAM Education",
+      "theorists": "Georgette Yakman",
+      "description_ja": "STEMに芸術を追加",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "プロジェクト型学習",
+      "name": "Project-Based Learning",
+      "theorists": "Buck Institute",
+      "description_ja": "現実世界の問題に取り組む",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "成長マインドセット",
+      "name": "Growth Mindset",
+      "theorists": "Carol Dweck",
+      "description_ja": "知能・能力は努力で成長可能",
+      "category": "modern_education",
+      "priority": 5
+    },
+    {
+      "name_ja": "批判的ペダゴジー",
+      "name": "Critical Pedagogy",
+      "theorists": "Paulo Freire",
+      "description_ja": "批判的意識の覚醒と社会変革",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "被抑圧者の教育学",
+      "name": "Pedagogy of the Oppressed",
+      "theorists": "Paulo Freire",
+      "description_ja": "銀行型教育への批判と意識化",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "文化的に応答的な教育",
+      "name": "Culturally Relevant Pedagogy",
+      "theorists": "Gloria Ladson-Billings",
+      "description_ja": "学業成功・文化的能力・社会政治的意識",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "多文化教育理論",
+      "name": "Multicultural Education",
+      "theorists": "James A. Banks",
+      "description_ja": "文化的多様性を教育の中心に",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "モンテッソーリ教育",
+      "name": "Montessori Education",
+      "theorists": "Maria Montessori",
+      "description_ja": "子どもの自発的学習と準備された環境",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "シュタイナー/ヴァルドルフ教育",
+      "name": "Waldorf Education",
+      "theorists": "Rudolf Steiner",
+      "description_ja": "知・情・意のバランスと芸術統合",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "レッジョ・エミリア教育",
+      "name": "Reggio Emilia Approach",
+      "theorists": "Loris Malaguzzi",
+      "description_ja": "子どもを有能な主体と捉える",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "ペスタロッチの教育思想",
+      "name": "Pestalozzian Education",
+      "theorists": "Johann Heinrich Pestalozzi",
+      "description_ja": "頭・心・手の全人教育",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "フレーベルの幼児教育",
+      "name": "Froebel's Kindergarten",
+      "theorists": "Friedrich Froebel",
+      "description_ja": "遊びを通じた学習と自己発見",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "デューイのプラグマティズム教育",
+      "name": "Dewey's Progressive Education",
+      "theorists": "John Dewey",
+      "description_ja": "なすことによって学ぶ",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "インクルージョン理論",
+      "name": "Inclusion Theory",
+      "theorists": "Mel Ainscow",
+      "description_ja": "すべての学習者が共に学ぶ権利",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "応用行動分析（ABA）",
+      "name": "Applied Behavior Analysis",
+      "theorists": "B.F. Skinner / O. Ivar Lovaas",
+      "description_ja": "行動原理に基づく科学的介入",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "TEACCH",
+      "name": "Treatment and Education of Autistic and Communication Handicapped Children",
+      "theorists": "Eric Schopler",
+      "description_ja": "視覚的構造化と予測可能な環境",
+      "category": "critical_alternative_special",
+      "priority": 5
+    },
+    {
+      "name_ja": "ユニバーサルデザイン・フォー・ラーニング",
+      "name": "Universal Design for Learning",
+      "theorists": "David Rose & Anne Meyer",
+      "description_ja": "多様な学習者への柔軟な設計",
+      "category": "critical_alternative_special",
+      "priority": 5
+    }
+  ],
+  "priority_4": [
+    {
+      "name_ja": "古典的条件づけ",
+      "name": "Classical Conditioning",
+      "theorists": "Ivan Pavlov",
+      "description_ja": "刺激と反応の連合による学習理論",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "発見学習",
+      "name": "Discovery Learning",
+      "theorists": "Jerome Bruner",
+      "description_ja": "学習者が自ら原理や概念を発見する学習理論",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "有意味受容学習",
+      "name": "Meaningful Reception Learning",
+      "theorists": "David Ausubel",
+      "description_ja": "新情報を既存の認知構造と関連づける学習",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "状況的学習理論",
+      "name": "Situated Learning Theory",
+      "theorists": "Jean Lave & Etienne Wenger",
+      "description_ja": "実践共同体への参加を通じた学習",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "多重知能理論",
+      "name": "Theory of Multiple Intelligences",
+      "theorists": "Howard Gardner",
+      "description_ja": "8つの独立した知能を定義",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "情報処理理論",
+      "name": "Information Processing Theory",
+      "theorists": "George A. Miller",
+      "description_ja": "人間の認知を情報処理システムとして捉える",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "ヒューマニズム学習理論",
+      "name": "Humanistic Learning Theory",
+      "theorists": "Carl Rogers / Abraham Maslow",
+      "description_ja": "学習者の全人的発達と自己実現を重視",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "アンドラゴジー",
+      "name": "Andragogy",
+      "theorists": "Malcolm Knowles",
+      "description_ja": "成人学習者の特性に基づく学習理論",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "コネクティビズム",
+      "name": "Connectivism",
+      "theorists": "George Siemens & Stephen Downes",
+      "description_ja": "デジタル時代の学習理論、ネットワーク上の知識",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "認知的徒弟制",
+      "name": "Cognitive Apprenticeship",
+      "theorists": "Allan Collins et al.",
+      "description_ja": "伝統的徒弟制の原理を認知的課題に適用",
+      "category": "learning_theory",
+      "priority": 4
+    },
+    {
+      "name_ja": "道徳発達理論",
+      "name": "Theory of Moral Development",
+      "theorists": "Lawrence Kohlberg",
+      "description_ja": "道徳的判断の3水準6段階",
+      "category": "developmental",
+      "priority": 4
+    },
+    {
+      "name_ja": "生態学的システム理論",
+      "name": "Ecological Systems Theory",
+      "theorists": "Urie Bronfenbrenner",
+      "description_ja": "多層的環境システムとの相互作用",
+      "category": "developmental",
+      "priority": 4
+    },
+    {
+      "name_ja": "欲求階層理論",
+      "name": "Hierarchy of Needs",
+      "theorists": "Abraham Maslow",
+      "description_ja": "5段階の欲求ピラミッド",
+      "category": "developmental",
+      "priority": 4
+    },
+    {
+      "name_ja": "心の理論",
+      "name": "Theory of Mind",
+      "theorists": "David Premack et al.",
+      "description_ja": "他者の心的状態を理解する能力",
+      "category": "developmental",
+      "priority": 4
+    },
+    {
+      "name_ja": "感情知能理論",
+      "name": "Emotional Intelligence Theory",
+      "theorists": "Daniel Goleman",
+      "description_ja": "感情を認識・管理する能力",
+      "category": "developmental",
+      "priority": 4
+    },
+    {
+      "name_ja": "シュタイナー教育",
+      "name": "Waldorf Education",
+      "theorists": "Rudolf Steiner",
+      "description_ja": "芸術・実践・学問を統合した全人教育",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "レッジョ・エミリア・アプローチ",
+      "name": "Reggio Emilia Approach",
+      "theorists": "Loris Malaguzzi",
+      "description_ja": "子ども主導の探究学習",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "直接教授法",
+      "name": "Direct Instruction",
+      "theorists": "Siegfried Engelmann",
+      "description_ja": "明確に構造化された教師主導の教授法",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "完全習得学習",
+      "name": "Mastery Learning",
+      "theorists": "Benjamin Bloom",
+      "description_ja": "高いレベルで習得してから次に進む",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "メリルの第一原理",
+      "name": "Merrill's First Principles",
+      "theorists": "M. David Merrill",
+      "description_ja": "問題中心の5つの教授設計原理",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "ケラーのARCSモデル",
+      "name": "Keller's ARCS Model",
+      "theorists": "John M. Keller",
+      "description_ja": "注意・関連性・自信・満足感の4要素",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "ディック・アンド・キャリーモデル",
+      "name": "Dick and Carey Model",
+      "theorists": "Walter Dick / Lou Carey",
+      "description_ja": "体系的インストラクショナルデザイン",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "協同学習",
+      "name": "Cooperative Learning",
+      "theorists": "David & Roger Johnson",
+      "description_ja": "小グループでの協力的学習活動",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "探究型学習",
+      "name": "Inquiry-Based Learning",
+      "theorists": "Joseph Schwab",
+      "description_ja": "学習者が質問を立て調査・分析",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "CPA（具体・図式・抽象）アプローチ",
+      "name": "Concrete-Pictorial-Abstract",
+      "theorists": "Jerome Bruner",
+      "description_ja": "段階的な理解促進",
+      "category": "instructional_design",
+      "priority": 4
+    },
+    {
+      "name_ja": "隠れたカリキュラム",
+      "name": "Hidden Curriculum",
+      "theorists": "Philip Jackson",
+      "description_ja": "暗黙的に教えられる規範・価値観",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "統合カリキュラム",
+      "name": "Integrated Curriculum",
+      "theorists": "James Beane",
+      "description_ja": "教科の境界を越えた学習統合",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "コアカリキュラム",
+      "name": "Core Curriculum",
+      "theorists": "進歩主義教育協会",
+      "description_ja": "共通の基礎的知識・スキル",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "教科横断型カリキュラム",
+      "name": "Interdisciplinary Curriculum",
+      "theorists": "Susan Drake",
+      "description_ja": "複数教科の知識を関連付け",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "学習者中心カリキュラム",
+      "name": "Learner-Centered Curriculum",
+      "theorists": "John Dewey",
+      "description_ja": "学習者の興味・ニーズを出発点",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "アウトカム基盤型教育",
+      "name": "Outcome-Based Education",
+      "theorists": "William Spady",
+      "description_ja": "学習成果を中心に組織化",
+      "category": "curriculum",
+      "priority": 4
+    },
+    {
+      "name_ja": "フロー理論",
+      "name": "Flow Theory",
+      "theorists": "Mihaly Csikszentmihalyi",
+      "description_ja": "挑戦と技能のバランスによる没入",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "欲求階層理論",
+      "name": "Hierarchy of Needs",
+      "theorists": "Abraham Maslow",
+      "description_ja": "5段階の欲求ピラミッド",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "興味の発達理論",
+      "name": "Four-Phase Model of Interest",
+      "theorists": "Suzanne Hidi & K. Ann Renninger",
+      "description_ja": "興味の4段階発達",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "達成感情の統制価値理論",
+      "name": "Control-Value Theory",
+      "theorists": "Reinhard Pekrun",
+      "description_ja": "統制感と価値認知による感情",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "学習性無力感理論",
+      "name": "Learned Helplessness",
+      "theorists": "Martin Seligman",
+      "description_ja": "制御不能経験による無力感",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "目標設定理論",
+      "name": "Goal Setting Theory",
+      "theorists": "Edwin A. Locke & Gary P. Latham",
+      "description_ja": "明確で挑戦的な目標の効果",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "グリット",
+      "name": "Grit",
+      "theorists": "Angela Duckworth",
+      "description_ja": "長期目標への情熱と忍耐力",
+      "category": "motivation",
+      "priority": 4
+    },
+    {
+      "name_ja": "ポートフォリオ評価",
+      "name": "Portfolio Assessment",
+      "theorists": "Helen C. Barrett",
+      "description_ja": "成果物の体系的収集・省察",
+      "category": "assessment",
+      "priority": 4
+    },
+    {
+      "name_ja": "動的評価",
+      "name": "Dynamic Assessment",
+      "theorists": "Reuven Feuerstein",
+      "description_ja": "介入しながら潜在能力を評価",
+      "category": "assessment",
+      "priority": 4
+    },
+    {
+      "name_ja": "スタンダード・ベースド評価",
+      "name": "Standards-Based Assessment",
+      "theorists": "Ralph W. Tyler",
+      "description_ja": "学習基準への達成度評価",
+      "category": "assessment",
+      "priority": 4
+    },
+    {
+      "name_ja": "診断的評価",
+      "name": "Diagnostic Assessment",
+      "theorists": "Benjamin Bloom",
+      "description_ja": "学習開始前の既有知識特定",
+      "category": "assessment",
+      "priority": 4
+    },
+    {
+      "name_ja": "パフォーマンス評価",
+      "name": "Performance Assessment",
+      "theorists": "多数の研究者",
+      "description_ja": "実際の課題遂行能力の観察",
+      "category": "assessment",
+      "priority": 4
+    },
+    {
+      "name_ja": "正統的周辺参加",
+      "name": "Legitimate Peripheral Participation",
+      "theorists": "Jean Lave & Etienne Wenger",
+      "description_ja": "新参者から中心的役割への移行",
+      "category": "social_learning",
+      "priority": 4
+    },
+    {
+      "name_ja": "対話主義",
+      "name": "Dialogism",
+      "theorists": "Mikhail Bakhtin",
+      "description_ja": "複数の声の相互作用による意味生成",
+      "category": "social_learning",
+      "priority": 4
+    },
+    {
+      "name_ja": "被抑圧者の教育学",
+      "name": "Pedagogy of the Oppressed",
+      "theorists": "Paulo Freire",
+      "description_ja": "対話と意識化による解放",
+      "category": "social_learning",
+      "priority": 4
+    },
+    {
+      "name_ja": "知識構築理論",
+      "name": "Knowledge Building Theory",
+      "theorists": "Marlene Scardamalia & Carl Bereiter",
+      "description_ja": "共同体の知識創造と改善",
+      "category": "social_learning",
+      "priority": 4
+    },
+    {
+      "name_ja": "性善説と教育",
+      "name": "Mencius's Theory",
+      "theorists": "孟子",
+      "description_ja": "内在する善の芽を育てる",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "性悪説と教育",
+      "name": "Xunzi's Theory",
+      "theorists": "荀子",
+      "description_ja": "礼と教育による道徳性獲得",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "良知説",
+      "name": "Yangmingism",
+      "theorists": "王陽明",
+      "description_ja": "内なる良知の発現",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "朱子学教育思想",
+      "name": "Zhu Xi's Neo-Confucian Education",
+      "theorists": "朱熹",
+      "description_ja": "格物致知と段階的学習",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "学記",
+      "name": "Xueji (Record on Learning)",
+      "theorists": "伝統的",
+      "description_ja": "世界最古の体系的教育論文",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "蔡元培の教育思想",
+      "name": "Cai Yuanpei's Philosophy",
+      "theorists": "蔡元培",
+      "description_ja": "思想自由、美育重視",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "藩校教育",
+      "name": "Han School Education",
+      "theorists": "伝統的",
+      "description_ja": "武士階級のための学校教育",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "森有礼の国民教育論",
+      "name": "Mori Arinori's System",
+      "theorists": "森有礼",
+      "description_ja": "近代学校制度の確立",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "価値創造教育",
+      "name": "Soka Education",
+      "theorists": "牧口常三郎",
+      "description_ja": "教育目的としての価値創造",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "斎藤喜博の授業論",
+      "name": "Saito Kihaku's Lesson Theory",
+      "theorists": "斎藤喜博",
+      "description_ja": "授業の創造と指導性",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "大村はまの単元学習",
+      "name": "Omura Hama's Unit Learning",
+      "theorists": "大村はま",
+      "description_ja": "主体的学習と言語活動",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "グルクル教育",
+      "name": "Gurukul System",
+      "theorists": "伝統的",
+      "description_ja": "師弟共同生活の寄宿制教育",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "ヴィヴェーカーナンダの教育思想",
+      "name": "Vivekananda's Philosophy",
+      "theorists": "スワミ・ヴィヴェーカーナンダ",
+      "description_ja": "身体・知性・精神の統合",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "弘益人間",
+      "name": "Hongik Ingan",
+      "theorists": "伝統的",
+      "description_ja": "韓国の建国理念・教育理念",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "タルビヤ",
+      "name": "Tarbiyah (Islamic Education)",
+      "theorists": "伝統的",
+      "description_ja": "イスラム的人格形成",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "科挙と教育",
+      "name": "Imperial Examination System",
+      "theorists": "伝統的",
+      "description_ja": "官僚登用試験に基づく教育",
+      "category": "asian_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "MOOC理論",
+      "name": "Massive Open Online Courses",
+      "theorists": "George Siemens et al.",
+      "description_ja": "大規模公開オンライン講座",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "ゲーミフィケーション",
+      "name": "Gamification in Education",
+      "theorists": "Karl Kapp",
+      "description_ja": "ゲーム要素の学習への適用",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "オープン教育リソース",
+      "name": "Open Educational Resources",
+      "theorists": "UNESCO",
+      "description_ja": "無料でアクセス可能な教育素材",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "ユビキタスラーニング",
+      "name": "Ubiquitous Learning",
+      "theorists": "Mark Weiser",
+      "description_ja": "いつでもどこでも学習可能",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "VR/AR教育",
+      "name": "Virtual/Augmented Reality in Education",
+      "theorists": "Chris Dede",
+      "description_ja": "没入型体験学習",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "コンストラクショニズム",
+      "name": "Constructionism",
+      "theorists": "Seymour Papert",
+      "description_ja": "作ることで学ぶ",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "コミュニティ・オブ・インクワイアリー",
+      "name": "Community of Inquiry",
+      "theorists": "Randy Garrison",
+      "description_ja": "オンライン協働探究モデル",
+      "category": "technology_enhanced",
+      "priority": 4
+    },
+    {
+      "name_ja": "深い学び",
+      "name": "Deep Learning (in Education)",
+      "theorists": "Michael Fullan",
+      "description_ja": "6つのグローバルコンピテンシー",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "コンピテンシー・ベースド教育",
+      "name": "Competency-Based Education",
+      "theorists": "Robert Marzano",
+      "description_ja": "能力習得を基準とする教育",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "メーカー教育",
+      "name": "Maker Education",
+      "theorists": "Sylvia Martinez",
+      "description_ja": "ものづくりを通じた学習",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "デザイン思考教育",
+      "name": "Design Thinking in Education",
+      "theorists": "Stanford d.school",
+      "description_ja": "人間中心の問題解決",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "マイクロラーニング",
+      "name": "Microlearning",
+      "theorists": "Theo Hug",
+      "description_ja": "短時間で完結する学習単位",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "自己調整学習",
+      "name": "Self-Regulated Learning",
+      "theorists": "Barry Zimmerman",
+      "description_ja": "自ら目標を設定し進捗を監視",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "グリット",
+      "name": "Grit",
+      "theorists": "Angela Duckworth",
+      "description_ja": "長期目標への情熱と忍耐力",
+      "category": "modern_education",
+      "priority": 4
+    },
+    {
+      "name_ja": "批判的リテラシー",
+      "name": "Critical Literacy",
+      "theorists": "Paulo Freire",
+      "description_ja": "テキストの権力関係を批判的に読み解く",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "フェミニスト・ペダゴジー",
+      "name": "Feminist Pedagogy",
+      "theorists": "bell hooks",
+      "description_ja": "教室内の権力関係を問い直す",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "アンチレイシスト教育",
+      "name": "Anti-Racist Education",
+      "theorists": "George Dei",
+      "description_ja": "人種差別の制度的構造を解体",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "文化的に持続可能な教育",
+      "name": "Culturally Sustaining Pedagogy",
+      "theorists": "Django Paris",
+      "description_ja": "文化的・言語的遺産の維持",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "脱植民地化教育",
+      "name": "Decolonizing Education",
+      "theorists": "Linda Tuhiwai Smith",
+      "description_ja": "先住民の知識体系の復権",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "ウブントゥ教育",
+      "name": "Ubuntu Pedagogy",
+      "theorists": "Mogobe Ramose",
+      "description_ja": "アフリカ哲学に基づく共同体性",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "先住民教育論",
+      "name": "Indigenous Education",
+      "theorists": "Gregory Cajete",
+      "description_ja": "先住民族固有の知識体系",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "バイリンガル教育理論",
+      "name": "Bilingual Education Theory",
+      "theorists": "Jim Cummins",
+      "description_ja": "母語と第二言語の両方を発達",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "ヘルバルトの教育学",
+      "name": "Herbartian Pedagogy",
+      "theorists": "Johann Friedrich Herbart",
+      "description_ja": "5段階教授法",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "サマーヒル教育",
+      "name": "Summerhill Education",
+      "theorists": "A.S. Neill",
+      "description_ja": "自由学校、任意参加授業",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "イエナプラン教育",
+      "name": "Jenaplan Education",
+      "theorists": "Peter Petersen",
+      "description_ja": "異年齢学級と4活動形式",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "ホリスティック教育",
+      "name": "Holistic Education",
+      "theorists": "Ron Miller",
+      "description_ja": "身体・心・精神の統合的発達",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "デモクラティック教育",
+      "name": "Democratic Education",
+      "theorists": "A.S. Neill / Daniel Greenberg",
+      "description_ja": "学校運営への生徒参加",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "森の幼稚園",
+      "name": "Forest Kindergarten",
+      "theorists": "Ella Flatau",
+      "description_ja": "自然環境での自由遊び",
+      "category": "critical_alternative_special",
+      "priority": 4
+    },
+    {
+      "name_ja": "感覚統合理論",
+      "name": "Sensory Integration Theory",
+      "theorists": "A. Jean Ayres",
+      "description_ja": "感覚情報の処理と統合",
+      "category": "critical_alternative_special",
+      "priority": 4
+    }
+  ]
+}

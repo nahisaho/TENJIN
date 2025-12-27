@@ -1,431 +1,2348 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "total_theorists": 60,
-    "source": "Educational-theory-research.md"
+    "version": "2.0.0",
+    "total_theorists": 154,
+    "source": "Educational-theory-research.md",
+    "generated_at": "2025-12-27"
   },
   "theorists": [
     {
       "id": "theorist-001",
-      "name": "B.F. Skinner",
-      "name_ja": "B.F.スキナー",
-      "birth_year": 1904,
-      "death_year": 1990,
+      "name": "A. Jean Ayres",
+      "name_ja": "A.ジーン・エアーズ",
+      "birth_year": 1920,
+      "death_year": 1988,
       "nationality": "American",
-      "primary_field": "Behavioral Psychology",
-      "contributions": ["Operant Conditioning", "Programmed Instruction", "Teaching Machines"],
-      "key_works": ["The Behavior of Organisms", "Verbal Behavior", "The Technology of Teaching"],
-      "related_theories": ["theory-001"]
+      "primary_field": "Occupational Therapy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-175"
+      ]
     },
     {
       "id": "theorist-002",
+      "name": "A.S. Neill",
+      "name_ja": "A.S.ニール",
+      "birth_year": 1883,
+      "death_year": 1973,
+      "nationality": "Scottish",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-170",
+        "theory-173"
+      ]
+    },
+    {
+      "id": "theorist-003",
+      "name": "Aaron Sams",
+      "name_ja": "アーロン・サムズ",
+      "nationality": "American",
+      "primary_field": "Education",
+      "contributions": [
+        "Flipped Learning"
+      ],
+      "key_works": [
+        "Flip Your Classroom"
+      ],
+      "related_theories": [
+        "theory-019",
+        "theory-065"
+      ]
+    },
+    {
+      "id": "theorist-004",
+      "name": "Abraham Maslow",
+      "name_ja": "アブラハム・マズロー",
+      "birth_year": 1908,
+      "death_year": 1970,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-094",
+        "theory-099"
+      ]
+    },
+    {
+      "id": "theorist-005",
       "name": "Albert Bandura",
       "name_ja": "アルバート・バンデューラ",
       "birth_year": 1925,
       "death_year": 2021,
       "nationality": "Canadian-American",
       "primary_field": "Social Psychology",
-      "contributions": ["Social Learning Theory", "Social Cognitive Theory", "Self-Efficacy"],
-      "key_works": ["Social Learning Theory", "Self-Efficacy: The Exercise of Control"],
-      "related_theories": ["theory-002", "theory-003", "theory-014"]
-    },
-    {
-      "id": "theorist-003",
-      "name": "John Sweller",
-      "name_ja": "ジョン・スウェラー",
-      "birth_year": 1946,
-      "nationality": "Australian",
-      "primary_field": "Educational Psychology",
-      "contributions": ["Cognitive Load Theory"],
-      "key_works": ["Cognitive Load Theory"],
-      "related_theories": ["theory-004"]
-    },
-    {
-      "id": "theorist-004",
-      "name": "David A. Kolb",
-      "name_ja": "デイヴィッド・コルブ",
-      "birth_year": 1939,
-      "nationality": "American",
-      "primary_field": "Organizational Behavior",
-      "contributions": ["Experiential Learning Theory", "Learning Styles"],
-      "key_works": ["Experiential Learning"],
-      "related_theories": ["theory-005"]
-    },
-    {
-      "id": "theorist-005",
-      "name": "Jean Piaget",
-      "name_ja": "ジャン・ピアジェ",
-      "birth_year": 1896,
-      "death_year": 1980,
-      "nationality": "Swiss",
-      "primary_field": "Developmental Psychology",
-      "contributions": ["Cognitive Development Theory", "Constructivism"],
-      "key_works": ["The Language and Thought of the Child", "The Construction of Reality in the Child"],
-      "related_theories": ["theory-006", "theory-010"]
+      "contributions": [
+        "Social Learning Theory",
+        "Social Cognitive Theory",
+        "Self-Efficacy"
+      ],
+      "key_works": [
+        "Social Learning Theory",
+        "Self-Efficacy: The Exercise of Control"
+      ],
+      "related_theories": [
+        "theory-002",
+        "theory-003",
+        "theory-014"
+      ]
     },
     {
       "id": "theorist-006",
-      "name": "Lev Vygotsky",
-      "name_ja": "レフ・ヴィゴツキー",
-      "birth_year": 1896,
-      "death_year": 1934,
-      "nationality": "Russian",
-      "primary_field": "Developmental Psychology",
-      "contributions": ["Social Constructivism", "Zone of Proximal Development", "Scaffolding"],
-      "key_works": ["Mind in Society", "Thought and Language"],
-      "related_theories": ["theory-007", "theory-011"]
+      "name": "Allan Collins et al.",
+      "name_ja": "Allan Collins et al.",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-096"
+      ]
     },
     {
       "id": "theorist-007",
-      "name": "Edward L. Deci",
-      "name_ja": "エドワード・デシ",
-      "birth_year": 1942,
+      "name": "Angela Duckworth",
+      "name_ja": "アンジェラ・ダックワース",
+      "birth_year": 1970,
+      "death_year": null,
       "nationality": "American",
       "primary_field": "Psychology",
-      "contributions": ["Self-Determination Theory", "Intrinsic Motivation"],
-      "key_works": ["Intrinsic Motivation", "Self-Determination Theory"],
-      "related_theories": ["theory-008"]
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-123"
+      ]
     },
     {
       "id": "theorist-008",
-      "name": "Richard M. Ryan",
-      "name_ja": "リチャード・ライアン",
-      "birth_year": 1953,
-      "nationality": "American",
-      "primary_field": "Psychology",
-      "contributions": ["Self-Determination Theory"],
-      "key_works": ["Self-Determination Theory"],
-      "related_theories": ["theory-008"]
+      "name": "Ann Brown",
+      "name_ja": "アン・ブラウン",
+      "birth_year": 1943,
+      "death_year": 1999,
+      "nationality": "British-American",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-044"
+      ]
     },
     {
       "id": "theorist-009",
-      "name": "Jerome Bruner",
-      "name_ja": "ジェローム・ブルーナー",
-      "birth_year": 1915,
-      "death_year": 2016,
+      "name": "Anne Meyer",
+      "name_ja": "アン・メイヤー",
+      "birth_year": null,
+      "death_year": null,
       "nationality": "American",
-      "primary_field": "Cognitive Psychology",
-      "contributions": ["Scaffolding Theory", "Discovery Learning", "Spiral Curriculum"],
-      "key_works": ["The Process of Education", "Toward a Theory of Instruction"],
-      "related_theories": ["theory-009"]
+      "primary_field": "Special Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-087"
+      ]
     },
     {
       "id": "theorist-010",
-      "name": "Erik Erikson",
-      "name_ja": "エリク・エリクソン",
-      "birth_year": 1902,
-      "death_year": 1994,
-      "nationality": "German-American",
-      "primary_field": "Developmental Psychology",
-      "contributions": ["Psychosocial Development Theory", "Identity Crisis"],
-      "key_works": ["Childhood and Society", "Identity: Youth and Crisis"],
-      "related_theories": ["theory-012"]
+      "name": "Annemarie Palincsar",
+      "name_ja": "アニー・パリンサー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-044"
+      ]
     },
     {
       "id": "theorist-011",
-      "name": "John Bowlby",
-      "name_ja": "ジョン・ボウルビィ",
-      "birth_year": 1907,
+      "name": "B.F. Skinner",
+      "name_ja": "B.F.スキナー",
+      "birth_year": 1904,
       "death_year": 1990,
-      "nationality": "British",
-      "primary_field": "Psychiatry",
-      "contributions": ["Attachment Theory"],
-      "key_works": ["Attachment and Loss"],
-      "related_theories": ["theory-013"]
+      "nationality": "American",
+      "primary_field": "Behavioral Psychology",
+      "contributions": [
+        "Operant Conditioning",
+        "Programmed Instruction",
+        "Teaching Machines"
+      ],
+      "key_works": [
+        "The Behavior of Organisms",
+        "Verbal Behavior",
+        "The Technology of Teaching"
+      ],
+      "related_theories": [
+        "theory-001",
+        "theory-085"
+      ]
     },
     {
       "id": "theorist-012",
-      "name": "Socrates",
-      "name_ja": "ソクラテス",
-      "birth_year": -470,
-      "death_year": -399,
-      "nationality": "Greek",
-      "primary_field": "Philosophy",
-      "contributions": ["Socratic Method"],
+      "name": "Barry Zimmerman",
+      "name_ja": "バリー・ジマーマン",
+      "birth_year": 1942,
+      "death_year": 2019,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
       "key_works": [],
-      "related_theories": ["theory-015"]
+      "related_theories": [
+        "theory-160"
+      ]
     },
     {
       "id": "theorist-013",
-      "name": "Maria Montessori",
-      "name_ja": "マリア・モンテッソーリ",
-      "birth_year": 1870,
-      "death_year": 1952,
-      "nationality": "Italian",
-      "primary_field": "Education",
-      "contributions": ["Montessori Method"],
-      "key_works": ["The Montessori Method", "The Absorbent Mind"],
-      "related_theories": ["theory-016"]
-    },
-    {
-      "id": "theorist-014",
-      "name": "John Dewey",
-      "name_ja": "ジョン・デューイ",
-      "birth_year": 1859,
-      "death_year": 1952,
-      "nationality": "American",
-      "primary_field": "Philosophy of Education",
-      "contributions": ["Progressive Education", "Experiential Learning", "Pragmatism"],
-      "key_works": ["Democracy and Education", "Experience and Education"],
-      "related_theories": ["theory-006", "theory-017"]
-    },
-    {
-      "id": "theorist-015",
-      "name": "William Kilpatrick",
-      "name_ja": "ウィリアム・キルパトリック",
-      "birth_year": 1871,
-      "death_year": 1965,
-      "nationality": "American",
-      "primary_field": "Education",
-      "contributions": ["Project Method"],
-      "key_works": ["The Project Method"],
-      "related_theories": ["theory-017"]
-    },
-    {
-      "id": "theorist-016",
-      "name": "Howard Barrows",
-      "name_ja": "ハワード・バロウズ",
-      "birth_year": 1928,
-      "death_year": 2011,
-      "nationality": "American",
-      "primary_field": "Medical Education",
-      "contributions": ["Problem-Based Learning"],
-      "key_works": ["Problem-Based Learning: An Approach to Medical Education"],
-      "related_theories": ["theory-018"]
-    },
-    {
-      "id": "theorist-017",
-      "name": "Jonathan Bergmann",
-      "name_ja": "ジョナサン・バーグマン",
-      "nationality": "American",
-      "primary_field": "Education",
-      "contributions": ["Flipped Learning"],
-      "key_works": ["Flip Your Classroom"],
-      "related_theories": ["theory-019"]
-    },
-    {
-      "id": "theorist-018",
-      "name": "Aaron Sams",
-      "name_ja": "アーロン・サムズ",
-      "nationality": "American",
-      "primary_field": "Education",
-      "contributions": ["Flipped Learning"],
-      "key_works": ["Flip Your Classroom"],
-      "related_theories": ["theory-019"]
-    },
-    {
-      "id": "theorist-019",
-      "name": "Robert M. Gagné",
-      "name_ja": "ロバート・ガニェ",
-      "birth_year": 1916,
-      "death_year": 2002,
-      "nationality": "American",
-      "primary_field": "Educational Psychology",
-      "contributions": ["Nine Events of Instruction", "Conditions of Learning"],
-      "key_works": ["The Conditions of Learning"],
-      "related_theories": ["theory-021"]
-    },
-    {
-      "id": "theorist-020",
       "name": "Benjamin Bloom",
       "name_ja": "ベンジャミン・ブルーム",
       "birth_year": 1913,
       "death_year": 1999,
       "nationality": "American",
       "primary_field": "Educational Psychology",
-      "contributions": ["Bloom's Taxonomy", "Mastery Learning"],
-      "key_works": ["Taxonomy of Educational Objectives"],
-      "related_theories": ["theory-022"]
+      "contributions": [
+        "Bloom's Taxonomy",
+        "Mastery Learning"
+      ],
+      "key_works": [
+        "Taxonomy of Educational Objectives"
+      ],
+      "related_theories": [
+        "theory-023",
+        "theory-105",
+        "theory-127"
+      ]
+    },
+    {
+      "id": "theorist-014",
+      "name": "Bernard Weiner",
+      "name_ja": "バーナード・ウェイナー",
+      "birth_year": 1935,
+      "nationality": "American",
+      "primary_field": "Social Psychology",
+      "contributions": [
+        "Attribution Theory"
+      ],
+      "key_works": [
+        "Human Motivation"
+      ],
+      "related_theories": [
+        "theory-031"
+      ]
+    },
+    {
+      "id": "theorist-015",
+      "name": "Buck Institute",
+      "name_ja": "Buck Institute",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-074"
+      ]
+    },
+    {
+      "id": "theorist-016",
+      "name": "CASEL",
+      "name_ja": "CASEL",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-069"
+      ]
+    },
+    {
+      "id": "theorist-017",
+      "name": "CAST",
+      "name_ja": "CAST",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-070"
+      ]
+    },
+    {
+      "id": "theorist-018",
+      "name": "Carl Bereiter",
+      "name_ja": "カール・ベライター",
+      "birth_year": 1930,
+      "death_year": null,
+      "nationality": "American-Canadian",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-131"
+      ]
+    },
+    {
+      "id": "theorist-019",
+      "name": "Carl Rogers",
+      "name_ja": "カール・ロジャーズ",
+      "birth_year": 1902,
+      "death_year": 1987,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-094"
+      ]
+    },
+    {
+      "id": "theorist-020",
+      "name": "Carol Dweck et al.",
+      "name_ja": "Carol Dweck et al.",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-030"
+      ]
     },
     {
       "id": "theorist-021",
-      "name": "George Siemens",
-      "name_ja": "ジョージ・シーメンス",
-      "nationality": "Canadian",
-      "primary_field": "Educational Technology",
-      "contributions": ["Connectivism"],
-      "key_works": ["Knowing Knowledge"],
-      "related_theories": ["theory-023"]
-    },
-    {
-      "id": "theorist-022",
-      "name": "Stephen Downes",
-      "name_ja": "スティーブン・ダウンズ",
-      "nationality": "Canadian",
-      "primary_field": "Educational Technology",
-      "contributions": ["Connectivism", "MOOCs"],
-      "key_works": [],
-      "related_theories": ["theory-023"]
-    },
-    {
-      "id": "theorist-023",
-      "name": "Punya Mishra",
-      "name_ja": "プンヤ・ミシュラ",
-      "nationality": "American",
-      "primary_field": "Educational Technology",
-      "contributions": ["TPACK Framework"],
-      "key_works": [],
-      "related_theories": ["theory-024"]
-    },
-    {
-      "id": "theorist-024",
-      "name": "Matthew Koehler",
-      "name_ja": "マシュー・ケーラー",
-      "nationality": "American",
-      "primary_field": "Educational Technology",
-      "contributions": ["TPACK Framework"],
-      "key_works": [],
-      "related_theories": ["theory-024"]
-    },
-    {
-      "id": "theorist-025",
-      "name": "Richard E. Mayer",
-      "name_ja": "リチャード・メイヤー",
-      "birth_year": 1947,
-      "nationality": "American",
-      "primary_field": "Educational Psychology",
-      "contributions": ["Multimedia Learning Theory", "Cognitive Theory of Multimedia Learning"],
-      "key_works": ["Multimedia Learning"],
-      "related_theories": ["theory-025"]
-    },
-    {
-      "id": "theorist-026",
       "name": "Carol S. Dweck",
       "name_ja": "キャロル・ドゥエック",
       "birth_year": 1946,
       "nationality": "American",
       "primary_field": "Social Psychology",
-      "contributions": ["Growth Mindset", "Implicit Theories of Intelligence"],
-      "key_works": ["Mindset: The New Psychology of Success"],
-      "related_theories": ["theory-026"]
+      "contributions": [
+        "Growth Mindset",
+        "Implicit Theories of Intelligence"
+      ],
+      "key_works": [
+        "Mindset: The New Psychology of Success"
+      ],
+      "related_theories": [
+        "theory-032"
+      ]
     },
     {
-      "id": "theorist-027",
+      "id": "theorist-022",
+      "name": "Chris Dede",
+      "name_ja": "クリス・デーデ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Technology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-152"
+      ]
+    },
+    {
+      "id": "theorist-023",
       "name": "Confucius",
       "name_ja": "孔子",
       "birth_year": -551,
       "death_year": -479,
       "nationality": "Chinese",
       "primary_field": "Philosophy",
-      "contributions": ["Confucian Philosophy", "Moral Education"],
-      "key_works": ["Analects"],
-      "related_theories": ["theory-031"]
+      "contributions": [
+        "Confucian Philosophy",
+        "Moral Education"
+      ],
+      "key_works": [
+        "Analects"
+      ],
+      "related_theories": [
+        "theory-045"
+      ]
+    },
+    {
+      "id": "theorist-024",
+      "name": "Daniel Goleman",
+      "name_ja": "ダニエル・ゴールマン",
+      "birth_year": 1946,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-101"
+      ]
+    },
+    {
+      "id": "theorist-025",
+      "name": "Daniel Greenberg",
+      "name_ja": "ダニエル・グリーンバーグ",
+      "birth_year": 1934,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Democratic Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-173"
+      ]
+    },
+    {
+      "id": "theorist-026",
+      "name": "David",
+      "name_ja": "David",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-038"
+      ]
+    },
+    {
+      "id": "theorist-027",
+      "name": "David A. Kolb",
+      "name_ja": "デイヴィッド・コルブ",
+      "birth_year": 1939,
+      "nationality": "American",
+      "primary_field": "Organizational Behavior",
+      "contributions": [
+        "Experiential Learning Theory",
+        "Learning Styles"
+      ],
+      "key_works": [
+        "Experiential Learning"
+      ],
+      "related_theories": [
+        "theory-005"
+      ]
     },
     {
       "id": "theorist-028",
-      "name": "Paul Black",
-      "name_ja": "ポール・ブラック",
-      "nationality": "British",
-      "primary_field": "Science Education",
-      "contributions": ["Formative Assessment", "Assessment for Learning"],
-      "key_works": ["Inside the Black Box"],
-      "related_theories": ["theory-032"]
+      "name": "David Ausubel",
+      "name_ja": "デイヴィッド・オーズベル",
+      "birth_year": 1918,
+      "death_year": 2008,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-090"
+      ]
     },
     {
       "id": "theorist-029",
+      "name": "David Johnson",
+      "name_ja": "デビッド・ジョンソン",
+      "nationality": "American",
+      "primary_field": "Social Psychology",
+      "contributions": [
+        "Cooperative Learning"
+      ],
+      "key_works": [
+        "Learning Together and Alone"
+      ],
+      "related_theories": [
+        "theory-109"
+      ]
+    },
+    {
+      "id": "theorist-030",
+      "name": "David Premack et al.",
+      "name_ja": "David Premack et al.",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-100"
+      ]
+    },
+    {
+      "id": "theorist-031",
+      "name": "David Rose",
+      "name_ja": "デイヴィッド・ローズ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Special Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-087"
+      ]
+    },
+    {
+      "id": "theorist-032",
+      "name": "Django Paris",
+      "name_ja": "ジャンゴ・パリス",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Culturally Sustaining Pedagogy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-164"
+      ]
+    },
+    {
+      "id": "theorist-033",
       "name": "Dylan Wiliam",
       "name_ja": "ディラン・ウィリアム",
       "birth_year": 1953,
       "nationality": "British",
       "primary_field": "Educational Assessment",
-      "contributions": ["Formative Assessment", "Embedded Formative Assessment"],
-      "key_works": ["Inside the Black Box", "Embedded Formative Assessment"],
-      "related_theories": ["theory-032"]
+      "contributions": [
+        "Formative Assessment",
+        "Embedded Formative Assessment"
+      ],
+      "key_works": [
+        "Inside the Black Box",
+        "Embedded Formative Assessment"
+      ],
+      "related_theories": [
+        "theory-033",
+        "theory-037"
+      ]
     },
     {
-      "id": "theorist-030",
-      "name": "David Johnson",
-      "name_ja": "デビッド・ジョンソン",
+      "id": "theorist-034",
+      "name": "Edward L. Deci",
+      "name_ja": "エドワード・デシ",
+      "birth_year": 1942,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [
+        "Self-Determination Theory",
+        "Intrinsic Motivation"
+      ],
+      "key_works": [
+        "Intrinsic Motivation",
+        "Self-Determination Theory"
+      ],
+      "related_theories": [
+        "theory-008"
+      ]
+    },
+    {
+      "id": "theorist-035",
+      "name": "Edwin A. Locke",
+      "name_ja": "エドウィン・ロック",
+      "birth_year": 1938,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Industrial Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-122"
+      ]
+    },
+    {
+      "id": "theorist-036",
+      "name": "Ella Flatau",
+      "name_ja": "エラ・フラタウ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Danish",
+      "primary_field": "Outdoor Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-174"
+      ]
+    },
+    {
+      "id": "theorist-037",
+      "name": "Elliot Aronson",
+      "name_ja": "エリオット・アロンソン",
+      "birth_year": 1932,
+      "death_year": null,
       "nationality": "American",
       "primary_field": "Social Psychology",
-      "contributions": ["Cooperative Learning"],
-      "key_works": ["Learning Together and Alone"],
-      "related_theories": ["theory-033"]
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-042"
+      ]
     },
     {
-      "id": "theorist-031",
-      "name": "Roger Johnson",
-      "name_ja": "ロジャー・ジョンソン",
+      "id": "theorist-038",
+      "name": "Eric Mazur",
+      "name_ja": "エリック・マザー",
+      "birth_year": 1954,
+      "death_year": null,
+      "nationality": "Dutch-American",
+      "primary_field": "Physics Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-043"
+      ]
+    },
+    {
+      "id": "theorist-039",
+      "name": "Eric Schopler",
+      "name_ja": "エリック・ショプラー",
+      "birth_year": 1927,
+      "death_year": 2006,
       "nationality": "American",
-      "primary_field": "Curriculum and Instruction",
-      "contributions": ["Cooperative Learning"],
-      "key_works": ["Learning Together and Alone"],
-      "related_theories": ["theory-033"]
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-086"
+      ]
     },
     {
-      "id": "theorist-032",
-      "name": "Jean Lave",
-      "name_ja": "ジーン・レイヴ",
-      "nationality": "American",
-      "primary_field": "Anthropology",
-      "contributions": ["Situated Learning", "Communities of Practice"],
-      "key_works": ["Situated Learning: Legitimate Peripheral Participation"],
-      "related_theories": ["theory-034"]
+      "id": "theorist-040",
+      "name": "Erik Erikson",
+      "name_ja": "エリク・エリクソン",
+      "birth_year": 1902,
+      "death_year": 1994,
+      "nationality": "German-American",
+      "primary_field": "Developmental Psychology",
+      "contributions": [
+        "Psychosocial Development Theory",
+        "Identity Crisis"
+      ],
+      "key_works": [
+        "Childhood and Society",
+        "Identity: Youth and Crisis"
+      ],
+      "related_theories": [
+        "theory-012"
+      ]
     },
     {
-      "id": "theorist-033",
+      "id": "theorist-041",
       "name": "Etienne Wenger",
       "name_ja": "エティエンヌ・ウェンガー",
       "nationality": "Swiss-American",
       "primary_field": "Learning Theory",
-      "contributions": ["Communities of Practice", "Situated Learning"],
-      "key_works": ["Communities of Practice: Learning, Meaning, and Identity"],
-      "related_theories": ["theory-034"]
+      "contributions": [
+        "Communities of Practice",
+        "Situated Learning"
+      ],
+      "key_works": [
+        "Communities of Practice: Learning, Meaning, and Identity"
+      ],
+      "related_theories": [
+        "theory-040",
+        "theory-091",
+        "theory-129"
+      ]
     },
     {
-      "id": "theorist-034",
-      "name": "Paulo Freire",
-      "name_ja": "パウロ・フレイレ",
-      "birth_year": 1921,
-      "death_year": 1997,
-      "nationality": "Brazilian",
+      "id": "theorist-042",
+      "name": "Florida State University",
+      "name_ja": "Florida State University",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-021"
+      ]
+    },
+    {
+      "id": "theorist-043",
+      "name": "Friedrich Froebel",
+      "name_ja": "フリードリヒ・フレーベル",
+      "birth_year": 1782,
+      "death_year": 1852,
+      "nationality": "German",
+      "primary_field": "Early Childhood Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-082"
+      ]
+    },
+    {
+      "id": "theorist-044",
+      "name": "Gary P. Latham",
+      "name_ja": "ゲイリー・レイサム",
+      "birth_year": 1945,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Organizational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-122"
+      ]
+    },
+    {
+      "id": "theorist-045",
+      "name": "George A. Miller",
+      "name_ja": "ジョージ・ミラー",
+      "birth_year": 1920,
+      "death_year": 2012,
+      "nationality": "American",
+      "primary_field": "Cognitive Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-093"
+      ]
+    },
+    {
+      "id": "theorist-046",
+      "name": "George Dei",
+      "name_ja": "ジョージ・デイ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Ghanaian-Canadian",
+      "primary_field": "Anti-Racist Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-163"
+      ]
+    },
+    {
+      "id": "theorist-047",
+      "name": "George Siemens",
+      "name_ja": "ジョージ・シーメンス",
+      "nationality": "Canadian",
+      "primary_field": "Educational Technology",
+      "contributions": [
+        "Connectivism"
+      ],
+      "key_works": [
+        "Knowing Knowledge"
+      ],
+      "related_theories": [
+        "theory-056",
+        "theory-063"
+      ]
+    },
+    {
+      "id": "theorist-048",
+      "name": "George Siemens et al.",
+      "name_ja": "George Siemens et al.",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-148"
+      ]
+    },
+    {
+      "id": "theorist-049",
+      "name": "Georgette Yakman",
+      "name_ja": "Georgette Yakman",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-073"
+      ]
+    },
+    {
+      "id": "theorist-050",
+      "name": "Gloria Ladson-Billings",
+      "name_ja": "グロリア・ラドソン・ビリングス",
+      "birth_year": 1947,
+      "death_year": null,
+      "nationality": "American",
       "primary_field": "Critical Pedagogy",
-      "contributions": ["Critical Pedagogy", "Conscientization", "Banking Model critique"],
-      "key_works": ["Pedagogy of the Oppressed"],
-      "related_theories": ["theory-035"]
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-077"
+      ]
     },
     {
-      "id": "theorist-035",
+      "id": "theorist-051",
       "name": "Grant Wiggins",
       "name_ja": "グラント・ウィギンズ",
       "birth_year": 1950,
       "death_year": 2015,
       "nationality": "American",
       "primary_field": "Curriculum Design",
-      "contributions": ["Backward Design", "Understanding by Design"],
-      "key_works": ["Understanding by Design"],
-      "related_theories": ["theory-038"]
+      "contributions": [
+        "Backward Design",
+        "Understanding by Design"
+      ],
+      "key_works": [
+        "Understanding by Design"
+      ],
+      "related_theories": [
+        "theory-027",
+        "theory-035"
+      ]
     },
     {
-      "id": "theorist-036",
-      "name": "Jay McTighe",
-      "name_ja": "ジェイ・マクタイ",
+      "id": "theorist-052",
+      "name": "Gregory Cajete",
+      "name_ja": "グレゴリー・カヘテ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Native American",
+      "primary_field": "Indigenous Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-167"
+      ]
+    },
+    {
+      "id": "theorist-053",
+      "name": "Helen C. Barrett",
+      "name_ja": "ヘレン・バレット",
+      "birth_year": null,
+      "death_year": null,
       "nationality": "American",
-      "primary_field": "Curriculum Design",
-      "contributions": ["Backward Design", "Understanding by Design"],
-      "key_works": ["Understanding by Design"],
-      "related_theories": ["theory-038"]
+      "primary_field": "Educational Technology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-124"
+      ]
     },
     {
-      "id": "theorist-037",
+      "id": "theorist-054",
+      "name": "Howard Barrows",
+      "name_ja": "ハワード・バロウズ",
+      "birth_year": 1928,
+      "death_year": 2011,
+      "nationality": "American",
+      "primary_field": "Medical Education",
+      "contributions": [
+        "Problem-Based Learning"
+      ],
+      "key_works": [
+        "Problem-Based Learning: An Approach to Medical Education"
+      ],
+      "related_theories": [
+        "theory-018"
+      ]
+    },
+    {
+      "id": "theorist-055",
+      "name": "Howard Gardner",
+      "name_ja": "ハワード・ガードナー",
+      "birth_year": 1943,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Developmental Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-092"
+      ]
+    },
+    {
+      "id": "theorist-056",
+      "name": "Ivan Pavlov",
+      "name_ja": "イワン・パブロフ",
+      "birth_year": 1849,
+      "death_year": 1936,
+      "nationality": "Russian",
+      "primary_field": "Physiology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-088"
+      ]
+    },
+    {
+      "id": "theorist-057",
+      "name": "J. クリシュナムルティ",
+      "name_ja": "J.クリシュナムルティ",
+      "birth_year": 1895,
+      "death_year": 1986,
+      "nationality": "Indian",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-054"
+      ]
+    },
+    {
+      "id": "theorist-058",
       "name": "Jacquelynne S. Eccles",
       "name_ja": "ジャクリン・エクルズ",
       "nationality": "American",
       "primary_field": "Psychology",
-      "contributions": ["Expectancy-Value Theory"],
+      "contributions": [
+        "Expectancy-Value Theory"
+      ],
       "key_works": [],
-      "related_theories": ["theory-039"]
+      "related_theories": [
+        "theory-029"
+      ]
     },
     {
-      "id": "theorist-038",
-      "name": "Bernard Weiner",
-      "name_ja": "バーナード・ウェイナー",
-      "birth_year": 1935,
+      "id": "theorist-059",
+      "name": "James A. Banks",
+      "name_ja": "ジェームズ・バンクス",
+      "birth_year": 1941,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Multicultural Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-078"
+      ]
+    },
+    {
+      "id": "theorist-060",
+      "name": "James Beane",
+      "name_ja": "ジェームズ・ビーン",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Curriculum",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-113"
+      ]
+    },
+    {
+      "id": "theorist-061",
+      "name": "Jay McTighe",
+      "name_ja": "ジェイ・マクタイ",
+      "nationality": "American",
+      "primary_field": "Curriculum Design",
+      "contributions": [
+        "Backward Design",
+        "Understanding by Design"
+      ],
+      "key_works": [
+        "Understanding by Design"
+      ],
+      "related_theories": [
+        "theory-027"
+      ]
+    },
+    {
+      "id": "theorist-062",
+      "name": "Jean Lave",
+      "name_ja": "ジーン・レイヴ",
+      "nationality": "American",
+      "primary_field": "Anthropology",
+      "contributions": [
+        "Situated Learning",
+        "Communities of Practice"
+      ],
+      "key_works": [
+        "Situated Learning: Legitimate Peripheral Participation"
+      ],
+      "related_theories": [
+        "theory-040",
+        "theory-091",
+        "theory-129"
+      ]
+    },
+    {
+      "id": "theorist-063",
+      "name": "Jean Piaget",
+      "name_ja": "ジャン・ピアジェ",
+      "birth_year": 1896,
+      "death_year": 1980,
+      "nationality": "Swiss",
+      "primary_field": "Developmental Psychology",
+      "contributions": [
+        "Cognitive Development Theory",
+        "Constructivism"
+      ],
+      "key_works": [
+        "The Language and Thought of the Child",
+        "The Construction of Reality in the Child"
+      ],
+      "related_theories": [
+        "theory-006",
+        "theory-010",
+        "theory-024"
+      ]
+    },
+    {
+      "id": "theorist-064",
+      "name": "Jerome Bruner",
+      "name_ja": "ジェローム・ブルーナー",
+      "birth_year": 1915,
+      "death_year": 2016,
+      "nationality": "American",
+      "primary_field": "Cognitive Psychology",
+      "contributions": [
+        "Scaffolding Theory",
+        "Discovery Learning",
+        "Spiral Curriculum"
+      ],
+      "key_works": [
+        "The Process of Education",
+        "Toward a Theory of Instruction"
+      ],
+      "related_theories": [
+        "theory-009",
+        "theory-020",
+        "theory-024",
+        "theory-026",
+        "theory-089",
+        "theory-111"
+      ]
+    },
+    {
+      "id": "theorist-065",
+      "name": "Jim Cummins",
+      "name_ja": "ジム・カミンズ",
+      "birth_year": 1949,
+      "death_year": null,
+      "nationality": "Irish-Canadian",
+      "primary_field": "Bilingual Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-168"
+      ]
+    },
+    {
+      "id": "theorist-066",
+      "name": "Johann Friedrich Herbart",
+      "name_ja": "ヨハン・フリードリヒ・ヘルバルト",
+      "birth_year": 1776,
+      "death_year": 1841,
+      "nationality": "German",
+      "primary_field": "Philosophy/Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-169"
+      ]
+    },
+    {
+      "id": "theorist-067",
+      "name": "Johann Heinrich Pestalozzi",
+      "name_ja": "ヨハン・ペスタロッチ",
+      "birth_year": 1746,
+      "death_year": 1827,
+      "nationality": "Swiss",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-081"
+      ]
+    },
+    {
+      "id": "theorist-068",
+      "name": "John Bowlby",
+      "name_ja": "ジョン・ボウルビィ",
+      "birth_year": 1907,
+      "death_year": 1990,
+      "nationality": "British",
+      "primary_field": "Psychiatry",
+      "contributions": [
+        "Attachment Theory"
+      ],
+      "key_works": [
+        "Attachment and Loss"
+      ],
+      "related_theories": [
+        "theory-013"
+      ]
+    },
+    {
+      "id": "theorist-069",
+      "name": "John Dewey",
+      "name_ja": "ジョン・デューイ",
+      "birth_year": 1859,
+      "death_year": 1952,
+      "nationality": "American",
+      "primary_field": "Philosophy of Education",
+      "contributions": [
+        "Progressive Education",
+        "Experiential Learning",
+        "Pragmatism"
+      ],
+      "key_works": [
+        "Democracy and Education",
+        "Experience and Education"
+      ],
+      "related_theories": [
+        "theory-006",
+        "theory-017",
+        "theory-083",
+        "theory-116"
+      ]
+    },
+    {
+      "id": "theorist-070",
+      "name": "John M. Keller",
+      "name_ja": "ジョン・ケラー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Instructional Design",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-107"
+      ]
+    },
+    {
+      "id": "theorist-071",
+      "name": "John Sweller",
+      "name_ja": "ジョン・スウェラー",
+      "birth_year": 1946,
+      "nationality": "Australian",
+      "primary_field": "Educational Psychology",
+      "contributions": [
+        "Cognitive Load Theory"
+      ],
+      "key_works": [
+        "Cognitive Load Theory"
+      ],
+      "related_theories": [
+        "theory-004"
+      ]
+    },
+    {
+      "id": "theorist-072",
+      "name": "John Traxler",
+      "name_ja": "ジョン・トラクスラー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "British",
+      "primary_field": "Mobile Learning",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-064"
+      ]
+    },
+    {
+      "id": "theorist-073",
+      "name": "Jonathan Bergmann",
+      "name_ja": "ジョナサン・バーグマン",
+      "nationality": "American",
+      "primary_field": "Education",
+      "contributions": [
+        "Flipped Learning"
+      ],
+      "key_works": [
+        "Flip Your Classroom"
+      ],
+      "related_theories": [
+        "theory-019",
+        "theory-065"
+      ]
+    },
+    {
+      "id": "theorist-074",
+      "name": "Joseph Schwab",
+      "name_ja": "ジョセフ・シュワブ",
+      "birth_year": 1909,
+      "death_year": 1988,
+      "nationality": "American",
+      "primary_field": "Curriculum",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-110"
+      ]
+    },
+    {
+      "id": "theorist-075",
+      "name": "K. Ann Renninger",
+      "name_ja": "K.アン・レニンガー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-119"
+      ]
+    },
+    {
+      "id": "theorist-076",
+      "name": "Karl Kapp",
+      "name_ja": "カール・カップ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Gamification",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-149"
+      ]
+    },
+    {
+      "id": "theorist-077",
+      "name": "Lawrence Kohlberg",
+      "name_ja": "ローレンス・コールバーグ",
+      "birth_year": 1927,
+      "death_year": 1987,
+      "nationality": "American",
+      "primary_field": "Moral Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-097"
+      ]
+    },
+    {
+      "id": "theorist-078",
+      "name": "Lev Vygotsky",
+      "name_ja": "レフ・ヴィゴツキー",
+      "birth_year": 1896,
+      "death_year": 1934,
+      "nationality": "Russian",
+      "primary_field": "Developmental Psychology",
+      "contributions": [
+        "Social Constructivism",
+        "Zone of Proximal Development",
+        "Scaffolding"
+      ],
+      "key_works": [
+        "Mind in Society",
+        "Thought and Language"
+      ],
+      "related_theories": [
+        "theory-007",
+        "theory-011"
+      ]
+    },
+    {
+      "id": "theorist-079",
+      "name": "Linda Tuhiwai Smith",
+      "name_ja": "リンダ・スミス",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "New Zealand Māori",
+      "primary_field": "Indigenous Research",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-165"
+      ]
+    },
+    {
+      "id": "theorist-080",
+      "name": "Loris Malaguzzi",
+      "name_ja": "ロリス・マラグッツィ",
+      "birth_year": 1920,
+      "death_year": 1994,
+      "nationality": "Italian",
+      "primary_field": "Early Childhood Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-080",
+        "theory-103"
+      ]
+    },
+    {
+      "id": "theorist-081",
+      "name": "Lou Carey",
+      "name_ja": "ルー・キャリー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Instructional Design",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-108"
+      ]
+    },
+    {
+      "id": "theorist-082",
+      "name": "M. David Merrill",
+      "name_ja": "M.デイヴィッド・メリル",
+      "birth_year": 1937,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Instructional Design",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-106"
+      ]
+    },
+    {
+      "id": "theorist-083",
+      "name": "Malcolm Knowles",
+      "name_ja": "マルコム・ノールズ",
+      "birth_year": 1913,
+      "death_year": 1997,
+      "nationality": "American",
+      "primary_field": "Adult Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-095"
+      ]
+    },
+    {
+      "id": "theorist-084",
+      "name": "Maria Montessori",
+      "name_ja": "マリア・モンテッソーリ",
+      "birth_year": 1870,
+      "death_year": 1952,
+      "nationality": "Italian",
+      "primary_field": "Education",
+      "contributions": [
+        "Montessori Method"
+      ],
+      "key_works": [
+        "The Montessori Method",
+        "The Absorbent Mind"
+      ],
+      "related_theories": [
+        "theory-016"
+      ]
+    },
+    {
+      "id": "theorist-085",
+      "name": "Mark Weiser",
+      "name_ja": "Mark Weiser",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-151"
+      ]
+    },
+    {
+      "id": "theorist-086",
+      "name": "Marlene Scardamalia",
+      "name_ja": "マーリーン・スカーダマリア",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Learning Sciences",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-131"
+      ]
+    },
+    {
+      "id": "theorist-087",
+      "name": "Martin Seligman",
+      "name_ja": "マーティン・セリグマン",
+      "birth_year": 1942,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-121"
+      ]
+    },
+    {
+      "id": "theorist-088",
+      "name": "Matthew Koehler",
+      "name_ja": "マシュー・ケーラー",
+      "nationality": "American",
+      "primary_field": "Educational Technology",
+      "contributions": [
+        "TPACK Framework"
+      ],
+      "key_works": [],
+      "related_theories": [
+        "theory-057"
+      ]
+    },
+    {
+      "id": "theorist-089",
+      "name": "Mel Ainscow",
+      "name_ja": "メル・エインスコウ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "British",
+      "primary_field": "Inclusive Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-084"
+      ]
+    },
+    {
+      "id": "theorist-090",
+      "name": "Michael B. Horn",
+      "name_ja": "マイケル・ホーン",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Innovation",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-060"
+      ]
+    },
+    {
+      "id": "theorist-091",
+      "name": "Michael Fullan",
+      "name_ja": "マイケル・フラン",
+      "birth_year": 1940,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Educational Change",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-155"
+      ]
+    },
+    {
+      "id": "theorist-092",
+      "name": "Michael Scriven",
+      "name_ja": "Michael Scriven",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-034"
+      ]
+    },
+    {
+      "id": "theorist-093",
+      "name": "Mihaly Csikszentmihalyi",
+      "name_ja": "ミハイ・チクセントミハイ",
+      "birth_year": 1934,
+      "death_year": 2021,
+      "nationality": "Hungarian-American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-118"
+      ]
+    },
+    {
+      "id": "theorist-094",
+      "name": "Mikhail Bakhtin",
+      "name_ja": "ミハイル・バフチン",
+      "birth_year": 1895,
+      "death_year": 1975,
+      "nationality": "Russian",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-130"
+      ]
+    },
+    {
+      "id": "theorist-095",
+      "name": "Mogobe Ramose",
+      "name_ja": "モゴベ・ラモセ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "South African",
+      "primary_field": "Ubuntu Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-166"
+      ]
+    },
+    {
+      "id": "theorist-096",
+      "name": "Morton Deutsch",
+      "name_ja": "モートン・ドイッチ",
+      "birth_year": 1920,
+      "death_year": 2017,
       "nationality": "American",
       "primary_field": "Social Psychology",
-      "contributions": ["Attribution Theory"],
-      "key_works": ["Human Motivation"],
-      "related_theories": ["theory-040"]
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-039"
+      ]
+    },
+    {
+      "id": "theorist-097",
+      "name": "NSF",
+      "name_ja": "NSF",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-072"
+      ]
+    },
+    {
+      "id": "theorist-098",
+      "name": "O. Ivar Lovaas",
+      "name_ja": "O.イヴァー・ロヴァース",
+      "birth_year": 1927,
+      "death_year": 2010,
+      "nationality": "Norwegian-American",
+      "primary_field": "Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-085"
+      ]
+    },
+    {
+      "id": "theorist-099",
+      "name": "OECD",
+      "name_ja": "OECD",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-068"
+      ]
+    },
+    {
+      "id": "theorist-100",
+      "name": "Partnership for 21st Century Learning",
+      "name_ja": "Partnership for 21st Century Learning",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-067"
+      ]
+    },
+    {
+      "id": "theorist-101",
+      "name": "Paul Black",
+      "name_ja": "ポール・ブラック",
+      "nationality": "British",
+      "primary_field": "Science Education",
+      "contributions": [
+        "Formative Assessment",
+        "Assessment for Learning"
+      ],
+      "key_works": [
+        "Inside the Black Box"
+      ],
+      "related_theories": [
+        "theory-033",
+        "theory-037"
+      ]
+    },
+    {
+      "id": "theorist-102",
+      "name": "Paulo Freire",
+      "name_ja": "パウロ・フレイレ",
+      "birth_year": 1921,
+      "death_year": 1997,
+      "nationality": "Brazilian",
+      "primary_field": "Critical Pedagogy",
+      "contributions": [
+        "Critical Pedagogy",
+        "Conscientization",
+        "Banking Model critique"
+      ],
+      "key_works": [
+        "Pedagogy of the Oppressed"
+      ],
+      "related_theories": [
+        "theory-075",
+        "theory-076",
+        "theory-161"
+      ]
+    },
+    {
+      "id": "theorist-103",
+      "name": "Paulo Freire et al.",
+      "name_ja": "Paulo Freire et al.",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-041"
+      ]
+    },
+    {
+      "id": "theorist-104",
+      "name": "Peter Petersen",
+      "name_ja": "ペーター・ペーターゼン",
+      "birth_year": 1884,
+      "death_year": 1952,
+      "nationality": "German",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-171"
+      ]
+    },
+    {
+      "id": "theorist-105",
+      "name": "Philip Jackson",
+      "name_ja": "フィリップ・ジャクソン",
+      "birth_year": 1928,
+      "death_year": 2015,
+      "nationality": "American",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-112"
+      ]
+    },
+    {
+      "id": "theorist-106",
+      "name": "Punya Mishra",
+      "name_ja": "プンヤ・ミシュラ",
+      "nationality": "American",
+      "primary_field": "Educational Technology",
+      "contributions": [
+        "TPACK Framework"
+      ],
+      "key_works": [],
+      "related_theories": [
+        "theory-057"
+      ]
+    },
+    {
+      "id": "theorist-107",
+      "name": "Ralph Tyler",
+      "name_ja": "ラルフ・タイラー",
+      "birth_year": 1902,
+      "death_year": 1994,
+      "nationality": "American",
+      "primary_field": "Curriculum",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-025"
+      ]
+    },
+    {
+      "id": "theorist-108",
+      "name": "Ralph W. Tyler",
+      "name_ja": "Ralph W. Tyler",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-126"
+      ]
+    },
+    {
+      "id": "theorist-109",
+      "name": "Randy Garrison",
+      "name_ja": "ランディ・ギャリソン",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Online Learning",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-154"
+      ]
+    },
+    {
+      "id": "theorist-110",
+      "name": "Reinhard Pekrun",
+      "name_ja": "ラインハルト・ペクルン",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "German",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-120"
+      ]
+    },
+    {
+      "id": "theorist-111",
+      "name": "Reuven Feuerstein",
+      "name_ja": "ルーベン・フォイエルシュタイン",
+      "birth_year": 1921,
+      "death_year": 2014,
+      "nationality": "Israeli",
+      "primary_field": "Cognitive Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-125"
+      ]
+    },
+    {
+      "id": "theorist-112",
+      "name": "Richard E. Mayer",
+      "name_ja": "リチャード・メイヤー",
+      "birth_year": 1947,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [
+        "Multimedia Learning Theory",
+        "Cognitive Theory of Multimedia Learning"
+      ],
+      "key_works": [
+        "Multimedia Learning"
+      ],
+      "related_theories": [
+        "theory-059"
+      ]
+    },
+    {
+      "id": "theorist-113",
+      "name": "Richard M. Ryan",
+      "name_ja": "リチャード・ライアン",
+      "birth_year": 1953,
+      "nationality": "American",
+      "primary_field": "Psychology",
+      "contributions": [
+        "Self-Determination Theory"
+      ],
+      "key_works": [
+        "Self-Determination Theory"
+      ],
+      "related_theories": [
+        "theory-008"
+      ]
+    },
+    {
+      "id": "theorist-114",
+      "name": "Robert M. Gagné",
+      "name_ja": "ロバート・ガニェ",
+      "birth_year": 1916,
+      "death_year": 2002,
+      "nationality": "American",
+      "primary_field": "Educational Psychology",
+      "contributions": [
+        "Nine Events of Instruction",
+        "Conditions of Learning"
+      ],
+      "key_works": [
+        "The Conditions of Learning"
+      ],
+      "related_theories": [
+        "theory-022"
+      ]
+    },
+    {
+      "id": "theorist-115",
+      "name": "Robert Marzano",
+      "name_ja": "ロバート・マルザーノ",
+      "birth_year": 1946,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Research",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-156"
+      ]
+    },
+    {
+      "id": "theorist-116",
+      "name": "Roger Johnson",
+      "name_ja": "ロジャー・ジョンソン",
+      "nationality": "American",
+      "primary_field": "Curriculum and Instruction",
+      "contributions": [
+        "Cooperative Learning"
+      ],
+      "key_works": [
+        "Learning Together and Alone"
+      ],
+      "related_theories": [
+        "theory-038",
+        "theory-109"
+      ]
+    },
+    {
+      "id": "theorist-117",
+      "name": "Ron Miller",
+      "name_ja": "ロン・ミラー",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Holistic Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-172"
+      ]
+    },
+    {
+      "id": "theorist-118",
+      "name": "Rose Luckin",
+      "name_ja": "ローズ・ラッキン",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "British",
+      "primary_field": "AI in Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-066"
+      ]
+    },
+    {
+      "id": "theorist-119",
+      "name": "Ruben R. Puentedura",
+      "name_ja": "ルーベン・プエンテドゥラ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Educational Technology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-058"
+      ]
+    },
+    {
+      "id": "theorist-120",
+      "name": "Rudolf Steiner",
+      "name_ja": "ルドルフ・シュタイナー",
+      "birth_year": 1861,
+      "death_year": 1925,
+      "nationality": "Austrian",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-079",
+        "theory-102"
+      ]
+    },
+    {
+      "id": "theorist-121",
+      "name": "Seymour Papert",
+      "name_ja": "シーモア・パパート",
+      "birth_year": 1928,
+      "death_year": 2016,
+      "nationality": "South African-American",
+      "primary_field": "Learning Theory",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-153"
+      ]
+    },
+    {
+      "id": "theorist-122",
+      "name": "Siegfried Engelmann",
+      "name_ja": "ジークフリード・エンゲルマン",
+      "birth_year": 1931,
+      "death_year": 2019,
+      "nationality": "American",
+      "primary_field": "Instructional Design",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-104"
+      ]
+    },
+    {
+      "id": "theorist-123",
+      "name": "SoLAR",
+      "name_ja": "SoLAR",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-063"
+      ]
+    },
+    {
+      "id": "theorist-124",
+      "name": "Socrates",
+      "name_ja": "ソクラテス",
+      "birth_year": -470,
+      "death_year": -399,
+      "nationality": "Greek",
+      "primary_field": "Philosophy",
+      "contributions": [
+        "Socratic Method"
+      ],
+      "key_works": [],
+      "related_theories": [
+        "theory-015"
+      ]
+    },
+    {
+      "id": "theorist-125",
+      "name": "Stanford d.school",
+      "name_ja": "Stanford d.school",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-158"
+      ]
+    },
+    {
+      "id": "theorist-126",
+      "name": "Stephen Downes",
+      "name_ja": "スティーブン・ダウンズ",
+      "nationality": "Canadian",
+      "primary_field": "Educational Technology",
+      "contributions": [
+        "Connectivism",
+        "MOOCs"
+      ],
+      "key_works": [],
+      "related_theories": [
+        "theory-056"
+      ]
+    },
+    {
+      "id": "theorist-127",
+      "name": "Susan Drake",
+      "name_ja": "スーザン・ドレイク",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Curriculum",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-115"
+      ]
+    },
+    {
+      "id": "theorist-128",
+      "name": "Suzanne Hidi",
+      "name_ja": "スザンヌ・ヒディ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Canadian",
+      "primary_field": "Educational Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-119"
+      ]
+    },
+    {
+      "id": "theorist-129",
+      "name": "Sylvia Martinez",
+      "name_ja": "シルビア・マルティネス",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Maker Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-157"
+      ]
+    },
+    {
+      "id": "theorist-130",
+      "name": "Theo Hug",
+      "name_ja": "テオ・フグ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Austrian",
+      "primary_field": "Educational Sciences",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-159"
+      ]
+    },
+    {
+      "id": "theorist-131",
+      "name": "Traditional (Meiji era onwards)",
+      "name_ja": "Traditional (Meiji era onwards)",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-051"
+      ]
+    },
+    {
+      "id": "theorist-132",
+      "name": "UNESCO",
+      "name_ja": "UNESCO",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-071",
+        "theory-150"
+      ]
+    },
+    {
+      "id": "theorist-133",
+      "name": "Urie Bronfenbrenner",
+      "name_ja": "ユーリ・ブロンフェンブレンナー",
+      "birth_year": 1917,
+      "death_year": 2005,
+      "nationality": "American",
+      "primary_field": "Developmental Psychology",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-098"
+      ]
+    },
+    {
+      "id": "theorist-134",
+      "name": "Walter Dick",
+      "name_ja": "ウォルター・ディック",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Instructional Design",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-108"
+      ]
+    },
+    {
+      "id": "theorist-135",
+      "name": "William Kilpatrick",
+      "name_ja": "ウィリアム・キルパトリック",
+      "birth_year": 1871,
+      "death_year": 1965,
+      "nationality": "American",
+      "primary_field": "Education",
+      "contributions": [
+        "Project Method"
+      ],
+      "key_works": [
+        "The Project Method"
+      ],
+      "related_theories": [
+        "theory-017"
+      ]
+    },
+    {
+      "id": "theorist-136",
+      "name": "William Spady",
+      "name_ja": "ウィリアム・スペイディ",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "American",
+      "primary_field": "Curriculum",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-117"
+      ]
+    },
+    {
+      "id": "theorist-137",
+      "name": "bell hooks",
+      "name_ja": "ベル・フックス",
+      "birth_year": 1952,
+      "death_year": 2021,
+      "nationality": "American",
+      "primary_field": "Critical Pedagogy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-162"
+      ]
+    },
+    {
+      "id": "theorist-138",
+      "name": "シュリ・オーロビンド",
+      "name_ja": "シュリ・オーロビンド",
+      "birth_year": 1872,
+      "death_year": 1950,
+      "nationality": "Indian",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-055"
+      ]
+    },
+    {
+      "id": "theorist-139",
+      "name": "スワミ・ヴィヴェーカーナンダ",
+      "name_ja": "スワミ・ヴィヴェーカーナンダ",
+      "birth_year": 1863,
+      "death_year": 1902,
+      "nationality": "Indian",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-144"
+      ]
+    },
+    {
+      "id": "theorist-140",
+      "name": "マハトマ・ガンディー",
+      "name_ja": "マハトマ・ガンディー",
+      "birth_year": 1869,
+      "death_year": 1948,
+      "nationality": "Indian",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-053"
+      ]
+    },
+    {
+      "id": "theorist-141",
+      "name": "ラビンドラナート・タゴール",
+      "name_ja": "ラビンドラナート・タゴール",
+      "birth_year": 1861,
+      "death_year": 1941,
+      "nationality": "Indian",
+      "primary_field": "Literature/Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-052"
+      ]
+    },
+    {
+      "id": "theorist-142",
+      "name": "佐藤学",
+      "name_ja": "佐藤学",
+      "birth_year": 1951,
+      "death_year": null,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-050"
+      ]
+    },
+    {
+      "id": "theorist-143",
+      "name": "大村はま",
+      "name_ja": "大村はま",
+      "birth_year": 1906,
+      "death_year": 2005,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-142"
+      ]
+    },
+    {
+      "id": "theorist-144",
+      "name": "孟子",
+      "name_ja": "孟子",
+      "birth_year": -372,
+      "death_year": -289,
+      "nationality": "Chinese",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-132"
+      ]
+    },
+    {
+      "id": "theorist-145",
+      "name": "斎藤喜博",
+      "name_ja": "斎藤喜博",
+      "birth_year": 1911,
+      "death_year": 1981,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-141"
+      ]
+    },
+    {
+      "id": "theorist-146",
+      "name": "朱熹",
+      "name_ja": "朱熹",
+      "birth_year": 1130,
+      "death_year": 1200,
+      "nationality": "Chinese",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-135"
+      ]
+    },
+    {
+      "id": "theorist-147",
+      "name": "森有礼",
+      "name_ja": "森有礼",
+      "birth_year": 1847,
+      "death_year": 1889,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-139"
+      ]
+    },
+    {
+      "id": "theorist-148",
+      "name": "牧口常三郎",
+      "name_ja": "牧口常三郎",
+      "birth_year": 1871,
+      "death_year": 1944,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-140"
+      ]
+    },
+    {
+      "id": "theorist-149",
+      "name": "王陽明",
+      "name_ja": "王陽明",
+      "birth_year": 1472,
+      "death_year": 1529,
+      "nationality": "Chinese",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-046",
+        "theory-134"
+      ]
+    },
+    {
+      "id": "theorist-150",
+      "name": "福沢諭吉",
+      "name_ja": "福沢諭吉",
+      "birth_year": 1835,
+      "death_year": 1901,
+      "nationality": "Japanese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-048"
+      ]
+    },
+    {
+      "id": "theorist-151",
+      "name": "荀子",
+      "name_ja": "荀子",
+      "birth_year": -313,
+      "death_year": -238,
+      "nationality": "Chinese",
+      "primary_field": "Philosophy",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-133"
+      ]
+    },
+    {
+      "id": "theorist-152",
+      "name": "蔡元培",
+      "name_ja": "蔡元培",
+      "birth_year": 1868,
+      "death_year": 1940,
+      "nationality": "Chinese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-137"
+      ]
+    },
+    {
+      "id": "theorist-153",
+      "name": "進歩主義教育協会",
+      "name_ja": "進歩主義教育協会",
+      "birth_year": null,
+      "death_year": null,
+      "nationality": "Unknown",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-114"
+      ]
+    },
+    {
+      "id": "theorist-154",
+      "name": "陶行知",
+      "name_ja": "陶行知",
+      "birth_year": 1891,
+      "death_year": 1946,
+      "nationality": "Chinese",
+      "primary_field": "Education",
+      "contributions": [],
+      "key_works": [],
+      "related_theories": [
+        "theory-049"
+      ]
     }
   ]
 }
