@@ -2,11 +2,16 @@
 
 import pytest
 
-from tenjin.domain.value_objects.ids import TheoryId, TheoristId, CategoryId, MethodologyId, EvidenceId, ConceptId
+from tenjin.domain.value_objects.theory_id import TheoryId
+from tenjin.domain.value_objects.theorist_id import TheoristId
+from tenjin.domain.value_objects.concept_id import ConceptId
+from tenjin.domain.value_objects.methodology_id import MethodologyId
+from tenjin.domain.value_objects.evidence_id import EvidenceId
 from tenjin.domain.value_objects.category_type import CategoryType
 from tenjin.domain.value_objects.priority_level import PriorityLevel
 from tenjin.domain.value_objects.relationship_type import RelationshipType
-from tenjin.domain.value_objects.search import SearchQuery, SearchResult, SearchResults
+from tenjin.domain.value_objects.search_query import SearchQuery
+from tenjin.domain.value_objects.search_result import SearchResult, SearchResults
 
 
 class TestIds:

@@ -7,6 +7,7 @@ from .analysis_service import AnalysisService
 from .recommendation_service import RecommendationService
 from .citation_service import CitationService
 from .methodology_service import MethodologyService
+from .inference_service import InferenceService
 
 __all__ = [
     "TheoryService",
@@ -16,4 +17,5 @@ __all__ = [
     "RecommendationService",
     "CitationService",
     "MethodologyService",
+    "InferenceService",
 ]

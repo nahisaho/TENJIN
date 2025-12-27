@@ -6,7 +6,8 @@ from tenjin.domain.entities.theory import Theory
 from tenjin.domain.entities.theorist import Theorist
 from tenjin.domain.entities.category import Category
 from tenjin.domain.entities.relationship import TheoryRelationship
-from tenjin.domain.value_objects.ids import TheoryId, TheoristId, CategoryId
+from tenjin.domain.value_objects.theory_id import TheoryId
+from tenjin.domain.value_objects.theorist_id import TheoristId
 from tenjin.domain.value_objects.category_type import CategoryType
 from tenjin.domain.value_objects.priority_level import PriorityLevel
 from tenjin.domain.value_objects.relationship_type import RelationshipType

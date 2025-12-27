@@ -17,6 +17,10 @@ from .methodology_tools import (
     register_methodology_tools,
     get_methodology_tool_definitions,
 )
+from .inference_tools import (
+    register_inference_tools,
+    get_inference_tool_definitions,
+)
 
 
 def register_tools(server: Server, tenjin: TenjinServer) -> None:
@@ -34,6 +38,7 @@ def register_tools(server: Server, tenjin: TenjinServer) -> None:
     register_recommendation_tools(server, tenjin)
     register_citation_tools(server, tenjin)
     register_methodology_tools(server, tenjin)
+    register_inference_tools(server, tenjin)
 
     # Register tool listing
     @server.list_tools()
@@ -47,6 +52,7 @@ def register_tools(server: Server, tenjin: TenjinServer) -> None:
         tools.extend(get_recommendation_tool_definitions())
         tools.extend(get_citation_tool_definitions())
         tools.extend(get_methodology_tool_definitions())
+        tools.extend(get_inference_tool_definitions())
         return tools
 
 

@@ -1,5 +1,9 @@
 // @ts-check
 const { defineConfig } = require('@playwright/test');
+const path = require('path');
+
+// プロジェクトルートを動的に検出
+const projectRoot = path.resolve(__dirname, '../..');
 
 module.exports = defineConfig({
     testDir: './tests/e2e',
@@ -15,7 +19,7 @@ module.exports = defineConfig({
     },
     webServer: {
         command: 'python3 -m http.server 8080',
-        cwd: '/home/nahisaho/GitHub/TENJIN',
+        cwd: projectRoot,
         url: 'http://localhost:8080',
         reuseExistingServer: true,
         timeout: 10000,

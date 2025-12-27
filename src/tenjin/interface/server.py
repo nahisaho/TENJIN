@@ -24,6 +24,7 @@ from ..application.services import (
     RecommendationService,
     CitationService,
     MethodologyService,
+    InferenceService,
 )
 
 logger = get_logger(__name__)
@@ -57,6 +58,7 @@ class TenjinServer:
         self._recommendation_service: RecommendationService | None = None
         self._citation_service: CitationService | None = None
         self._methodology_service: MethodologyService | None = None
+        self._inference_service: InferenceService | None = None
 
     async def initialize(self) -> None:
         """Initialize all adapters, repositories, and services."""
@@ -122,6 +124,12 @@ class TenjinServer:
         self._methodology_service = MethodologyService(
             self._theory_repo,
             self._vector_repo,
+            self._llm,
+        )
+        self._inference_service = InferenceService(
+            self._theory_repo,
+            self._vector_repo,
+            self._graph_repo,
             self._llm,
         )
 
@@ -191,6 +199,17 @@ class TenjinServer:
         if not self._methodology_service:
             raise RuntimeError("Server not initialized")
         return self._methodology_service
+
+    @property
+    def inference_service(self) -> InferenceService:
+        """Get inference service."""
+        if not self._inference_service:
+            raise RuntimeError("Server not initialized")
+        return self._inference_service
+
+    def get_inference_service(self) -> InferenceService:
+        """Get inference service (method form for tools)."""
+        return self.inference_service
 
 
 # Global server instance

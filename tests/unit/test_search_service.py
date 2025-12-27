@@ -5,8 +5,9 @@ from unittest.mock import AsyncMock
 
 from tenjin.application.services.search_service import SearchService
 from tenjin.domain.entities.theory import Theory
-from tenjin.domain.value_objects.ids import TheoryId
-from tenjin.domain.value_objects.search import SearchQuery, SearchResult, SearchResults
+from tenjin.domain.value_objects.theory_id import TheoryId
+from tenjin.domain.value_objects.search_query import SearchQuery
+from tenjin.domain.value_objects.search_result import SearchResult, SearchResults
 
 
 class TestSearchService:

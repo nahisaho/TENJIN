@@ -2,8 +2,7 @@
 
 from typing import Any
 
-from esperanto import LanguageModel, EmbeddingModel
-from esperanto.providers import PROVIDERS
+from esperanto import LanguageModel, EmbeddingModel, provider_classes
 
 from ..config.logging import get_logger
 from ..config.settings import get_settings
@@ -193,7 +192,12 @@ Ranking (numbers only, comma-separated):"""
         Returns:
             List of provider names.
         """
-        return list(PROVIDERS.keys())
+        # Extract provider names from class names (e.g., "OpenAILanguageModel" -> "openai")
+        return [
+            cls.replace("LanguageModel", "").lower()
+            for cls in provider_classes
+            if "LanguageModel" in cls
+        ]
 
     def health_check(self) -> bool:
         """Check if LLM provider is accessible.

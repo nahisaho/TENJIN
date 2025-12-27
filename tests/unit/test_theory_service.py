@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock
 
 from tenjin.application.services.theory_service import TheoryService
 from tenjin.domain.entities.theory import Theory
-from tenjin.domain.value_objects.ids import TheoryId
+from tenjin.domain.value_objects.theory_id import TheoryId
 from tenjin.domain.value_objects.category_type import CategoryType
 from tenjin.domain.value_objects.priority_level import PriorityLevel
 
