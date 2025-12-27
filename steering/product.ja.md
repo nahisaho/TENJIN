@@ -1,9 +1,9 @@
 # Product Context
 
 **Project**: TENJIN
-**Last Updated**: 2025-12-27
+**Last Updated**: 2025-12-28
 **Version**: 0.2.0
-**Status**: 本番運用可能（MVP完了）
+**Status**: 本番運用可能（v0.2.0 推論機能強化）
 
 ---
 

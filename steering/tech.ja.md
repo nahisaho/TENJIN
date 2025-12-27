@@ -1,7 +1,7 @@
 # Technology Stack
 
 **Project**: TENJIN
-**Last Updated**: 2025-12-27
+**Last Updated**: 2025-12-28
 **Status**: 本番運用中
 
 ---

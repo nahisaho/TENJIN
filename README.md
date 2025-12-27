@@ -20,8 +20,7 @@ TENJINは、175+の教育理論をGraph + Vector RAG（Retrieval-Augmented Gener
 ### 主な機能
 
 - 🎓 **175+ 教育理論**: 学習理論、発達理論、教授法など9カテゴリーの包括的なデータベース
-- 🔍 **ハイブリッド検索**: グラフ構造検索 + ベクトル類似検索 + LLMリランキング
-- 🌐 **マルチLLMサポート**: [esperanto](https://github.com/lfnovo/esperanto)による15+ LLMプロバイダー対応
+- 🔍 **ハイブリッド検索**: グラフ構造検索 + ベクトル類似検索 + LLMリランキング- 🧠 **高度な推論機能**: 理論推薦、ギャップ分析、関係推論、エビデンス推論 (NEW in v0.2)- 🌐 **マルチLLMサポート**: [esperanto](https://github.com/lfnovo/esperanto)による15+ LLMプロバイダー対応
 - 📚 **MCPツール**: 理論検索、分析、比較、推薦、引用生成など
 - 🇯🇵 **日本語対応**: 日本語・英語バイリンガルサポート
 - 🏗️ **クリーンアーキテクチャ**: 保守性・テスト容易性の高い4層構造
@@ -174,7 +173,7 @@ uv run python -m scripts.load_data
 │  ┌──────────────┐ ┌──────────────┐ ┌──────────────────────┐│
 │  │TheoryService │ │SearchService │ │AnalysisService       ││
 │  │GraphService  │ │Recommendation│ │CitationService       ││
-│  │              │ │Service       │ │MethodologyService    ││
+│  │InferenceSvc  │ │Service       │ │MethodologyService    ││
 │  └──────┬───────┘ └──────┬───────┘ └───────────┬──────────┘│
 └─────────┼────────────────┼─────────────────────┼───────────┘
           │                │                     │
@@ -210,6 +209,10 @@ uv run python -m scripts.load_data
 | `traverse_graph` | 関連理論をグラフ探索 |
 | `compare_theories` | 複数の理論を比較分析 |
 | `cite_theory` | APA/MLA形式で引用生成 |
+| `recommend_theories_for_learner` | 🆕 学習者向け理論推薦 |
+| `analyze_learning_design_gaps` | 🆕 学習設計ギャップ分析 |
+| `infer_theory_relationships` | 🆕 理論関係推論 |
+| `reason_about_application` | 🆕 適用推論 |
 
 ## 教育理論カテゴリー
 

@@ -1,7 +1,7 @@
 # Project Structure
 
 **Project**: TENJIN
-**Last Updated**: 2025-12-27
+**Last Updated**: 2025-12-28
 **Version**: 0.2.0
 
 ---
@@ -226,7 +226,8 @@ src/tenjin/application/
 ├── services/                 # アプリケーションサービス
 │   ├── search_service.py     # 検索サービス
 │   ├── graph_service.py      # グラフクエリサービス
-│   ├── reasoning_service.py  # LLM推論サービス
+│   ├── inference_service.py  # LLM推論サービス (NEW)
+│   ├── reasoning_service.py  # 推論サービス
 │   ├── recommend_service.py  # 推薦サービス
 │   ├── citation_service.py   # 引用生成サービス
 │   ├── generation_service.py # コンテンツ生成サービス

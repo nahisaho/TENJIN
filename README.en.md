@@ -21,6 +21,7 @@ TENJIN is an MCP server that provides 175+ educational theories using Graph + Ve
 
 - 🎓 **175+ Educational Theories**: Comprehensive database spanning 9 categories including learning theories, developmental theories, and instructional methods
 - 🔍 **Hybrid Search**: Graph structure search + vector similarity search + LLM reranking
+- 🧠 **Advanced Inference**: Theory recommendations, gap analysis, relationship inference, evidence-based reasoning (NEW in v0.2)
 - 🌐 **Multi-LLM Support**: Support for 15+ LLM providers via [esperanto](https://github.com/lfnovo/esperanto)
 - 📚 **MCP Tools**: Theory search, analysis, comparison, recommendations, citation generation, and more
 - 🇯🇵 **Bilingual Support**: Japanese and English
