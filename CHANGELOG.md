@@ -20,8 +20,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `analyze_learning_design_gaps`: 学習設計ギャップ分析
   - `infer_theory_relationships`: 理論関係推論
   - `reason_about_application`: 適用推論
+- **Docker機能強化**:
+  - マルチステージDockerfile（base, runtime, data-loader）
+  - docker-compose.preload.yml: プリロード用構成
+  - ChromaDBサービス統合
+  - データローダーサービス（profileベース）
+  - ヘルスチェック設定
+- **ビルドスクリプト**:
+  - `scripts/build-preloaded-image.sh`: プリロード済みイメージ作成
+  - `scripts/init_data.sh`: データ初期化スクリプト
 - **Theory Editor E2Eテスト**: Playwright による14件のE2Eテスト
 - **InferenceService単体テスト**: 10件のテストケース
+- **ドキュメント**: Docker デプロイメントガイド（docs/DOCKER.ja.md）
 
 ### Fixed
 - esperanto API互換性修正（`PROVIDERS` → `provider_classes`）

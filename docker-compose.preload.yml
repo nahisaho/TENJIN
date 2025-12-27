@@ -1,15 +1,30 @@
 version: "3.8"
 
+# ===========================================
+# Docker Compose for Pre-loaded Data Image Build
+# ===========================================
+# This compose file creates a complete TENJIN environment
+# with educational theory data pre-loaded into Neo4j and ChromaDB.
+#
+# Usage:
+#   1. Start databases: docker-compose -f docker-compose.preload.yml up -d neo4j chromadb
+#   2. Wait for healthy: docker-compose -f docker-compose.preload.yml ps
+#   3. Load data: docker-compose -f docker-compose.preload.yml run --rm data-loader
+#   4. (Optional) Export volumes for distribution
+#
+# Or use the build script:
+#   ./scripts/build-preloaded-image.sh
+
 services:
   # ===========================================
-  # Neo4j Graph Database
+  # Neo4j with Education Theory Data
   # ===========================================
   neo4j:
     image: neo4j:5.15-community
-    container_name: tenjin-neo4j
+    container_name: tenjin-neo4j-preload
     ports:
-      - "7474:7474"  # HTTP
-      - "7687:7687"  # Bolt
+      - "7474:7474"
+      - "7687:7687"
     environment:
       - NEO4J_AUTH=neo4j/password
       - NEO4J_PLUGINS=["apoc"]
@@ -17,42 +32,24 @@ services:
       - NEO4J_dbms_memory_heap_initial__size=512m
       - NEO4J_dbms_memory_heap_max__size=1G
     volumes:
-      - neo4j_data:/data
-      - neo4j_logs:/logs
+      - tenjin_neo4j_preload:/data
       - ./data/theories:/import/theories:ro
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
 
   # ===========================================
-  # Redis Cache
-  # ===========================================
-  redis:
-    image: redis:7-alpine
-    container_name: tenjin-redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    command: redis-server --appendonly yes
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  # ===========================================
-  # ChromaDB Vector Database
+  # ChromaDB with Vector Embeddings
   # ===========================================
   chromadb:
     image: chromadb/chroma:latest
-    container_name: tenjin-chromadb
+    container_name: tenjin-chromadb-preload
     ports:
       - "8000:8000"
     volumes:
-      - chromadb_data:/chroma/chroma
+      - tenjin_chromadb_preload:/chroma/chroma
     environment:
       - IS_PERSISTENT=TRUE
       - ANONYMIZED_TELEMETRY=FALSE
@@ -60,44 +57,16 @@ services:
       test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/heartbeat || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
 
   # ===========================================
-  # TENJIN MCP Server
-  # ===========================================
-  tenjin:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: tenjin-server
-    depends_on:
-      neo4j:
-        condition: service_healthy
-      chromadb:
-        condition: service_healthy
-    environment:
-      - NEO4J_URI=bolt://neo4j:7687
-      - NEO4J_USERNAME=neo4j
-      - NEO4J_PASSWORD=password
-      - CHROMADB_HOST=chromadb
-      - CHROMADB_PORT=8000
-      - REDIS_URL=redis://redis:6379
-      - EMBEDDING_PROVIDER=${EMBEDDING_PROVIDER:-ollama}
-      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-nomic-embed-text}
-      - OLLAMA_HOST=${OLLAMA_HOST:-http://host.docker.internal:11434}
-    volumes:
-      - ./data:/app/data:ro
-    profiles:
-      - full
-
-  # ===========================================
-  # Data Loader (one-time initialization)
+  # Data Loader Service
   # ===========================================
   data-loader:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tenjin-data-loader
+    container_name: tenjin-data-loader-preload
     depends_on:
       neo4j:
         condition: service_healthy
@@ -116,11 +85,9 @@ services:
       - ./data:/app/data:ro
       - ./scripts:/app/scripts:ro
     entrypoint: ["python", "-m", "scripts.load_data", "--clear", "--verbose"]
-    profiles:
-      - init
 
 volumes:
-  neo4j_data:
-  neo4j_logs:
-  redis_data:
-  chromadb_data:
+  tenjin_neo4j_preload:
+    name: tenjin_neo4j_preload
+  tenjin_chromadb_preload:
+    name: tenjin_chromadb_preload

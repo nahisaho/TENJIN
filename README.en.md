@@ -55,18 +55,31 @@ cp .env.example .env
 ### Start Database
 
 ```bash
-# Start Neo4j
-docker-compose up -d neo4j
+# Start all databases (Neo4j, ChromaDB, Redis)
+docker-compose up -d neo4j chromadb redis
 
-# Wait for database to start (about 30 seconds on first run)
-sleep 30
+# Wait for database to start (about 60 seconds on first run)
+sleep 60
 ```
 
 ### Load Data
 
 ```bash
-# Load educational theory data
-uv run python -m scripts.load_data
+# Load educational theory data (using Docker)
+docker-compose --profile init run --rm data-loader
+
+# Or run directly
+uv run python -m scripts.load_data --clear --verbose
+```
+
+### Use Pre-loaded Image (Recommended)
+
+```bash
+# Build pre-loaded image
+./scripts/build-preloaded-image.sh
+
+# Or use docker-compose.preload.yml
+docker-compose -f docker-compose.preload.yml up -d
 ```
 
 ### VS Code MCP Server Configuration

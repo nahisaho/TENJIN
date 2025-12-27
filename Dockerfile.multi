@@ -1,0 +1,67 @@
+# TENJIN with Pre-loaded Educational Theory Data
+# Multi-stage build for production-ready image with data
+
+# ==================================================
+# Stage 1: Base image with dependencies
+# ==================================================
+FROM python:3.11-slim AS base
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install uv for faster package management
+RUN pip install uv
+
+# Copy dependency files
+COPY pyproject.toml ./
+
+# Install dependencies
+RUN uv pip install --system -e ".[dev]"
+
+# ==================================================
+# Stage 2: Data loader image (with Neo4j for data loading)
+# ==================================================
+FROM neo4j:5.15-community AS neo4j-builder
+
+# Copy data files
+COPY data/ /import/data/
+
+# Initialize Neo4j with data
+# Neo4j data will be in /data volume
+
+# ==================================================
+# Stage 3: Final production image
+# ==================================================
+FROM base AS production
+
+# Copy source code
+COPY src/ ./src/
+COPY data/ ./data/
+COPY scripts/ ./scripts/
+
+# Make init script executable
+RUN chmod +x scripts/init_data.sh 2>/dev/null || true
+
+# Set environment variables
+ENV PYTHONPATH=/app/src
+ENV PYTHONUNBUFFERED=1
+
+# Default command - run MCP server
+ENTRYPOINT ["python", "-m", "tenjin.server"]
+
+# ==================================================
+# Stage 4: Development image with all tools
+# ==================================================
+FROM production AS development
+
+# Install additional development tools
+RUN pip install pytest pytest-asyncio pytest-cov mypy ruff
+
+# Keep container running for development
+CMD ["tail", "-f", "/dev/null"]

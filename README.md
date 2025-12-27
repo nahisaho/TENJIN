@@ -53,18 +53,31 @@ cp .env.example .env
 ### データベース起動
 
 ```bash
-# Neo4jを起動
-docker-compose up -d neo4j
+# 全データベースを起動（Neo4j, ChromaDB, Redis）
+docker-compose up -d neo4j chromadb redis
 
-# データベースが起動するまで待機（初回は約30秒）
-sleep 30
+# データベースが起動するまで待機（初回は約60秒）
+sleep 60
 ```
 
 ### データロード
 
 ```bash
-# 教育理論データをロード
-uv run python -m scripts.load_data
+# 教育理論データをロード（Docker使用）
+docker-compose --profile init run --rm data-loader
+
+# または直接実行
+uv run python -m scripts.load_data --clear --verbose
+```
+
+### プリロード済みイメージを使用（推奨）
+
+```bash
+# プリロード済みイメージをビルド
+./scripts/build-preloaded-image.sh
+
+# または docker-compose.preload.yml を使用
+docker-compose -f docker-compose.preload.yml up -d
 ```
 
 ### VS Code MCPサーバー設定
