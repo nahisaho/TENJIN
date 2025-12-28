@@ -35,6 +35,7 @@ from ..application.services import (
     InferenceService,
     CacheService,
 )
+from ..application.services.export_service import ExportService
 
 logger = get_logger(__name__)
 
@@ -70,6 +71,7 @@ class TenjinServer:
         self._methodology_service: MethodologyService | None = None
         self._inference_service: InferenceService | None = None
         self._cache_service: CacheService | None = None
+        self._export_service: ExportService | None = None
 
     async def initialize(self) -> None:
         """Initialize all adapters, repositories, and services."""
@@ -152,6 +154,8 @@ class TenjinServer:
             self._graph_repo,
             self._llm,
         )
+        
+        self._export_service = ExportService(self._theory_repo)
 
         # Initialize cache service
         if self._redis:
@@ -234,6 +238,13 @@ class TenjinServer:
         if not self._inference_service:
             raise RuntimeError("Server not initialized")
         return self._inference_service
+
+    @property
+    def export_service(self) -> ExportService:
+        """Get export service."""
+        if not self._export_service:
+            raise RuntimeError("Server not initialized")
+        return self._export_service
 
     @property
     def cache_service(self) -> CacheService | None:

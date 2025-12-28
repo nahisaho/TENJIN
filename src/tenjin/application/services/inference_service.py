@@ -782,3 +782,198 @@ Always respond with valid JSON."""
                 "evaluation_criteria": [],
                 "error": str(e),
             }
+
+    # ========================================
+    # Theory Synthesis
+    # ========================================
+
+    async def synthesize_theories(
+        self,
+        theory_ids: list[str],
+        synthesis_goal: str,
+        context: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Synthesize multiple theories into an integrated framework.
+
+        Args:
+            theory_ids: List of theory IDs to synthesize
+            synthesis_goal: Purpose of the synthesis (e.g., "course design")
+            context: Optional context (target audience, constraints, etc.)
+
+        Returns:
+            Integrated framework with analysis
+        """
+        logger.info(f"Synthesizing {len(theory_ids)} theories for: {synthesis_goal}")
+
+        # Fetch all theories
+        theories: list[Theory] = []
+        for tid in theory_ids:
+            theory = await self._theory_repo.get_by_id(TheoryId(tid))
+            if theory:
+                theories.append(theory)
+
+        if len(theories) < 2:
+            return {
+                "error": "At least 2 valid theories are required for synthesis",
+                "found_theories": len(theories),
+            }
+
+        # Get relationships between theories
+        relationships = []
+        for i, t1 in enumerate(theories):
+            for t2 in theories[i + 1:]:
+                rels = await self._graph_repo.get_relationships(
+                    t1.id.value, t2.id.value
+                )
+                relationships.extend(rels)
+
+        # Perform synthesis analysis
+        synthesis = await self._perform_synthesis(
+            theories, relationships, synthesis_goal, context or {}
+        )
+
+        return {
+            "synthesis_goal": synthesis_goal,
+            "context": context,
+            "theories_analyzed": [
+                {"id": t.id.value, "name": t.name, "name_ja": t.name_ja}
+                for t in theories
+            ],
+            "relationships_found": len(relationships),
+            "synthesis": synthesis,
+        }
+
+    async def _perform_synthesis(
+        self,
+        theories: list[Theory],
+        relationships: list,
+        synthesis_goal: str,
+        context: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Perform LLM-based theory synthesis.
+
+        Args:
+            theories: List of Theory objects
+            relationships: Relationships between theories
+            synthesis_goal: Purpose of synthesis
+            context: Additional context
+
+        Returns:
+            Synthesis results
+        """
+        # Build theory descriptions
+        theory_descs = []
+        for t in theories:
+            theory_descs.append(
+                f"### {t.name} ({t.name_ja})\n"
+                f"Category: {t.category.display_name}\n"
+                f"Description: {t.description}\n"
+                f"Key Principles: {', '.join(t.key_principles)}\n"
+                f"Strengths: {', '.join(t.strengths[:3])}\n"
+                f"Limitations: {', '.join(t.limitations[:3])}"
+            )
+
+        # Build relationship descriptions
+        rel_descs = []
+        for r in relationships:
+            rel_descs.append(
+                f"- {r.get('source', 'Unknown')} → {r.get('target', 'Unknown')}: "
+                f"{r.get('relationship_type', 'related')}"
+            )
+
+        prompt = f"""You are an expert in educational theory integration.
+Synthesize the following theories into a coherent framework.
+
+SYNTHESIS GOAL: {synthesis_goal}
+
+CONTEXT:
+- Target Audience: {context.get('target_audience', 'not specified')}
+- Setting: {context.get('setting', 'not specified')}
+- Constraints: {context.get('constraints', 'none')}
+
+THEORIES TO SYNTHESIZE:
+{chr(10).join(theory_descs)}
+
+KNOWN RELATIONSHIPS:
+{chr(10).join(rel_descs) if rel_descs else 'None identified'}
+
+Provide a comprehensive synthesis in JSON format:
+{{
+  "integrated_framework": {{
+    "name": "<name for the integrated approach>",
+    "description": "<brief description of the synthesis>",
+    "core_principles": [
+      {{
+        "principle": "<principle>",
+        "contributing_theories": ["<theory1>", "<theory2>"],
+        "rationale": "<why these combine well>"
+      }}
+    ]
+  }},
+  "comparison_matrix": {{
+    "dimensions": ["<dim1>", "<dim2>", "<dim3>"],
+    "theory_positions": [
+      {{
+        "theory": "<theory name>",
+        "positions": {{
+          "<dim1>": "<position/description>",
+          "<dim2>": "<position/description>"
+        }}
+      }}
+    ]
+  }},
+  "synergies": [
+    {{
+      "theories": ["<theory1>", "<theory2>"],
+      "synergy_description": "<how they complement>",
+      "application_example": "<practical example>"
+    }}
+  ],
+  "tensions": [
+    {{
+      "theories": ["<theory1>", "<theory2>"],
+      "tension_description": "<where they conflict>",
+      "resolution_strategy": "<how to resolve>"
+    }}
+  ],
+  "implementation_sequence": [
+    {{
+      "phase": 1,
+      "focus_theory": "<theory>",
+      "activities": ["<activity1>", "<activity2>"],
+      "rationale": "<why this order>"
+    }}
+  ],
+  "success_indicators": ["<indicator1>", "<indicator2>"],
+  "adaptation_guidelines": {{
+    "for_beginners": "<how to simplify>",
+    "for_advanced": "<how to deepen>",
+    "for_different_contexts": "<flexibility notes>"
+  }}
+}}
+
+Return valid JSON only."""
+
+        system_prompt = """You are an expert in educational theory integration.
+Create coherent, practical frameworks that combine theoretical insights.
+Always respond with valid JSON."""
+
+        try:
+            response = await self._llm.generate(prompt, system_prompt)
+            return json.loads(response)
+        except Exception as e:
+            logger.error(f"Synthesis failed: {e}")
+            return {
+                "integrated_framework": {
+                    "name": "Combined Approach",
+                    "description": f"Integration of {len(theories)} theories",
+                    "core_principles": [],
+                },
+                "comparison_matrix": {"dimensions": [], "theory_positions": []},
+                "synergies": [],
+                "tensions": [],
+                "implementation_sequence": [],
+                "success_indicators": [],
+                "adaptation_guidelines": {},
+                "error": str(e),
+            }

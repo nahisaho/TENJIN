@@ -8,6 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **synthesize_theoriesツール**: 複数理論の統合分析・比較
+  - 統合フレームワークの生成
+  - 理論間のシナジーと緊張関係の分析
+  - 比較マトリックス生成
+- **batch_searchツール**: 複数クエリの一括検索
+  - 並列実行による高効率な検索
+  - 共通理論の抽出
+- **Theory Editor WebSocket**: リアルタイム同期
+  - `ws-sync-server.py`: Starlette WebSocket + HTTPサーバー
+  - 接続状態インジケーターUI
+  - 理論の作成/更新/削除のブロードキャスト
+- **検索フィルター拡張**: 年代・エビデンスレベルでフィルタリング
+  - `year_from`/`year_to`: 年範囲フィルター
+  - `decade`: 10年単位フィルター（例: "1990s"）
+  - `evidence_level`: エビデンスレベルフィルター
+- **エクスポート機能**: 3つの新しいエクスポートツール
+  - `export_theories_json`: JSONフォーマット出力
+  - `export_theories_markdown`: Markdown文書生成
+  - `export_theories_csv`: CSVフォーマット出力
 - **Redisキャッシュ統合**: 検索結果・理論データのキャッシング
   - `RedisAdapter`: 非同期Redis操作（get/set/delete）
   - `CacheService`: アプリケーションレベルのキャッシュ管理

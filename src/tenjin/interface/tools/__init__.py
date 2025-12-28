@@ -22,6 +22,7 @@ from .inference_tools import (
     get_inference_tool_definitions,
 )
 from .cache_tools import register_cache_tools, get_cache_tool_definitions
+from .export_tools import register_export_tools, get_export_tool_definitions
 
 
 def register_tools(server: Server, tenjin: TenjinServer) -> None:
@@ -41,6 +42,7 @@ def register_tools(server: Server, tenjin: TenjinServer) -> None:
     register_methodology_tools(server, tenjin)
     register_inference_tools(server, tenjin)
     register_cache_tools(server, tenjin)
+    register_export_tools(server, tenjin)
 
     # Register tool listing
     @server.list_tools()
@@ -56,6 +58,7 @@ def register_tools(server: Server, tenjin: TenjinServer) -> None:
         tools.extend(get_methodology_tool_definitions())
         tools.extend(get_inference_tool_definitions())
         tools.extend(get_cache_tool_definitions(tenjin))
+        tools.extend(get_export_tool_definitions())
         return tools
 
 

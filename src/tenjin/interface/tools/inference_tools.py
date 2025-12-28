@@ -231,6 +231,62 @@ Returns primary and secondary recommendations with reasoning chains.""",
                 },
                 "required": ["scenario"]
             }
+        ),
+        Tool(
+            name="synthesize_theories",
+            description="""Synthesize multiple educational theories into an integrated framework.
+
+This tool combines insights from multiple theories to create a coherent,
+practical framework for a specific educational goal.
+
+Example use cases:
+- "Combine constructivism and connectivism for online course design"
+- "Synthesize Bloom's taxonomy with Zone of Proximal Development"
+- "Create an integrated framework from these 3 theories for STEM education"
+
+Returns an integrated framework with:
+- Core principles from each theory
+- Comparison matrix showing theory positions
+- Synergies and tensions between theories
+- Implementation sequence
+- Adaptation guidelines for different contexts""",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "theory_ids": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "List of theory IDs to synthesize (minimum 2)",
+                        "minItems": 2
+                    },
+                    "synthesis_goal": {
+                        "type": "string",
+                        "description": (
+                            "Purpose of the synthesis "
+                            "(e.g., 'course design', 'assessment strategy')"
+                        )
+                    },
+                    "context": {
+                        "type": "object",
+                        "description": "Optional context for the synthesis",
+                        "properties": {
+                            "target_audience": {
+                                "type": "string",
+                                "description": "Who the framework is for"
+                            },
+                            "setting": {
+                                "type": "string",
+                                "description": "Educational setting"
+                            },
+                            "constraints": {
+                                "type": "string",
+                                "description": "Any constraints or requirements"
+                            }
+                        }
+                    }
+                },
+                "required": ["theory_ids", "synthesis_goal"]
+            }
         )
     ]
 
@@ -287,6 +343,17 @@ def register_inference_tools(server: Server, tenjin: TenjinServer) -> None:
             result = await inference_service.reason_about_application(
                 scenario=arguments.get("scenario", ""),
                 constraints=arguments.get("constraints"),
+            )
+            return [TextContent(
+                type="text",
+                text=json.dumps(result, ensure_ascii=False, indent=2)
+            )]
+
+        elif name == "synthesize_theories":
+            result = await inference_service.synthesize_theories(
+                theory_ids=arguments.get("theory_ids", []),
+                synthesis_goal=arguments.get("synthesis_goal", ""),
+                context=arguments.get("context"),
             )
             return [TextContent(
                 type="text",

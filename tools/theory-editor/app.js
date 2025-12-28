@@ -120,8 +120,51 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeElements();
     initializeEventListeners();
     initializeVersions();
+    initializeWebSocket();
     loadDefaultData();
 });
+
+/**
+ * WebSocket接続を初期化
+ */
+function initializeWebSocket() {
+    if (typeof GraphRAGSync === 'undefined') {
+        console.warn('GraphRAGSync module not loaded, WebSocket disabled');
+        return;
+    }
+    
+    const wsStatus = document.getElementById('ws-status');
+    const statusText = wsStatus?.querySelector('.status-text');
+    
+    GraphRAGSync.connect({
+        onConnectionChange: (connected) => {
+            if (wsStatus) {
+                wsStatus.className = `ws-status ${connected ? 'connected' : 'disconnected'}`;
+                if (statusText) {
+                    statusText.textContent = connected ? '接続中' : '未接続';
+                }
+            }
+            console.log(`[WS] Connection: ${connected ? 'CONNECTED' : 'DISCONNECTED'}`);
+        },
+        
+        onUpdate: (data) => {
+            console.log('[WS] Theory update received:', data);
+            // 他のクライアントからの更新を受信
+            if (data.client_id && data.action) {
+                setStatus(`📡 ${data.action}: ${data.theory_id || 'unknown'}`, 'info');
+            }
+        },
+        
+        onSyncComplete: (result) => {
+            console.log('[WS] Sync completed:', result);
+            if (result.success) {
+                setStatus('✓ GraphRAG同期完了', 'success');
+            } else {
+                setStatus(`✗ 同期エラー: ${result.error || 'unknown'}`, 'error');
+            }
+        }
+    });
+}
 
 /**
  * デフォルトデータを読み込み
@@ -530,6 +573,11 @@ function handleSave(e) {
     const action = isNew ? '新規追加' : '編集';
     saveVersion(`${theoryData.name} を${action}`);
     
+    // WebSocket通知を送信
+    if (typeof GraphRAGSync !== 'undefined') {
+        GraphRAGSync.notifyTheoryUpdate(theoryData.id, isNew ? 'create' : 'update');
+    }
+    
     updateState({ isModified: false });
     elements.statusModified.classList.add('hidden');
     
@@ -627,6 +675,11 @@ function handleConfirmDelete() {
         
         // バージョンを保存
         saveVersion(`${deletedName} (${deletedId}) を削除`);
+        
+        // WebSocket通知を送信
+        if (typeof GraphRAGSync !== 'undefined') {
+            GraphRAGSync.notifyTheoryUpdate(deletedId, 'delete');
+        }
         
         updateState({
             currentTheoryId: null,

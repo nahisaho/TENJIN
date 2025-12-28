@@ -25,14 +25,24 @@ def register_search_tools(server: Server, tenjin: TenjinServer) -> None:
         search_type = arguments.get("search_type", "hybrid")
         limit = arguments.get("limit", 10)
         category = arguments.get("category")
+        
+        # Extended filters
+        year_from = arguments.get("year_from")
+        year_to = arguments.get("year_to")
+        decade = arguments.get("decade")
+        evidence_level = arguments.get("evidence_level")
 
-        filters = {"category": category} if category else None
+        categories = [category] if category else None
 
         result = await tenjin.search_service.search(
             query=query,
             search_type=search_type,
+            categories=categories,
             limit=limit,
-            filters=filters,
+            year_from=year_from,
+            year_to=year_to,
+            decade=decade,
+            evidence_level=evidence_level,
         )
         return [TextContent(type="text", text=str(result))]
 
@@ -84,6 +94,25 @@ def register_search_tools(server: Server, tenjin: TenjinServer) -> None:
         )
         return [TextContent(type="text", text=str(result))]
 
+    @server.call_tool()
+    async def batch_search(arguments: dict[str, Any]) -> list[TextContent]:
+        """Perform multiple searches in batch."""
+        import json
+
+        queries = arguments.get("queries", [])
+        default_search_type = arguments.get("default_search_type", "hybrid")
+        default_limit = arguments.get("default_limit", 5)
+
+        result = await tenjin.search_service.batch_search(
+            queries=queries,
+            default_search_type=default_search_type,
+            default_limit=default_limit,
+        )
+        return [TextContent(
+            type="text",
+            text=json.dumps(result, ensure_ascii=False, indent=2)
+        )]
+
 
 def get_search_tool_definitions() -> list[Tool]:
     """Get search tool definitions."""
@@ -112,6 +141,23 @@ def get_search_tool_definitions() -> list[Tool]:
                     "category": {
                         "type": "string",
                         "description": "Filter by category (optional)",
+                    },
+                    "year_from": {
+                        "type": "integer",
+                        "description": "Filter theories from this year (e.g., 1990)",
+                    },
+                    "year_to": {
+                        "type": "integer",
+                        "description": "Filter theories up to this year (e.g., 2020)",
+                    },
+                    "decade": {
+                        "type": "string",
+                        "description": "Filter by decade (e.g., '1990s', '2000s')",
+                    },
+                    "evidence_level": {
+                        "type": "string",
+                        "enum": ["high", "medium", "low"],
+                        "description": "Filter by evidence level",
                     },
                 },
                 "required": ["query"],
@@ -191,6 +237,62 @@ def get_search_tool_definitions() -> list[Tool]:
                     },
                 },
                 "required": ["query"],
+            },
+        ),
+        Tool(
+            name="batch_search",
+            description="""Execute multiple search queries in a single request.
+
+Useful for:
+- Searching multiple related topics at once
+- Comparing search results across different queries
+- Finding common theories across multiple learning objectives
+
+Returns individual results plus aggregations showing common theories.""",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "queries": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "query": {
+                                    "type": "string",
+                                    "description": "Search query text",
+                                },
+                                "search_type": {
+                                    "type": "string",
+                                    "enum": ["hybrid", "semantic", "keyword"],
+                                    "description": "Search type for this query",
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Max results for this query",
+                                },
+                                "categories": {
+                                    "type": "array",
+                                    "items": {"type": "string"},
+                                    "description": "Category filters",
+                                },
+                            },
+                            "required": ["query"],
+                        },
+                        "description": "List of search queries to execute",
+                    },
+                    "default_search_type": {
+                        "type": "string",
+                        "enum": ["hybrid", "semantic", "keyword"],
+                        "description": "Default search type",
+                        "default": "hybrid",
+                    },
+                    "default_limit": {
+                        "type": "integer",
+                        "description": "Default max results per query",
+                        "default": 5,
+                    },
+                },
+                "required": ["queries"],
             },
         ),
     ]

@@ -43,6 +43,10 @@ class SearchService:
         priority_max: int = 1,
         limit: int = 10,
         language: str = "both",
+        year_from: int | None = None,
+        year_to: int | None = None,
+        decade: str | None = None,
+        evidence_level: str | None = None,
     ) -> SearchResults:
         """Perform a search with the specified parameters.
 
@@ -54,6 +58,10 @@ class SearchService:
             priority_max: Maximum priority (1=highest).
             limit: Maximum results.
             language: "en", "ja", or "both".
+            year_from: Filter theories from this year.
+            year_to: Filter theories up to this year.
+            decade: Filter by decade (e.g., "1990s", "2000s").
+            evidence_level: Filter by evidence level ("high", "medium", "low").
 
         Returns:
             Search results.
@@ -74,11 +82,103 @@ class SearchService:
         )
 
         if search_type == "semantic":
-            return await self._vector_repo.semantic_search(search_query)
+            results = await self._vector_repo.semantic_search(search_query)
         elif search_type == "keyword":
-            return await self._keyword_search(search_query)
+            results = await self._keyword_search(search_query)
         else:  # hybrid
-            return await self._vector_repo.hybrid_search(search_query)
+            results = await self._vector_repo.hybrid_search(search_query)
+
+        # Apply post-filters (year, decade, evidence_level)
+        filtered_results = await self._apply_filters(
+            results.results,
+            year_from=year_from,
+            year_to=year_to,
+            decade=decade,
+            evidence_level=evidence_level,
+        )
+
+        return SearchResults(
+            results=tuple(filtered_results),
+            total_count=len(filtered_results),
+            query=results.query,
+            search_type=results.search_type,
+        )
+
+    async def _apply_filters(
+        self,
+        results: Sequence[SearchResult],
+        year_from: int | None = None,
+        year_to: int | None = None,
+        decade: str | None = None,
+        evidence_level: str | None = None,
+    ) -> list[SearchResult]:
+        """Apply additional filters to search results.
+
+        Args:
+            results: Search results to filter.
+            year_from: Filter from year.
+            year_to: Filter to year.
+            decade: Filter by decade.
+            evidence_level: Filter by evidence level.
+
+        Returns:
+            Filtered results.
+        """
+        if not any([year_from, year_to, decade, evidence_level]):
+            return list(results)
+
+        filtered = []
+        for result in results:
+            # Get metadata year if available
+            metadata = result.metadata or {}
+            result_year = metadata.get("year")
+            result_evidence = metadata.get("evidence_level")
+
+            # Decade filter
+            if decade:
+                decade_start = self._parse_decade(decade)
+                if decade_start:
+                    if not result_year:
+                        continue
+                    if not (decade_start <= result_year < decade_start + 10):
+                        continue
+
+            # Year range filter
+            if year_from and result_year and result_year < year_from:
+                continue
+            if year_to and result_year and result_year > year_to:
+                continue
+
+            # Evidence level filter
+            if evidence_level:
+                if result_evidence and result_evidence.lower() != evidence_level.lower():
+                    continue
+
+            filtered.append(result)
+
+        return filtered
+
+    def _parse_decade(self, decade: str) -> int | None:
+        """Parse decade string to start year.
+
+        Args:
+            decade: Decade string (e.g., "1990s", "2000s", "1980").
+
+        Returns:
+            Start year of the decade, or None if invalid.
+        """
+        decade = decade.strip().lower()
+
+        # Remove 's' suffix if present
+        if decade.endswith("s"):
+            decade = decade[:-1]
+
+        try:
+            year = int(decade)
+            # Normalize to decade start
+            return (year // 10) * 10
+        except ValueError:
+            return None
 
     async def _keyword_search(self, query: SearchQuery) -> SearchResults:
         """Perform keyword-based search.
@@ -297,3 +397,99 @@ class SearchService:
             Index statistics.
         """
         return await self._vector_repo.get_collection_stats()
+
+    async def batch_search(
+        self,
+        queries: list[dict[str, Any]],
+        default_search_type: str = "hybrid",
+        default_limit: int = 5,
+    ) -> dict[str, Any]:
+        """Perform multiple searches in batch.
+
+        Args:
+            queries: List of query objects with optional parameters
+            default_search_type: Default search type for queries
+            default_limit: Default limit per query
+
+        Returns:
+            Batch results with individual results and aggregations
+        """
+        import asyncio
+
+        logger.info(f"Batch search: {len(queries)} queries")
+
+        # Execute searches concurrently
+        async def execute_single(q: dict[str, Any], idx: int) -> dict[str, Any]:
+            query_text = q.get("query", "")
+            search_type = q.get("search_type", default_search_type)
+            limit = q.get("limit", default_limit)
+            categories = q.get("categories")
+
+            try:
+                results = await self.search(
+                    query=query_text,
+                    search_type=search_type,
+                    categories=categories,
+                    limit=limit,
+                )
+                return {
+                    "index": idx,
+                    "query": query_text,
+                    "search_type": search_type,
+                    "success": True,
+                    "result_count": results.total_count,
+                    "results": [
+                        {
+                            "id": r.id,
+                            "name": r.name,
+                            "entity_type": r.entity_type,
+                            "score": r.score,
+                            "snippet": r.snippet[:200] if r.snippet else None,
+                        }
+                        for r in results.results
+                    ],
+                }
+            except Exception as e:
+                logger.error(f"Batch search error for query '{query_text}': {e}")
+                return {
+                    "index": idx,
+                    "query": query_text,
+                    "success": False,
+                    "error": str(e),
+                    "results": [],
+                }
+
+        # Run all searches concurrently
+        tasks = [execute_single(q, i) for i, q in enumerate(queries)]
+        individual_results = await asyncio.gather(*tasks)
+
+        # Calculate aggregations
+        successful = [r for r in individual_results if r["success"]]
+        total_results = sum(r["result_count"] for r in successful)
+
+        # Find common theories across queries
+        theory_counts: dict[str, int] = {}
+        for result in successful:
+            for r in result["results"]:
+                if r["entity_type"] == "theory":
+                    theory_id = r["id"]
+                    theory_counts[theory_id] = theory_counts.get(theory_id, 0) + 1
+
+        common_theories = [
+            {"theory_id": tid, "occurrence_count": count}
+            for tid, count in sorted(
+                theory_counts.items(),
+                key=lambda x: x[1],
+                reverse=True,
+            )
+            if count > 1
+        ][:10]
+
+        return {
+            "batch_size": len(queries),
+            "successful_queries": len(successful),
+            "failed_queries": len(queries) - len(successful),
+            "total_results": total_results,
+            "common_theories": common_theories,
+            "results": individual_results,
+        }
