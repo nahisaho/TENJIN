@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from tenjin.infrastructure.config.settings import get_settings
 from tenjin.infrastructure.adapters.neo4j_adapter import Neo4jAdapter
 from tenjin.infrastructure.adapters.chromadb_adapter import ChromaDBAdapter
-from tenjin.infrastructure.adapters.embedding_adapter import EmbeddingAdapter
+from tenjin.infrastructure.adapters.esperanto_adapter import EmbeddingAdapter
 from tenjin.infrastructure.data.data_loader import DataLoader
 
 
@@ -102,14 +102,14 @@ async def main() -> int:
 
     # Initialize adapters
     neo4j_adapter = Neo4jAdapter(
-        uri=settings.neo4j_uri,
-        username=settings.neo4j_username,
-        password=settings.neo4j_password,
+        uri=settings.neo4j.uri,
+        user=settings.neo4j.user,
+        password=settings.neo4j.password,
     )
-    chromadb_adapter = ChromaDBAdapter(persist_directory=settings.chromadb_path)
+    chromadb_adapter = ChromaDBAdapter(persist_dir=settings.chromadb.persist_dir)
     embedding_adapter = EmbeddingAdapter(
-        provider=settings.embedding_provider,
-        model=settings.embedding_model,
+        provider=settings.embedding.provider,
+        model=settings.embedding.model,
     )
 
     try:

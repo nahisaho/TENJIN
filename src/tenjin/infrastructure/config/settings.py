@@ -49,10 +49,17 @@ class LLMSettings(BaseSettings):
 class EmbeddingSettings(BaseSettings):
     """Embedding model settings."""
 
-    model_config = SettingsConfigDict(env_prefix="EMBEDDING_")
+    model_config = SettingsConfigDict(
+        env_prefix="EMBEDDING_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
-    provider: str = Field(default="openai", description="Embedding provider")
-    model: str = Field(default="text-embedding-3-small", description="Embedding model name")
+    provider: str = Field(default="ollama", description="Embedding provider")
+    model: str = Field(default="nomic-embed-text", description="Embedding model name")
+    base_url: str = Field(default="http://localhost:11434", description="Embedding service base URL")
+    api_key: str | None = Field(default=None, description="API key for embedding service")
 
 
 class CacheSettings(BaseSettings):

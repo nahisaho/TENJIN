@@ -13,13 +13,14 @@ from tenjin.domain.entities.theory import Theory
 from tenjin.domain.entities.theorist import Theorist
 from tenjin.domain.entities.category import Category
 from tenjin.domain.entities.relationship import TheoryRelationship
-from tenjin.domain.value_objects.ids import TheoryId, TheoristId, CategoryId
+from tenjin.domain.value_objects.theory_id import TheoryId
+from tenjin.domain.value_objects.theorist_id import TheoristId
 from tenjin.domain.value_objects.category_type import CategoryType
 from tenjin.domain.value_objects.priority_level import PriorityLevel
 from tenjin.domain.value_objects.relationship_type import RelationshipType
 from tenjin.infrastructure.adapters.neo4j_adapter import Neo4jAdapter
 from tenjin.infrastructure.adapters.chromadb_adapter import ChromaDBAdapter
-from tenjin.infrastructure.adapters.embedding_adapter import EmbeddingAdapter
+from tenjin.infrastructure.adapters.esperanto_adapter import EmbeddingAdapter
 
 logger = logging.getLogger(__name__)
 
@@ -71,14 +72,20 @@ class DataLoader:
         categories = []
 
         for item in data["categories"]:
+            # Map category id to CategoryType enum
+            try:
+                category_type = CategoryType(item["id"])
+            except ValueError:
+                logger.warning(f"Unknown category type: {item['id']}, skipping")
+                continue
+
             category = Category(
-                id=CategoryId(item["id"]),
+                type=category_type,
                 name=item["name"],
                 name_ja=item["name_ja"],
                 description=item["description"],
                 description_ja=item["description_ja"],
                 theory_count=item["theory_count"],
-                color=item.get("color"),
             )
             categories.append(category)
 
@@ -89,20 +96,18 @@ class DataLoader:
                 c.name_ja = $name_ja,
                 c.description = $description,
                 c.description_ja = $description_ja,
-                c.theory_count = $theory_count,
-                c.color = $color
+                c.theory_count = $theory_count
             RETURN c
             """
             await self.neo4j.execute_write(
                 query,
                 {
-                    "id": str(category.id),
+                    "id": category_type.value,
                     "name": category.name,
                     "name_ja": category.name_ja,
                     "description": category.description,
                     "description_ja": category.description_ja,
                     "theory_count": category.theory_count,
-                    "color": category.color,
                 },
             )
 
@@ -172,6 +177,7 @@ class DataLoader:
         """
         data = self._load_json("theories.json")
         theories = []
+        theorist_names_map = {}  # Store theorist names for Neo4j
 
         for item in data["theories"]:
             # Map category string to CategoryType enum
@@ -183,7 +189,6 @@ class DataLoader:
                 name_ja=item["name_ja"],
                 category=category_type,
                 priority=PriorityLevel(item["priority"]),
-                theorist_names=item.get("theorists", []),
                 description=item["description"],
                 description_ja=item["description_ja"],
                 key_principles=item.get("key_principles", []),
@@ -192,6 +197,7 @@ class DataLoader:
                 limitations=item.get("limitations", []),
             )
             theories.append(theory)
+            theorist_names_map[str(theory.id)] = item.get("theorists", [])
 
             # Create Neo4j node
             query = """
@@ -217,7 +223,7 @@ class DataLoader:
                     "name_ja": theory.name_ja,
                     "category": theory.category.value,
                     "priority": theory.priority.value,
-                    "theorist_names": theory.theorist_names,
+                    "theorist_names": theorist_names_map[str(theory.id)],
                     "description": theory.description,
                     "description_ja": theory.description_ja,
                     "key_principles": theory.key_principles,
@@ -243,19 +249,18 @@ class DataLoader:
 
             # Generate embedding and add to ChromaDB
             embedding_text = self._create_embedding_text(theory)
-            embedding = await self.embedding.embed_text(embedding_text)
+            embedding = await self.embedding.embed(embedding_text)
             
-            await self.chromadb.add_document(
-                collection_name="theories",
-                document_id=str(theory.id),
-                text=embedding_text,
-                embedding=embedding,
-                metadata={
+            self.chromadb.add(
+                ids=[str(theory.id)],
+                embeddings=[embedding],
+                documents=[embedding_text],
+                metadatas=[{
                     "name": theory.name,
                     "name_ja": theory.name_ja,
                     "category": theory.category.value,
                     "priority": theory.priority.value,
-                },
+                }],
             )
 
         logger.info(f"Loaded {len(theories)} theories")
@@ -275,12 +280,11 @@ class DataLoader:
             rel_type = self._map_relationship_type(item["relationship_type"])
 
             relationship = TheoryRelationship(
-                id=item["id"],
-                source_id=TheoryId(item["source_id"]),
-                target_id=TheoryId(item["target_id"]),
+                source_id=str(item["source_id"]),
+                target_id=str(item["target_id"]),
                 relationship_type=rel_type,
                 strength=item.get("strength", 0.5),
-                description=item.get("description"),
+                description=item.get("description", ""),
             )
             relationships.append(relationship)
 
@@ -299,7 +303,7 @@ class DataLoader:
                 {
                     "source_id": str(relationship.source_id),
                     "target_id": str(relationship.target_id),
-                    "id": relationship.id,
+                    "id": item.get("id", f"{relationship.source_id}-{rel_type.value}-{relationship.target_id}"),
                     "strength": relationship.strength,
                     "description": relationship.description,
                 },
@@ -336,7 +340,7 @@ class DataLoader:
         logger.info("Starting full data load...")
 
         # Ensure ChromaDB collection exists
-        await self.chromadb.get_or_create_collection("theories")
+        self.chromadb.connect()
 
         categories = await self.load_categories()
         theorists = await self.load_theorists()
@@ -389,15 +393,16 @@ class DataLoader:
         """
         mapping = {
             "influences": RelationshipType.INFLUENCES,
+            "influenced_by": RelationshipType.INFLUENCED_BY,
             "extends": RelationshipType.EXTENDS,
             "contrasts_with": RelationshipType.CONTRASTS_WITH,
             "complements": RelationshipType.COMPLEMENTS,
             "derived_from": RelationshipType.DERIVED_FROM,
-            "applied_in": RelationshipType.APPLIED_IN,
-            "evolved_into": RelationshipType.EVOLVED_INTO,
-            "integrates": RelationshipType.INTEGRATES,
-            "critiques": RelationshipType.CRITIQUES,
-            "supports": RelationshipType.SUPPORTS,
+            "applies": RelationshipType.APPLIES_TO,
+            "applies_to": RelationshipType.APPLIES_TO,
+            "evolved_into": RelationshipType.BUILDS_UPON,  # Map to BUILDS_UPON
+            "supports": RelationshipType.COMPLEMENTS,  # Map to COMPLEMENTS
+            "same_as": RelationshipType.SIMILAR_TO,  # Map to SIMILAR_TO
         }
         return mapping.get(rel_str, RelationshipType.INFLUENCES)
 
@@ -424,8 +429,9 @@ class DataLoader:
         if theory.applications:
             parts.append(f"Applications: {', '.join(theory.applications)}")
 
-        if theory.theorist_names:
-            parts.append(f"Theorists: {', '.join(theory.theorist_names)}")
+        if theory.theorists:
+            theorist_names = [t.name if hasattr(t, 'name') else str(t) for t in theory.theorists]
+            parts.append(f"Theorists: {', '.join(theorist_names)}")
 
         return "\n".join(parts)
 

@@ -17,8 +17,11 @@ class Theorist:
         birth_year: Year of birth.
         death_year: Year of death (None if alive).
         nationality: Country of origin.
+        primary_field: Primary field of study/work.
         biography: Brief biography.
         contributions: Key contributions to education.
+        key_works: Key published works.
+        related_theory_ids: Related theory IDs.
         created_at: Creation timestamp.
         updated_at: Last update timestamp.
     """
@@ -29,8 +32,11 @@ class Theorist:
     birth_year: int | None = None
     death_year: int | None = None
     nationality: str | None = None
+    primary_field: str | None = None
     biography: str | None = None
     contributions: list[str] = field(default_factory=list)
+    key_works: list[str] = field(default_factory=list)
+    related_theory_ids: list = field(default_factory=list)
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
 

@@ -29,14 +29,14 @@ RUN apt-get update && apt-get install -y \
 # Install uv for faster package management
 RUN pip install uv
 
-# Copy dependency files
-COPY pyproject.toml ./
+# Copy dependency files and source code
+COPY pyproject.toml README.md ./
+COPY src/ ./src/
 
 # Install dependencies
 RUN uv pip install --system -e ".[dev]"
 
-# Copy source code
-COPY src/ ./src/
+# Copy remaining files
 COPY data/ ./data/
 COPY scripts/ ./scripts/
 

@@ -2,7 +2,9 @@
 
 from typing import Any
 
-from esperanto import LanguageModel, EmbeddingModel, provider_classes
+from esperanto import LanguageModel, provider_classes
+from esperanto.providers.embedding.ollama import OllamaEmbeddingModel
+from esperanto.providers.embedding.openai import OpenAIEmbeddingModel
 
 from ..config.logging import get_logger
 from ..config.settings import get_settings
@@ -237,20 +239,33 @@ class EmbeddingAdapter:
         self._embedding_model: EmbeddingModel | None = None
 
     @property
-    def embedding_model(self) -> EmbeddingModel:
+    def embedding_model(self) -> OllamaEmbeddingModel | OpenAIEmbeddingModel:
         """Get or create the embedding model.
 
         Returns:
             EmbeddingModel instance.
         """
         if self._embedding_model is None:
+            settings = get_settings()
             logger.debug(
                 f"Creating embedding model: {self._provider}/{self._model}"
             )
-            self._embedding_model = EmbeddingModel(
-                provider=self._provider,
-                model=self._model,
-            )
+            if self._provider == "ollama":
+                self._embedding_model = OllamaEmbeddingModel(
+                    model_name=self._model,
+                    base_url=settings.embedding.base_url,
+                )
+            elif self._provider == "openai":
+                self._embedding_model = OpenAIEmbeddingModel(
+                    model_name=self._model,
+                    api_key=settings.embedding.api_key,
+                )
+            else:
+                # Default to Ollama
+                self._embedding_model = OllamaEmbeddingModel(
+                    model_name=self._model,
+                    base_url=settings.embedding.base_url,
+                )
         return self._embedding_model
 
     async def embed(self, text: str) -> list[float]:
@@ -262,8 +277,8 @@ class EmbeddingAdapter:
         Returns:
             Embedding vector.
         """
-        response = await self.embedding_model.embed_async([text])
-        return response.embeddings[0]
+        result = await self.embedding_model.aembed([text])
+        return result[0]
 
     async def embed_batch(self, texts: list[str]) -> list[list[float]]:
         """Generate embeddings for multiple texts.
@@ -283,8 +298,8 @@ class EmbeddingAdapter:
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i : i + batch_size]
-            response = await self.embedding_model.embed_async(batch)
-            all_embeddings.extend(response.embeddings)
+            result = await self.embedding_model.aembed(batch)
+            all_embeddings.extend(result)
 
         return all_embeddings
 
@@ -297,8 +312,8 @@ class EmbeddingAdapter:
         Returns:
             Embedding vector.
         """
-        response = self.embedding_model.embed([text])
-        return response.embeddings[0]
+        result = self.embedding_model.embed([text])
+        return result[0]
 
     @property
     def dimension(self) -> int:

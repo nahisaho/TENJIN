@@ -12,7 +12,7 @@ from ..infrastructure.config.logging import get_logger, setup_logging
 from ..infrastructure.adapters.neo4j_adapter import Neo4jAdapter
 from ..infrastructure.adapters.chromadb_adapter import ChromaDBAdapter
 from ..infrastructure.adapters.esperanto_adapter import EsperantoAdapter
-from ..infrastructure.adapters.embedding_adapter import EmbeddingAdapter
+from ..infrastructure.adapters.esperanto_adapter import EmbeddingAdapter
 from ..infrastructure.repositories.neo4j_theory_repository import Neo4jTheoryRepository
 from ..infrastructure.repositories.neo4j_graph_repository import Neo4jGraphRepository
 from ..infrastructure.repositories.chromadb_vector_repository import ChromaDBVectorRepository
@@ -70,28 +70,25 @@ class TenjinServer:
         # Initialize adapters
         self._neo4j = Neo4jAdapter(
             uri=self._settings.neo4j.uri,
-            username=self._settings.neo4j.username,
+            user=self._settings.neo4j.user,
             password=self._settings.neo4j.password,
-            database=self._settings.neo4j.database,
         )
         await self._neo4j.connect()
 
         self._chromadb = ChromaDBAdapter(
-            persist_directory=self._settings.chromadb.persist_directory,
+            persist_dir=self._settings.chromadb.persist_dir,
             collection_name=self._settings.chromadb.collection_name,
         )
-        await self._chromadb.initialize()
+        self._chromadb.connect()
 
         self._llm = EsperantoAdapter(
             provider=self._settings.llm.provider,
             model=self._settings.llm.model,
-            api_key=self._settings.llm.api_key,
         )
 
         self._embedding = EmbeddingAdapter(
             provider=self._settings.embedding.provider,
             model=self._settings.embedding.model,
-            api_key=self._settings.embedding.api_key,
         )
 
         # Initialize repositories
@@ -106,7 +103,6 @@ class TenjinServer:
         self._search_service = SearchService(
             self._vector_repo,
             self._theory_repo,
-            self._llm,
         )
         self._graph_service = GraphService(self._graph_repo)
         self._analysis_service = AnalysisService(

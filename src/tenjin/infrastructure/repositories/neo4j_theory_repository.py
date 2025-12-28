@@ -43,16 +43,29 @@ class Neo4jTheoryRepository(TheoryRepository):
         """
         theory_data = record.get("t", record)
 
+        # Handle category with fallback
+        try:
+            category = CategoryType(theory_data.get("category", "learning_theory"))
+        except ValueError:
+            category = CategoryType.LEARNING_THEORY
+
+        # Handle priority with fallback (default to MEDIUM = 3)
+        priority_value = theory_data.get("priority", 3)
+        try:
+            priority = PriorityLevel(priority_value)
+        except ValueError:
+            priority = PriorityLevel.MEDIUM
+
         return Theory(
             id=TheoryId.from_string(theory_data["id"]),
             name=theory_data["name"],
             name_ja=theory_data.get("name_ja", ""),
             description=theory_data["description"],
             description_ja=theory_data.get("description_ja", ""),
-            category=CategoryType(theory_data["category"]),
-            priority=PriorityLevel(theory_data["priority"]),
+            category=category,
+            priority=priority,
             year_proposed=theory_data.get("year_proposed"),
-            key_principles=theory_data.get("key_principles", []),
+            key_principles=theory_data.get("key_principles", theory_data.get("principles", [])),
             applications=theory_data.get("applications", []),
             strengths=theory_data.get("strengths", []),
             limitations=theory_data.get("limitations", []),
