@@ -91,6 +91,18 @@ TENJIN教育理論GraphRAG MCPサーバーのための技術スタック。参�
 - LangChain統合オプション
 ```
 
+**重要な実装注意点**:
+```python
+# esperanto 2.12+では、プロバイダ固有のクラスを直接使用
+from esperanto.providers.llm.ollama import OllamaLanguageModel
+from esperanto.providers.llm.openai import OpenAILanguageModel
+from esperanto.providers.embedding.ollama import OllamaEmbeddingModel
+from esperanto.providers.embedding.openai import OpenAIEmbeddingModel
+
+# LLMメソッド: achat_complete() を使用（chat_asyncではない）
+response = await llm.achat_complete(messages)
+```
+
 サポートプロバイダー:
 | プロバイダー | LLM | Embedding | 主な用途 |
 |-------------|-----|-----------|---------|
@@ -104,21 +116,30 @@ TENJIN教育理論GraphRAG MCPサーバーのための技術スタック。参�
 | OpenRouter | ✅ | - | モデルアクセス |
 | Perplexity | ✅ | - | 検索統合 |
 
+推奨エンベディングモデル:
+| モデル | プロバイダー | 次元 | 言語対応 | 用途 |
+|--------|-------------|------|---------|------|
+| **bge-m3** | Ollama | 1024 | 100+言語 | **本番推奨（多言語）** |
+| nomic-embed-text | Ollama | 768 | 英語中心 | 英語のみ |
+| text-embedding-3-small | OpenAI | 1536 | 多言語 | 商用API |
+
 設定例:
 ```python
-from esperanto.factory import AIFactory
+# 実際の実装パターン（esperanto 2.12+）
+from esperanto.providers.llm.ollama import OllamaLanguageModel
+from esperanto.providers.embedding.ollama import OllamaEmbeddingModel
 
 # LLMインスタンス作成
-llm = AIFactory.create_language(
-    "openai",
-    "gpt-4o",
-    config={"temperature": 0.7}
+llm = OllamaLanguageModel(
+    model_name="qwen2.5:7b",
+    base_url="http://localhost:11434",
+    temperature=0.7,
 )
 
-# Embeddingインスタンス作成
-embedder = AIFactory.create_embedding(
-    "openai",
-    "text-embedding-3-small"
+# Embeddingインスタンス作成（bge-m3推奨）
+embedder = OllamaEmbeddingModel(
+    model_name="bge-m3",  # 多言語対応
+    base_url="http://localhost:11434",
 )
 ```
 

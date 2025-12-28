@@ -2,9 +2,9 @@
 name: TENJIN
 description: 教育理論GraphRAG MCPサーバー - esperantoによるマルチLLM統合
 locale: ja
-version: "0.2.0"
+version: "0.2.1-dev"
 created: 2025-12-26
-updated: 2025-12-27
+updated: 2025-12-28
 
 # Technology Stack
 tech_stack:
@@ -64,11 +64,13 @@ sub_projects:
 mcp_integration:
   config_file: ./.vscode/mcp.json
   embedding_provider: ollama
-  embedding_model: nomic-embed-text
-  embedding_dimensions: 768
+  embedding_model: bge-m3  # 多言語対応（100+言語）
+  embedding_dimensions: 1024
   ollama_host: http://192.168.224.1:11434
   neo4j_url: bolt://localhost:7687
   theories_loaded: 175
+  llm_model: qwen2.5:7b
+  llm_provider: ollama
 
 # References (not tracked in git)
 references:
@@ -78,36 +80,58 @@ references:
 
 # Current Sprint
 current_sprint:
-  feature: mcp-integration-complete
+  feature: multilingual-search-enhancement
   phase: completed
-  started: 2025-12-27
-  last_updated: 2025-12-27
+  started: 2025-12-28
+  last_updated: 2025-12-28
   milestones:
-    - name: GraphRAG Implementation
+    - name: bge-m3 Multilingual Embedding Migration
       status: completed
-      tasks_completed: 30
-      tasks_total: 30
-    - name: Theory Editor
-      status: completed  
-      tasks_completed: 16
-      tasks_total: 16
-    - name: MCP Server VS Code Integration
+      description: 多言語エンベディングモデルへの移行（日本語検索精度向上）
+      changes:
+        - embedding model: nomic-embed-text → bge-m3
+        - embedding dimensions: 768 → 1024
+        - languages supported: 100+
+    - name: esperanto API Compatibility Fixes
       status: completed
-      components:
-        - VS Code MCP configuration (.vscode/mcp.json)
-        - Ollama embedding integration
-        - Neo4j 175 theories loaded
-        - Theory query tools working
-        - Lesson design assistance verified
-    - name: Documentation
+      changes:
+        - Provider class direct usage (OllamaLanguageModel, OpenAILanguageModel)
+        - LLM method: chat_async → achat_complete
+        - Settings .env loading fix
+        - Neo4j Cypher: length() → size()
+        - VectorRepository: search → semantic_search
+        - SearchResult: entity_id → id, relevance_score → score
+    - name: Test Updates
       status: completed
-      artifacts:
-        - Theory Editor README
-        - API Reference
-        - Architecture Documentation
+      tests_passed:
+        unit: 18
+        e2e_theory_editor: 14
+        e2e_mcp_server: 10
+        total: 42
+    - name: Documentation Updates
+      status: completed
+      updated_files:
+        - CHANGELOG.md
+        - README.md
 
 # Completed Sprints Archive
 completed_sprints:
+  - feature: multilingual-search-enhancement
+    phase: completed
+    started: 2025-12-28
+    completed: 2025-12-28
+    key_changes:
+      - bge-m3 multilingual embedding model
+      - esperanto API compatibility fixes
+      - 42 tests passing (18 unit + 14 e2e + 10 mcp)
+  - feature: mcp-integration-complete
+    phase: completed
+    started: 2025-12-27
+    completed: 2025-12-27
+    key_changes:
+      - GraphRAG implementation
+      - Theory Editor
+      - MCP Server VS Code integration
   - feature: theory-editor
     phase: completed
     tasks_completed: 16
