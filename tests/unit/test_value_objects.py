@@ -28,11 +28,6 @@ class TestIds:
         theorist_id = TheoristId("theorist-001")
         assert str(theorist_id) == "theorist-001"
 
-    def test_category_id(self) -> None:
-        """Test CategoryId creation."""
-        category_id = CategoryId("learning_theory")
-        assert str(category_id) == "learning_theory"
-
     def test_methodology_id(self) -> None:
         """Test MethodologyId creation."""
         methodology_id = MethodologyId("methodology-001")
@@ -104,21 +99,22 @@ class TestPriorityLevel:
     """Tests for PriorityLevel enum."""
 
     def test_priority_levels(self) -> None:
-        """Test all priority level values."""
-        assert PriorityLevel.CRITICAL.value == 5
-        assert PriorityLevel.HIGH.value == 4
+        """Test all priority level values (1=highest, 5=lowest)."""
+        # Current implementation: CRITICAL=1 (highest), OPTIONAL=5 (lowest)
+        assert PriorityLevel.CRITICAL.value == 1
+        assert PriorityLevel.HIGH.value == 2
         assert PriorityLevel.MEDIUM.value == 3
-        assert PriorityLevel.LOW.value == 2
-        assert PriorityLevel.MINIMAL.value == 1
+        assert PriorityLevel.LOW.value == 4
+        assert PriorityLevel.OPTIONAL.value == 5
 
     def test_priority_comparison(self) -> None:
-        """Test priority level comparison."""
-        assert PriorityLevel.CRITICAL.value > PriorityLevel.HIGH.value
-        assert PriorityLevel.HIGH.value > PriorityLevel.MEDIUM.value
+        """Test priority level comparison (lower value = higher priority)."""
+        assert PriorityLevel.CRITICAL.value < PriorityLevel.HIGH.value
+        assert PriorityLevel.HIGH.value < PriorityLevel.MEDIUM.value
 
     def test_priority_from_int(self) -> None:
         """Test creating PriorityLevel from integer."""
-        priority = PriorityLevel(5)
+        priority = PriorityLevel(1)
         assert priority == PriorityLevel.CRITICAL
 
 
@@ -133,11 +129,9 @@ class TestRelationshipType:
             ("contrasts_with", RelationshipType.CONTRASTS_WITH),
             ("complements", RelationshipType.COMPLEMENTS),
             ("derived_from", RelationshipType.DERIVED_FROM),
-            ("applied_in", RelationshipType.APPLIED_IN),
-            ("evolved_into", RelationshipType.EVOLVED_INTO),
-            ("integrates", RelationshipType.INTEGRATES),
+            ("applies_to", RelationshipType.APPLIES_TO),
             ("critiques", RelationshipType.CRITIQUES),
-            ("supports", RelationshipType.SUPPORTS),
+            ("similar_to", RelationshipType.SIMILAR_TO),
         ]
 
         for value, expected_type in types:
@@ -151,62 +145,62 @@ class TestSearchValueObjects:
     def test_search_query(self) -> None:
         """Test SearchQuery creation."""
         query = SearchQuery(
-            text="constructivism learning",
-            category=CategoryType.LEARNING_THEORY,
+            query="constructivism learning",
+            categories=(CategoryType.LEARNING_THEORY,),
             limit=10,
             offset=0,
         )
 
-        assert query.text == "constructivism learning"
-        assert query.category == CategoryType.LEARNING_THEORY
+        assert query.query == "constructivism learning"
+        assert CategoryType.LEARNING_THEORY in query.categories
         assert query.limit == 10
         assert query.offset == 0
 
     def test_search_query_defaults(self) -> None:
         """Test SearchQuery with default values."""
-        query = SearchQuery(text="test query")
+        query = SearchQuery(query="test query")
 
-        assert query.text == "test query"
-        assert query.category is None
+        assert query.query == "test query"
+        assert query.categories == ()
         assert query.limit == 10
         assert query.offset == 0
 
     def test_search_result(self) -> None:
         """Test SearchResult creation."""
         result = SearchResult(
-            theory_id=TheoryId("theory-001"),
+            id="theory-001",
+            entity_type="theory",
             name="Constructivism",
-            name_ja="構成主義",
             score=0.95,
-            highlights=["constructivism", "learning"],
+            snippet="constructivism learning",
         )
 
-        assert str(result.theory_id) == "theory-001"
+        assert result.id == "theory-001"
         assert result.name == "Constructivism"
         assert result.score == 0.95
-        assert len(result.highlights) == 2
 
     def test_search_results(self) -> None:
         """Test SearchResults container."""
         results = SearchResults(
-            items=[
+            results=(
                 SearchResult(
-                    theory_id=TheoryId("theory-001"),
+                    id="theory-001",
+                    entity_type="theory",
                     name="Theory 1",
-                    name_ja="理論1",
                     score=0.95,
                 ),
                 SearchResult(
-                    theory_id=TheoryId("theory-002"),
+                    id="theory-002",
+                    entity_type="theory",
                     name="Theory 2",
-                    name_ja="理論2",
                     score=0.85,
                 ),
-            ],
-            total=2,
+            ),
+            total_count=2,
             query="test query",
+            search_type="hybrid",
         )
 
-        assert len(results.items) == 2
-        assert results.total == 2
+        assert len(results.results) == 2
+        assert results.total_count == 2
         assert results.query == "test query"

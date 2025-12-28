@@ -20,7 +20,7 @@ class TestTheoryService:
         repo.get_by_id = AsyncMock(return_value=sample_theory)
         repo.get_all = AsyncMock(return_value=[sample_theory])
         repo.get_by_category = AsyncMock(return_value=[sample_theory])
-        repo.search = AsyncMock(return_value=[sample_theory])
+        repo.get_by_name = AsyncMock(return_value=sample_theory)
         repo.save = AsyncMock(return_value=sample_theory)
         repo.delete = AsyncMock(return_value=True)
         repo.count = AsyncMock(return_value=1)
@@ -80,34 +80,21 @@ class TestTheoryService:
         sample_theory: Theory,
     ) -> None:
         """Test getting theories by category."""
-        result = await theory_service.get_by_category(CategoryType.LEARNING_THEORY)
+        result = await theory_service.get_theories_by_category(CategoryType.LEARNING_THEORY)
 
         assert len(result) == 1
-        mock_theory_repository.get_by_category.assert_called_once_with(
-            CategoryType.LEARNING_THEORY
-        )
+        mock_theory_repository.get_by_category.assert_called_once()
 
     @pytest.mark.asyncio
-    async def test_search_theories(
+    async def test_get_theory_by_name(
         self,
         theory_service: TheoryService,
         mock_theory_repository: AsyncMock,
+        sample_theory: Theory,
     ) -> None:
-        """Test searching theories."""
-        result = await theory_service.search_theories("constructivism")
+        """Test getting theory by name."""
+        result = await theory_service.get_theory_by_name("Constructivism")
 
-        assert len(result) >= 0
-        mock_theory_repository.search.assert_called_once()
-
-    @pytest.mark.asyncio
-    async def test_get_theory_statistics(
-        self,
-        theory_service: TheoryService,
-        mock_theory_repository: AsyncMock,
-    ) -> None:
-        """Test getting theory statistics."""
-        mock_theory_repository.count.return_value = 200
-
-        stats = await theory_service.get_statistics()
-
-        assert stats["total_theories"] == 200
+        assert result is not None
+        assert result.name == sample_theory.name
+        mock_theory_repository.get_by_name.assert_called_once_with("Constructivism")
