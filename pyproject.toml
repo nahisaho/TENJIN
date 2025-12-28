@@ -1,6 +1,6 @@
 [project]
 name = "tenjin"
-version = "0.1.0"
+version = "0.2.2-dev"
 description = "TENJIN - 教育理論GraphRAG MCPサーバー"
 readme = "README.md"
 license = { text = "MIT" }
@@ -26,6 +26,8 @@ dependencies = [
     "tenacity>=8.0.0",
     "structlog>=24.0.0",
     "python-dotenv>=1.0.0",
+    "starlette>=0.38.0",
+    "uvicorn>=0.30.0",
 ]
 
 [project.optional-dependencies]
@@ -39,6 +41,7 @@ dev = [
 
 [project.scripts]
 tenjin = "tenjin.server:main"
+tenjin-server = "tenjin.interface.server:run"
 
 [build-system]
 requires = ["hatchling"]

@@ -82,6 +82,19 @@ uv run python -m scripts.load_data --clear --verbose
 docker-compose -f docker-compose.preload.yml up -d
 ```
 
+### SSEモードで起動（リモートアクセス）
+
+```bash
+# SSEモードで起動（ポート8080で公開）
+uv run tenjin-server --mode sse --port 8080
+
+# Docker Composeで起動
+docker-compose --profile sse up -d tenjin-sse
+
+# ヘルスチェック
+curl http://localhost:8080/health
+```
+
 ### VS Code MCPサーバー設定
 
 `.vscode/mcp.json`が既に設定されています。VS Codeで`@tengin-graphrag`として使用可能です。

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **SSEトランスポート対応**: リモートMCPサーバーとしての動作
+  - `--mode sse` オプションでSSEモード起動
+  - `--host`/`--port` オプションでバインド設定
+  - `/sse` エンドポイントでSSE接続
+  - `/messages/` エンドポイントでPOSTメッセージ
+  - `/health` ヘルスチェックエンドポイント
+- **Docker SSEサービス**: `tenjin-sse` サービス追加
+  - `docker-compose --profile sse` で起動
+  - ポート8080で公開
+- **依存関係追加**: starlette, uvicorn
+
 ## [0.2.1] - 2025-12-28
 
 ### Added
