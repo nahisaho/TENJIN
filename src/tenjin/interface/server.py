@@ -20,6 +20,7 @@ from ..infrastructure.adapters.neo4j_adapter import Neo4jAdapter
 from ..infrastructure.adapters.chromadb_adapter import ChromaDBAdapter
 from ..infrastructure.adapters.esperanto_adapter import EsperantoAdapter
 from ..infrastructure.adapters.esperanto_adapter import EmbeddingAdapter
+from ..infrastructure.adapters.redis_adapter import RedisAdapter
 from ..infrastructure.repositories.neo4j_theory_repository import Neo4jTheoryRepository
 from ..infrastructure.repositories.neo4j_graph_repository import Neo4jGraphRepository
 from ..infrastructure.repositories.chromadb_vector_repository import ChromaDBVectorRepository
@@ -32,6 +33,7 @@ from ..application.services import (
     CitationService,
     MethodologyService,
     InferenceService,
+    CacheService,
 )
 
 logger = get_logger(__name__)
@@ -51,6 +53,7 @@ class TenjinServer:
         self._chromadb: ChromaDBAdapter | None = None
         self._llm: EsperantoAdapter | None = None
         self._embedding: EmbeddingAdapter | None = None
+        self._redis: RedisAdapter | None = None
 
         # Repositories
         self._theory_repo: Neo4jTheoryRepository | None = None
@@ -66,6 +69,7 @@ class TenjinServer:
         self._citation_service: CitationService | None = None
         self._methodology_service: MethodologyService | None = None
         self._inference_service: InferenceService | None = None
+        self._cache_service: CacheService | None = None
 
     async def initialize(self) -> None:
         """Initialize all adapters, repositories, and services."""
@@ -97,6 +101,19 @@ class TenjinServer:
             provider=self._settings.embedding.provider,
             model=self._settings.embedding.model,
         )
+
+        # Initialize Redis adapter (optional - for caching)
+        if self._settings.cache.enabled:
+            try:
+                self._redis = RedisAdapter(
+                    url=self._settings.cache.redis_url,
+                    default_ttl=self._settings.cache.ttl_seconds,
+                )
+                await self._redis.connect()
+                logger.info("Redis cache connected")
+            except Exception as e:
+                logger.warning(f"Redis cache not available: {e}. Continuing without cache.")
+                self._redis = None
 
         # Initialize repositories
         self._theory_repo = Neo4jTheoryRepository(self._neo4j)
@@ -136,12 +153,20 @@ class TenjinServer:
             self._llm,
         )
 
+        # Initialize cache service
+        if self._redis:
+            self._cache_service = CacheService(self._redis)
+            logger.info("Cache service initialized")
+
         self._initialized = True
         logger.info("TENJIN server initialized successfully")
 
     async def shutdown(self) -> None:
         """Shutdown all connections."""
         logger.info("Shutting down TENJIN server...")
+
+        if self._redis:
+            await self._redis.close()
 
         if self._neo4j:
             await self._neo4j.close()
@@ -209,6 +234,16 @@ class TenjinServer:
         if not self._inference_service:
             raise RuntimeError("Server not initialized")
         return self._inference_service
+
+    @property
+    def cache_service(self) -> CacheService | None:
+        """Get cache service (may be None if Redis is not available)."""
+        return self._cache_service
+
+    @property
+    def redis_adapter(self) -> RedisAdapter | None:
+        """Get Redis adapter (may be None if not available)."""
+        return self._redis
 
     def get_inference_service(self) -> InferenceService:
         """Get inference service (method form for tools)."""

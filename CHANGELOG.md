@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Redisキャッシュ統合**: 検索結果・理論データのキャッシング
+  - `RedisAdapter`: 非同期Redis操作（get/set/delete）
+  - `CacheService`: アプリケーションレベルのキャッシュ管理
+  - `get_cache_stats` MCPツール: キャッシュ統計取得
+  - `invalidate_cache` MCPツール: パターン指定でのキャッシュ無効化
+  - 環境変数: `CACHE_ENABLED`, `CACHE_REDIS_URL`, `CACHE_TTL_SECONDS`
 - **SSEトランスポート対応**: リモートMCPサーバーとしての動作
   - `--mode sse` オプションでSSEモード起動
   - `--host`/`--port` オプションでバインド設定
@@ -17,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Docker SSEサービス**: `tenjin-sse` サービス追加
   - `docker-compose --profile sse` で起動
   - ポート8080で公開
-- **依存関係追加**: starlette, uvicorn
+- **依存関係追加**: starlette, uvicorn, redis
 
 ## [0.2.1] - 2025-12-28
 

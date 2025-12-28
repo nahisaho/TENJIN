@@ -8,6 +8,7 @@ from .recommendation_service import RecommendationService
 from .citation_service import CitationService
 from .methodology_service import MethodologyService
 from .inference_service import InferenceService
+from .cache_service import CacheService
 
 __all__ = [
     "TheoryService",
@@ -18,4 +19,5 @@ __all__ = [
     "CitationService",
     "MethodologyService",
     "InferenceService",
+    "CacheService",
 ]
