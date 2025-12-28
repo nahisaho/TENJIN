@@ -348,8 +348,10 @@ class EmbeddingAdapter:
             "text-embedding-ada-002": 1536,
             "voyage-large-2": 1024,
             "voyage-2": 1024,
+            "bge-m3": 1024,  # Multilingual embedding model (100+ languages)
+            "nomic-embed-text": 768,
         }
-        return dimensions.get(self._model, 1536)
+        return dimensions.get(self._model, 1024)
 
     def health_check(self) -> bool:
         """Check if embedding model is accessible.
