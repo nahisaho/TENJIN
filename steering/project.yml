@@ -2,7 +2,7 @@
 name: TENJIN
 description: 教育理論GraphRAG MCPサーバー - esperantoによるマルチLLM統合
 locale: ja
-version: "0.2.1-dev"
+version: "0.2.2-dev"
 created: 2025-12-26
 updated: 2025-12-28
 
@@ -18,9 +18,11 @@ tech_stack:
     - fastmcp
     - esperanto
     - pydantic
+    - starlette
   databases:
     - neo4j
     - chromadb
+    - redis
   testing:
     - pytest
     - pytest-asyncio
@@ -80,42 +82,60 @@ references:
 
 # Current Sprint
 current_sprint:
-  feature: multilingual-search-enhancement
-  phase: completed
+  feature: v0.2.2-advanced-features
+  phase: in-progress
   started: 2025-12-28
   last_updated: 2025-12-28
   milestones:
-    - name: bge-m3 Multilingual Embedding Migration
+    - name: synthesize_theories Tool
       status: completed
-      description: 多言語エンベディングモデルへの移行（日本語検索精度向上）
+      description: 複数理論の統合分析・比較ツール
       changes:
-        - embedding model: nomic-embed-text → bge-m3
-        - embedding dimensions: 768 → 1024
-        - languages supported: 100+
-    - name: esperanto API Compatibility Fixes
+        - InferenceService.synthesize_theories()
+        - 統合フレームワーク生成
+        - シナジー/緊張関係分析
+    - name: batch_search API
       status: completed
+      description: 複数クエリの一括検索
       changes:
-        - Provider class direct usage (OllamaLanguageModel, OpenAILanguageModel)
-        - LLM method: chat_async → achat_complete
-        - Settings .env loading fix
-        - Neo4j Cypher: length() → size()
-        - VectorRepository: search → semantic_search
-        - SearchResult: entity_id → id, relevance_score → score
-    - name: Test Updates
+        - SearchService.batch_search()
+        - 並列実行
+        - 共通理論の抽出
+    - name: Theory Editor WebSocket
       status: completed
-      tests_passed:
-        unit: 18
-        e2e_theory_editor: 14
-        e2e_mcp_server: 10
-        total: 42
-    - name: Documentation Updates
+      description: リアルタイム同期機能
+      changes:
+        - ws-sync-server.py (Starlette WebSocket)
+        - graphrag-sync.js WebSocketクライアント
+        - 接続状態インジケーターUI
+    - name: Search Filter Extension
       status: completed
-      updated_files:
-        - CHANGELOG.md
-        - README.md
+      description: 年代・エビデンスレベルフィルター
+      changes:
+        - year_from/year_to パラメータ
+        - decade フィルター (e.g., "1990s")
+        - evidence_level フィルター
+    - name: Export Functionality
+      status: completed
+      description: JSON/Markdown/CSVエクスポート
+      changes:
+        - ExportService
+        - export_theories_json tool
+        - export_theories_markdown tool
+        - export_theories_csv tool
 
 # Completed Sprints Archive
 completed_sprints:
+  - feature: v0.2.1-multilingual-enhancement
+    phase: completed
+    started: 2025-12-28
+    completed: 2025-12-28
+    key_changes:
+      - bge-m3 multilingual embedding model
+      - esperanto API compatibility fixes
+      - SSE transport support
+      - Redis cache integration
+      - 42 tests passing (18 unit + 14 e2e + 10 mcp)
   - feature: multilingual-search-enhancement
     phase: completed
     started: 2025-12-28

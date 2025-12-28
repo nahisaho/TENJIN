@@ -22,6 +22,8 @@ TENJIN教育理論GraphRAG MCPサーバーのための技術スタック。参�
 | Data Validation | Pydantic | 2.0+ | スキーマ定義・バリデーション |
 | Async Runtime | asyncio | - | 非同期処理 |
 | Caching | Redis / メモリ | - | 階層型キャッシュ |
+| Web Framework | Starlette | 0.38+ | SSE/WebSocketサーバー |
+| WebSocket | websockets | 12.0+ | リアルタイム同期 |
 | Testing | pytest | 8.0+ | テストフレームワーク |
 | Linting | ruff | 0.4+ | コード品質 |
 | Type Checking | mypy | 1.0+ | 型チェック |
@@ -54,6 +56,10 @@ TENJIN教育理論GraphRAG MCPサーバーのための技術スタック。参�
 - `httpx` - Async HTTP Client
 - `structlog` - Structured Logging
 - `tenacity` - リトライ処理
+- `starlette` - ASGI Web Framework (SSE/WebSocket)
+- `uvicorn` - ASGI Server
+- `redis` - キャッシュバックエンド
+- `websockets` - WebSocketライブラリ
 
 ---
 
@@ -407,6 +413,10 @@ dependencies = [
     "httpx>=0.27",
     "structlog>=24.0",
     "tenacity>=8.0",
+    "starlette>=0.38",
+    "uvicorn>=0.30",
+    "redis>=5.0",
+    "websockets>=12.0",
 ]
 
 [project.optional-dependencies]

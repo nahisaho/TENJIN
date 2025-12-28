@@ -2,7 +2,7 @@
 
 **Project**: TENJIN
 **Last Updated**: 2025-12-28
-**Version**: 0.2.1
+**Version**: 0.2.2-dev
 
 ---
 
@@ -149,10 +149,12 @@ TENJIN/
 │       ├── styles.css        # スタイル
 │       ├── app.js            # メインアプリケーション
 │       ├── sync-server.py    # Neo4j同期サーバー (port 8081)
+│       ├── ws-sync-server.py # WebSocket同期サーバー (port 8081)
 │       ├── js/               # モジュール化されたJS
 │       │   ├── validation.js # バリデーション
 │       │   ├── diff.js       # 差分計算
 │       │   ├── storage.js    # ローカルストレージ
+│       │   ├── graphrag-sync.js # WebSocket同期クライアント (v0.2.2)
 │       │   └── error-handler.js # エラーハンドリング
 │       ├── docs/             # ドキュメント
 │       │   ├── API.md        # APIリファレンス
@@ -224,14 +226,15 @@ src/tenjin/domain/
 ```
 src/tenjin/application/
 ├── services/                 # アプリケーションサービス
-│   ├── search_service.py     # 検索サービス
+│   ├── search_service.py     # 検索サービス（拡張フィルター対応）
 │   ├── graph_service.py      # グラフクエリサービス
-│   ├── inference_service.py  # LLM推論サービス (NEW)
+│   ├── inference_service.py  # LLM推論サービス（synthesize_theories追加）
 │   ├── reasoning_service.py  # 推論サービス
 │   ├── recommend_service.py  # 推薦サービス
 │   ├── citation_service.py   # 引用生成サービス
 │   ├── generation_service.py # コンテンツ生成サービス
 │   ├── comparison_service.py # 比較サービス
+│   ├── export_service.py     # エクスポートサービス (v0.2.2)
 │   └── cache_service.py      # キャッシュ管理
 ├── dto/                      # Data Transfer Objects
 │   ├── search_dto.py         # 検索リクエスト/レスポンス
