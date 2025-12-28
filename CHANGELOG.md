@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **多言語エンベディング**: bge-m3モデルへの移行（100+言語対応）
+  - 日本語検索精度の大幅向上
+  - エンベディング次元: 768 → 1024
+
+### Fixed
+- esperanto LLMプロバイダクラスの直接使用（OllamaLanguageModel, OpenAILanguageModel）
+- LLMメソッド名修正（`chat_async` → `achat_complete`）
+- Settings `.env`ファイル読み込み修正
+- Neo4j Cypher修正（`length()` → `size()`）
+- VectorRepository API修正（`search` → `semantic_search`）
+- SearchResult属性修正（`entity_id` → `id`, `relevance_score` → `score`）
+
+### Tests
+- 単体テストをAPI変更に合わせて更新（18件パス）
+
 ## [0.2.0] - 2025-12-28
 
 ### Added

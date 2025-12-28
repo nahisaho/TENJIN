@@ -89,14 +89,14 @@ docker-compose -f docker-compose.preload.yml up -d
 ```json
 {
   "servers": {
-    "tengin-graphrag": {
+    "tenjin": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "tengin-server"],
-      "cwd": "${workspaceFolder}/References/TENGIN-GraphRAG",
+      "args": ["run", "tenjin-server"],
+      "cwd": "${workspaceFolder}/References/TENJIN",
       "env": {
         "EMBEDDING_PROVIDER": "ollama",
-        "EMBEDDING_MODEL": "nomic-embed-text",
+        "EMBEDDING_MODEL": "bge-m3",
         "OLLAMA_HOST": "http://localhost:11434"
       }
     }
@@ -104,7 +104,7 @@ docker-compose -f docker-compose.preload.yml up -d
 }
 ```
 
-> **Note**: Ollamaを使用する場合は、事前に`ollama pull nomic-embed-text`でモデルをダウンロードしてください。
+> **Note**: Ollamaを使用する場合は、事前に`ollama pull bge-m3`でモデルをダウンロードしてください。bge-m3は100以上の言語に対応した多言語エンベディングモデルです。
 
 **OpenAI使用時（高精度・有料）:**
 
@@ -157,12 +157,12 @@ docker-compose -f docker-compose.preload.yml up -d
   "mcpServers": {
     "tenjin": {
       "command": "uv",
-      "args": ["run", "tengin-server"],
-      "cwd": "/path/to/tenjin/References/TENGIN-GraphRAG",
+      "args": ["run", "tenjin-server"],
+      "cwd": "/path/to/tenjin",
       "env": {
         "NEO4J_URI": "bolt://localhost:7687",
         "EMBEDDING_PROVIDER": "ollama",
-        "EMBEDDING_MODEL": "nomic-embed-text"
+        "EMBEDDING_MODEL": "bge-m3"
       }
     }
   }
@@ -253,7 +253,7 @@ NEO4J_PASSWORD=password
 
 # Embedding (Ollamaを推奨)
 EMBEDDING_PROVIDER=ollama
-EMBEDDING_MODEL=nomic-embed-text
+EMBEDDING_MODEL=bge-m3
 OLLAMA_HOST=http://localhost:11434
 
 # または OpenAI
@@ -269,12 +269,13 @@ LOG_LEVEL=INFO
 
 esperantoを通じて以下のプロバイダーに対応:
 
-| プロバイダー | モデル例 | 次元数 |
-|-------------|---------|--------|
-| **Ollama** (推奨) | nomic-embed-text | 768 |
-| OpenAI | text-embedding-3-small | 1536 |
-| Google | text-embedding-004 | 768 |
-| Azure OpenAI | text-embedding-ada-002 | 1536 |
+| プロバイダー | モデル例 | 次元数 | 備考 |
+|-------------|---------|--------|------|
+| **Ollama** (推奨) | bge-m3 | 1024 | 100+言語対応 |
+| Ollama | nomic-embed-text | 768 | 英語中心 |
+| OpenAI | text-embedding-3-small | 1536 | |
+| Google | text-embedding-004 | 768 | |
+| Azure OpenAI | text-embedding-ada-002 | 1536 | |
 
 ## ツール
 
