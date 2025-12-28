@@ -89,7 +89,7 @@ class InferenceService:
             search_type="semantic",
             limit=limit * 3,
         )
-        search_results = await self._vector_repo.search(query)
+        search_results = await self._vector_repo.semantic_search(query)
 
         if not search_results.results:
             return {
@@ -102,11 +102,11 @@ class InferenceService:
         # Get full theory details
         candidate_theories = []
         for result in search_results.results:
-            theory = await self._theory_repo.get_by_id(result.entity_id)
+            theory = await self._theory_repo.get_by_id(result.id)
             if theory:
                 candidate_theories.append({
                     "theory": theory,
-                    "semantic_score": result.relevance_score,
+                    "semantic_score": result.score,
                 })
 
         # Use LLM to rank and explain recommendations
@@ -276,12 +276,12 @@ Always respond with valid JSON."""
             search_type="semantic",
             limit=15,
         )
-        relevant_theories = await self._vector_repo.search(query)
+        relevant_theories = await self._vector_repo.semantic_search(query)
 
         # Get details for relevant theories
         candidate_theories = []
         for result in relevant_theories.results:
-            theory = await self._theory_repo.get_by_id(result.entity_id)
+            theory = await self._theory_repo.get_by_id(result.id)
             if theory and theory not in applied_theory_details:
                 candidate_theories.append(theory)
 
@@ -667,16 +667,16 @@ Always respond with valid JSON."""
             search_type="hybrid",
             limit=15,
         )
-        search_results = await self._vector_repo.search(query)
+        search_results = await self._vector_repo.semantic_search(query)
 
         # Get theory details
         theories = []
         for result in search_results.results:
-            theory = await self._theory_repo.get_by_id(result.entity_id)
+            theory = await self._theory_repo.get_by_id(result.id)
             if theory:
                 theories.append({
                     "theory": theory,
-                    "relevance": result.relevance_score,
+                    "relevance": result.score,
                 })
 
         # Reason about application

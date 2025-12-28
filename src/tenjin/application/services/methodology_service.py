@@ -137,7 +137,7 @@ class MethodologyService:
             if methodology:
                 methodologies.append({
                     "methodology": methodology.to_dict(),
-                    "relevance_score": result.relevance_score,
+                    "relevance_score": result.score,
                 })
 
         return {

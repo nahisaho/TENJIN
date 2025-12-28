@@ -63,7 +63,7 @@ class RecommendationService:
             search_type="semantic",
             limit=limit * 2,  # Get more candidates for ranking
         )
-        search_results = await self._vector_repo.search(query)
+        search_results = await self._vector_repo.semantic_search(query)
 
         if not search_results.results:
             return {
@@ -75,9 +75,9 @@ class RecommendationService:
         # Get full theory details
         theories = []
         for result in search_results.results:
-            theory = await self._theory_repo.get_by_id(result.entity_id)
+            theory = await self._theory_repo.get_by_id(result.id)
             if theory:
-                theories.append((theory, result.relevance_score))
+                theories.append((theory, result.score))
 
         # Apply filters if provided
         if filters:
@@ -219,7 +219,7 @@ Provide a brief, practical explanation of the fit."""
             search_type="semantic",
             limit=limit,
         )
-        vector_similar = await self._vector_repo.search(query)
+        vector_similar = await self._vector_repo.semantic_search(query)
 
         # Combine and deduplicate
         seen_ids = {theory_id}
@@ -240,15 +240,15 @@ Provide a brief, practical explanation of the fit."""
 
         # Add vector-similar
         for result in vector_similar.results:
-            tid = str(result.entity_id)
+            tid = str(result.id)
             if tid not in seen_ids:
                 seen_ids.add(tid)
-                theory = await self._theory_repo.get_by_id(result.entity_id)
+                theory = await self._theory_repo.get_by_id(result.id)
                 if theory:
                     recommendations.append({
                         "theory": theory.to_dict(),
                         "source": "semantic_similarity",
-                        "similarity_score": result.relevance_score,
+                        "similarity_score": result.score,
                     })
 
         return {
@@ -420,12 +420,12 @@ Provide a brief explanation of how they work together."""
             search_type="semantic",
             limit=10,
         )
-        results = await self._vector_repo.search(query)
+        results = await self._vector_repo.semantic_search(query)
 
         candidates = []
         for result in results.results:
-            if str(result.entity_id) not in current_knowledge:
-                theory = await self._theory_repo.get_by_id(result.entity_id)
+            if str(result.id) not in current_knowledge:
+                theory = await self._theory_repo.get_by_id(result.id)
                 if theory:
                     candidates.append(theory)
 
