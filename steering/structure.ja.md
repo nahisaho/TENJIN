@@ -2,7 +2,7 @@
 
 **Project**: TENJIN
 **Last Updated**: 2025-12-28
-**Version**: 0.2.1-dev
+**Version**: 0.2.1
 
 ---
 

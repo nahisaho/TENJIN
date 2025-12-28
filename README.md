@@ -7,7 +7,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![MCP](https://img.shields.io/badge/MCP-1.5+-green.svg)](https://modelcontextprotocol.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-MVP%20Complete-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/version-0.2.1-brightgreen.svg)](https://github.com/nahisaho/TENJIN/releases/tag/v0.2.1)
 
 [English](README.en.md) | 日本語
 
@@ -20,7 +20,9 @@ TENJINは、175+の教育理論をGraph + Vector RAG（Retrieval-Augmented Gener
 ### 主な機能
 
 - 🎓 **175+ 教育理論**: 学習理論、発達理論、教授法など9カテゴリーの包括的なデータベース
-- 🔍 **ハイブリッド検索**: グラフ構造検索 + ベクトル類似検索 + LLMリランキング- 🧠 **高度な推論機能**: 理論推薦、ギャップ分析、関係推論、エビデンス推論 (NEW in v0.2)- 🌐 **マルチLLMサポート**: [esperanto](https://github.com/lfnovo/esperanto)による15+ LLMプロバイダー対応
+- 🔍 **ハイブリッド検索**: グラフ構造検索 + ベクトル類似検索 + LLMリランキング- 🌍 **多言語エンベディング**: bge-m3モデル対応（100+言語） (NEW in v0.2.1)
+- 📦 **Docker対応強化**: ChromaDB HTTPクライアントサポート (NEW in v0.2.1)
+- 🧠 **高度な推論機能**: 理論推薦、ギャップ分析、関係推論、エビデンス推論 (v0.2.0)- 🌐 **マルチLLMサポート**: [esperanto](https://github.com/lfnovo/esperanto)による15+ LLMプロバイダー対応
 - 📚 **MCPツール**: 理論検索、分析、比較、推薦、引用生成など
 - 🇯🇵 **日本語対応**: 日本語・英語バイリンガルサポート
 - 🏗️ **クリーンアーキテクチャ**: 保守性・テスト容易性の高い4層構造
@@ -104,7 +106,7 @@ docker-compose -f docker-compose.preload.yml up -d
 }
 ```
 
-> **Note**: Ollamaを使用する場合は、事前に`ollama pull bge-m3`でモデルをダウンロードしてください。bge-m3は100以上の言語に対応した多言語エンベディングモデルです。
+> **Note**: Ollamaを使用する場合は、事前に`ollama pull bge-m3`でモデルをダウンロードしてください。bge-m3は100以上の言語に対応した多言語エンベディングモデルで、v0.2.1から推奨されています。
 
 **OpenAI使用時（高精度・有料）:**
 

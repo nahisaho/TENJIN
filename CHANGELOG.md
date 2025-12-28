@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2025-12-28
+
 ### Added
 - **多言語エンベディング**: bge-m3モデルへの移行（100+言語対応）
   - 日本語検索精度の大幅向上
   - エンベディング次元: 768 → 1024
+- **ChromaDB HTTPクライアント対応**: Docker環境でのHTTP接続サポート
+  - `CHROMADB_HOST`/`CHROMADB_PORT` 環境変数による設定
+  - ローカル開発用 PersistentClient との自動切り替え
 
 ### Fixed
 - esperanto LLMプロバイダクラスの直接使用（OllamaLanguageModel, OpenAILanguageModel）
@@ -19,9 +24,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Neo4j Cypher修正（`length()` → `size()`）
 - VectorRepository API修正（`search` → `semantic_search`）
 - SearchResult属性修正（`entity_id` → `id`, `relevance_score` → `score`）
+- Docker Compose: Linux環境でのOllama接続（extra_hosts設定）
+- Dockerfile: __pycache__クリーンアップ追加
 
 ### Tests
 - 単体テストをAPI変更に合わせて更新（18件パス）
+- E2Eテスト全件パス（10件）
 
 ## [0.2.0] - 2025-12-28
 
@@ -89,6 +97,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - インストールガイド
 - 使用ガイド
 
-[Unreleased]: https://github.com/nahisaho/TENJIN/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/nahisaho/TENJIN/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/nahisaho/TENJIN/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/nahisaho/TENJIN/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/nahisaho/TENJIN/releases/tag/v0.1.0

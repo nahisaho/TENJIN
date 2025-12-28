@@ -2,8 +2,8 @@
 
 **Project**: TENJIN
 **Last Updated**: 2025-12-28
-**Version**: 0.2.1-dev
-**Status**: 本番運用可能（v0.2.1 多言語検索強化）
+**Version**: 0.2.1
+**Status**: 本番運用中（v0.2.1 Docker/ChromaDB HTTP対応）
 
 ---
 

@@ -82,11 +82,14 @@ docker build --target runtime -t tenjin:runtime .
 | `NEO4J_URI` | `bolt://localhost:7687` | Neo4j 接続 URI |
 | `NEO4J_USERNAME` | `neo4j` | Neo4j ユーザー名 |
 | `NEO4J_PASSWORD` | `password` | Neo4j パスワード |
-| `CHROMADB_HOST` | `localhost` | ChromaDB ホスト |
+| `CHROMADB_HOST` | - | ChromaDB ホスト（設定時HTTPクライアント使用） |
 | `CHROMADB_PORT` | `8000` | ChromaDB ポート |
 | `EMBEDDING_PROVIDER` | `ollama` | 埋め込みプロバイダー |
-| `EMBEDDING_MODEL` | `nomic-embed-text` | 埋め込みモデル |
-| `OLLAMA_HOST` | `http://host.docker.internal:11434` | Ollama サーバー |
+| `EMBEDDING_MODEL` | `bge-m3` | 埋め込みモデル（100+言語対応） |
+| `EMBEDDING_BASE_URL` | - | Embeddingサーバーのベース URL |
+| `OLLAMA_HOST` | `http://192.168.224.1:11434` | Ollama サーバー（Linux Docker向け） |
+
+> **Note**: Linux環境では`host.docker.internal`が使えないため、ホストのDocker Gateway IPを使用します。`ip route | grep docker0`でIPを確認できます。
 
 ## 📁 Docker Compose プロファイル
 
