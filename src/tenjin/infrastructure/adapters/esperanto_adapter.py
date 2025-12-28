@@ -3,6 +3,8 @@
 from typing import Any
 
 from esperanto import LanguageModel, provider_classes
+from esperanto.providers.llm.ollama import OllamaLanguageModel
+from esperanto.providers.llm.openai import OpenAILanguageModel
 from esperanto.providers.embedding.ollama import OllamaEmbeddingModel
 from esperanto.providers.embedding.openai import OpenAIEmbeddingModel
 
@@ -46,7 +48,7 @@ class EsperantoAdapter:
         )
         self._llm: LanguageModel | None = None
 
-    def _create_llm(self, provider: str | None = None) -> LanguageModel:
+    def _create_llm(self, provider: str | None = None) -> OllamaLanguageModel | OpenAILanguageModel:
         """Create a language model instance.
 
         Args:
@@ -56,17 +58,34 @@ class EsperantoAdapter:
             Configured LanguageModel instance.
         """
         use_provider = provider or self._provider
+        settings = get_settings()
         logger.debug(f"Creating LLM with provider: {use_provider}, model: {self._model}")
 
-        return LanguageModel(
-            provider=use_provider,
-            model=self._model,
-            temperature=self._temperature,
-            max_tokens=self._max_tokens,
-        )
+        if use_provider == "ollama":
+            return OllamaLanguageModel(
+                model_name=self._model,
+                base_url=settings.embedding.base_url,  # Same base URL as embedding
+                temperature=self._temperature,
+                max_tokens=self._max_tokens,
+            )
+        elif use_provider == "openai":
+            return OpenAILanguageModel(
+                model_name=self._model,
+                api_key=settings.openai_api_key,
+                temperature=self._temperature,
+                max_tokens=self._max_tokens,
+            )
+        else:
+            # Default to Ollama
+            return OllamaLanguageModel(
+                model_name=self._model,
+                base_url=settings.embedding.base_url,
+                temperature=self._temperature,
+                max_tokens=self._max_tokens,
+            )
 
     @property
-    def llm(self) -> LanguageModel:
+    def llm(self) -> OllamaLanguageModel | OpenAILanguageModel:
         """Get or create the language model.
 
         Returns:
@@ -103,7 +122,7 @@ class EsperantoAdapter:
         for provider in providers_to_try:
             try:
                 llm = self._create_llm(provider) if provider != self._provider else self.llm
-                response = await llm.chat_async(messages, **kwargs)
+                response = await llm.achat_complete(messages, **kwargs)
                 return response.content
             except Exception as e:
                 logger.warning(f"Provider {provider} failed: {e}")

@@ -44,7 +44,7 @@ class Neo4jGraphRepository(GraphRepository):
         WITH DISTINCT t2, r
         RETURN t2 as theory,
                [rel in r | type(rel)] as relationship_types,
-               length(r) as distance
+               size(r) as distance
         ORDER BY distance, t2.priority
         LIMIT $limit
         """

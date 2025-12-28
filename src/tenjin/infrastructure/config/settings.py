@@ -29,7 +29,12 @@ class ChromaDBSettings(BaseSettings):
 class LLMSettings(BaseSettings):
     """LLM provider settings for esperanto."""
 
-    model_config = SettingsConfigDict(env_prefix="LLM_")
+    model_config = SettingsConfigDict(
+        env_prefix="LLM_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     provider: str = Field(default="openai", description="Primary LLM provider")
     model: str = Field(default="gpt-4o-mini", description="LLM model name")

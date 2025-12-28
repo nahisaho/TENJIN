@@ -59,7 +59,7 @@ class RecommendationService:
         """
         # Perform semantic search to find relevant theories
         query = SearchQuery(
-            query_text=context,
+            query=context,
             search_type="semantic",
             limit=limit * 2,  # Get more candidates for ranking
         )
@@ -215,7 +215,7 @@ Provide a brief, practical explanation of the fit."""
             return {"error": "Theory not found"}
 
         query = SearchQuery(
-            query_text=f"{source_theory.name} {source_theory.description}",
+            query=f"{source_theory.name} {source_theory.description}",
             search_type="semantic",
             limit=limit,
         )
@@ -416,7 +416,7 @@ Provide a brief explanation of how they work together."""
 
         # Get relevant theories
         query = SearchQuery(
-            query_text=goal,
+            query=goal,
             search_type="semantic",
             limit=10,
         )
