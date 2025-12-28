@@ -1,6 +1,15 @@
 title: 「なぜその教育理論？」に答えられるAIへ ― TENJIN GraphRAGで実現するエビデンスベース教育支援
 
 > **更新履歴**
+> - 2025-12-28: v0.2.2 - 高度な機能拡張
+>   - `synthesize_theories`: 複数理論の統合分析・比較
+>   - `batch_search`: 複数クエリの一括検索（並列実行）
+>   - Theory Editor WebSocket: リアルタイム同期
+>   - 検索フィルター拡張（年代・エビデンスレベル）
+>   - エクスポート機能（JSON/Markdown/CSV）
+>   - Redisキャッシュ統合
+>   - SSEトランスポート対応
+> - 2025-12-28: v0.2.1 - 多言語エンベディング（bge-m3）
 > - 2025-12-28: v0.2.0 - 高度な推論機能 & Docker強化
 >   - 学習者プロファイルに基づく理論推薦（InferenceService）
 >   - 学習設計のギャップ分析
@@ -57,6 +66,9 @@ TENJIN（天神）は、**175以上の教育理論**をナレッジグラフ化�
 | 関係性が見えない | グラフトラバースで系譜・関係を可視化 |
 | 学習者に合った理論が不明 | 🆕 LLM推論による理論推薦 |
 | 学習設計の改善点が不明 | 🆕 ギャップ分析による課題特定 |
+| 複数理論の統合が困難 | 🆕 `synthesize_theories`による統合分析 |
+| 大量検索の効率が悪い | 🆕 `batch_search`による並列一括検索 |
+| データエクスポートが手動 | 🆕 JSON/Markdown/CSV自動出力 |
 
 
 # 第2章 なぜBaseline RAGでは不十分なのか
@@ -361,6 +373,11 @@ TENJINが提供する主要なMCPツール：
 | `traverse_graph` | グラフ探索 | 「足場かけ理論の関連理論は？」 |
 | `compare_theories` | 理論比較 | 「行動主義と構成主義の違いは？」 |
 | `cite_theory` | 引用生成 | 「APA形式で引用を生成」 |
+| `synthesize_theories` | 🆕 複数理論の統合分析 | 「構成主義とZPDを統合して」 |
+| `batch_search` | 🆕 一括検索 | 複数クエリを並列実行 |
+| `export_theories_json` | 🆕 JSON出力 | 理論データをJSON形式で出力 |
+| `export_theories_markdown` | 🆕 Markdown出力 | 理論データをMarkdownで出力 |
+| `export_theories_csv` | 🆕 CSV出力 | 理論データをCSV形式で出力 |
 
 
 # 第5章 GraphRAGで「何ができるようになるか」
@@ -871,7 +888,8 @@ GraphRAGはオントロジーを活用するため、「複雑で遅いのでは
 | 関係数 | 342+ |
 | 平均検索時間 | < 500ms |
 | グラフトラバース（深度2） | < 200ms |
-| Embedding次元 | 768（nomic-embed-text） |
+| Embedding次元 | 1024（bge-m3） |
+| 対応言語 | 100+言語（日英含む） |
 
 
 # 第7章 導入方法
@@ -967,7 +985,7 @@ VS CodeでTENJIN GraphRAGを利用するには、**MCP（Model Context Protocol�
 |------|------|--------|
 | `NEO4J_URI` | Neo4jの接続先 | デフォルト: `bolt://localhost:7687` |
 | `EMBEDDING_PROVIDER` | Embeddingプロバイダー | `ollama`, `openai`, `azure` |
-| `EMBEDDING_MODEL` | 使用するモデル | Ollama: `nomic-embed-text`<br>OpenAI: `text-embedding-3-small` |
+| `EMBEDDING_MODEL` | 使用するモデル | Ollama: `bge-m3`（推奨）<br>OpenAI: `text-embedding-3-small` |
 
 ### Embeddingプロバイダーの詳細設定
 
@@ -991,7 +1009,7 @@ cp .env.example .env
 ```dotenv
 # Ollama使用時（ローカル、無料）
 EMBEDDING_PROVIDER=ollama
-EMBEDDING_MODEL=nomic-embed-text
+EMBEDDING_MODEL=bge-m3
 OLLAMA_HOST=http://localhost:11434
 
 # OpenAI使用時（クラウド、有料）
@@ -1004,12 +1022,12 @@ OLLAMA_HOST=http://localhost:11434
 
 | プロバイダー | 必要な設定 | 特徴 |
 |-------------|-----------|------|
-| **Ollama** | `OLLAMA_HOST`（デフォルト: localhost:11434） | 無料、ローカル実行、プライバシー保護 |
+| **Ollama** | `OLLAMA_HOST`（デフォルト: localhost:11434） | 無料、ローカル実行、プライバシー保護、100+言語対応（bge-m3） |
 | **OpenAI** | `OPENAI_API_KEY` | 高精度、クラウド、従量課金 |
 | **Azure OpenAI** | `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_KEY` | エンタープライズ向け、SLA保証 |
 
 :::note info
-**Ollamaのセットアップ**: Ollamaを使用する場合は、事前に`ollama pull nomic-embed-text`でモデルをダウンロードしてください。
+**Ollamaのセットアップ**: Ollamaを使用する場合は、事前に`ollama pull bge-m3`でモデルをダウンロードしてください。bge-m3は100+言語対応で日本語検索精度が大幅に向上しています。
 :::
 
 :::note warn
@@ -1038,13 +1056,19 @@ TENJIN GraphRAGには、教育理論データを**視覚的に編集・拡張**�
 | **理論の追加** | フォーム入力で新しい理論を追加 |
 | **関係の編集** | 理論間の関係（BASED_ON, EXTENDS等）を視覚的に編集 |
 | **JSON出力** | 編集結果をJSON形式でエクスポート |
+| **🆕 WebSocket同期** | GraphRAGとリアルタイム双方向同期 |
 
 教育理論データを編集・拡張するWebツールも提供：
 
 ```bash
 cd tools/theory-editor
+
+# 静的ファイルサーバーで起動（編集のみ）
 python -m http.server 8080
-# http://localhost:8080 でアクセス
+
+# WebSocket同期サーバーで起動（GraphRAGと双方向同期）
+python ws-sync-server.py
+# http://localhost:8765 でアクセス
 ```
 
 **Theory Editorの画面構成**：
@@ -1063,7 +1087,9 @@ python -m http.server 8080
 | フェーズ | 内容 | 状態 |
 |---------|------|------|
 | Phase 1 | 基盤構築（175理論、MCP統合） | ✅ 完了 |
-| Phase 2 | 推論機能強化（ギャップ分析、関係推論、理論推薦） | 🚧 開発中 |
+| Phase 2 | 推論機能強化（ギャップ分析、関係推論、理論推薦） | ✅ 完了 |
+| Phase 2.1 | 多言語エンベディング（bge-m3モデル、100+言語対応） | ✅ 完了 |
+| Phase 2.2 | 高度な機能（synthesize_theories, batch_search, エクスポート, WebSocket, Redis） | ✅ 完了 |
 | Phase 3 | マルチモーダル対応（図解自動生成） | 📋 計画中 |
 | Phase 4 | コミュニティ拡張（理論追加API） | 📋 計画中 |
 
