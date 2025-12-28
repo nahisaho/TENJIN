@@ -83,9 +83,9 @@ class TestRecommendTheoriesForLearner:
         # Setup mocks
         mock_search_result = MagicMock()
         mock_search_result.results = [
-            MagicMock(entity_id=TheoryId.from_string("THEORY-001"), relevance_score=0.9)
+            MagicMock(id="THEORY-001", score=0.9)
         ]
-        mock_vector_repository.search.return_value = mock_search_result
+        mock_vector_repository.semantic_search.return_value = mock_search_result
         mock_theory_repository.get_by_id.return_value = sample_theory
 
         # Execute
@@ -98,7 +98,7 @@ class TestRecommendTheoriesForLearner:
         # Verify
         assert "learning_goals" in result
         assert "recommendations" in result or "message" in result
-        mock_vector_repository.search.assert_called_once()
+        mock_vector_repository.semantic_search.assert_called_once()
 
     @pytest.mark.asyncio
     async def test_recommend_with_no_matches(
@@ -108,7 +108,7 @@ class TestRecommendTheoriesForLearner:
         # Setup mock with empty results
         mock_search_result = MagicMock()
         mock_search_result.results = []
-        mock_vector_repository.search.return_value = mock_search_result
+        mock_vector_repository.semantic_search.return_value = mock_search_result
 
         # Execute
         result = await inference_service.recommend_theories_for_learner(
@@ -135,7 +135,7 @@ class TestAnalyzeLearningDesignGaps:
         mock_theory_repository.get_by_id.return_value = sample_theory
         mock_search_result = MagicMock()
         mock_search_result.results = []
-        mock_vector_repository.search.return_value = mock_search_result
+        mock_vector_repository.semantic_search.return_value = mock_search_result
         mock_llm_adapter.generate.return_value = '{"theoretical_gaps": [], "overall_score": 75}'
 
         # Execute
@@ -158,7 +158,7 @@ class TestAnalyzeLearningDesignGaps:
         # Setup mocks
         mock_search_result = MagicMock()
         mock_search_result.results = []
-        mock_vector_repository.search.return_value = mock_search_result
+        mock_vector_repository.semantic_search.return_value = mock_search_result
         mock_llm_adapter.generate.return_value = '{"theoretical_gaps": [], "overall_score": 50}'
 
         # Execute
@@ -242,9 +242,9 @@ class TestReasonAboutApplication:
         # Setup mocks
         mock_search_result = MagicMock()
         mock_search_result.results = [
-            MagicMock(entity_id=TheoryId.from_string("THEORY-001"), relevance_score=0.85)
+            MagicMock(id="THEORY-001", score=0.85)
         ]
-        mock_vector_repository.search.return_value = mock_search_result
+        mock_vector_repository.semantic_search.return_value = mock_search_result
         mock_theory_repository.get_by_id.return_value = sample_theory
         mock_llm_adapter.generate.return_value = '''
         {
@@ -271,7 +271,7 @@ class TestReasonAboutApplication:
         # Verify
         assert "scenario" in result
         assert "reasoning" in result
-        mock_vector_repository.search.assert_called_once()
+        mock_vector_repository.semantic_search.assert_called_once()
 
     @pytest.mark.asyncio
     async def test_reason_with_empty_scenario(

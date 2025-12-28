@@ -1,7 +1,7 @@
 """Unit tests for SearchService."""
 
 import pytest
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, MagicMock
 
 from tenjin.application.services.search_service import SearchService
 from tenjin.domain.entities.theory import Theory
@@ -17,18 +17,34 @@ class TestSearchService:
     def mock_vector_repository(self) -> AsyncMock:
         """Create mock vector repository."""
         repo = AsyncMock()
-        repo.search = AsyncMock(
-            return_value=[
-                {
-                    "id": "theory-001",
-                    "score": 0.95,
-                    "metadata": {
-                        "name": "Constructivism",
-                        "name_ja": "構成主義",
-                    },
-                }
-            ]
+        # Return SearchResults object as semantic_search does
+        mock_results = SearchResults(
+            results=(
+                SearchResult(
+                    id="theory-001",
+                    entity_type="theory",
+                    name="Constructivism",
+                    score=0.95,
+                    snippet="Learning as an active process",
+                    metadata={"name_ja": "構成主義"},
+                ),
+            ),
+            total_count=1,
+            query="constructivism",
+            search_type="semantic",
         )
+        repo.semantic_search = AsyncMock(return_value=mock_results)
+        repo.hybrid_search = AsyncMock(return_value=mock_results)
+        repo.similar_to = AsyncMock(return_value=[
+            SearchResult(
+                id="theory-002",
+                entity_type="theory",
+                name="Social Constructivism",
+                score=0.88,
+                snippet="Learning through social interaction",
+                metadata={"name_ja": "社会構成主義"},
+            )
+        ])
         return repo
 
     @pytest.fixture
@@ -37,27 +53,19 @@ class TestSearchService:
         repo = AsyncMock()
         repo.get_by_id = AsyncMock(return_value=sample_theory)
         repo.get_by_ids = AsyncMock(return_value=[sample_theory])
+        repo.search_by_keyword = AsyncMock(return_value=[sample_theory])
         return repo
-
-    @pytest.fixture
-    def mock_llm_adapter(self) -> AsyncMock:
-        """Create mock LLM adapter."""
-        adapter = AsyncMock()
-        adapter.chat = AsyncMock(return_value="Reranked results analysis")
-        return adapter
 
     @pytest.fixture
     def search_service(
         self,
         mock_vector_repository: AsyncMock,
         mock_theory_repository: AsyncMock,
-        mock_llm_adapter: AsyncMock,
     ) -> SearchService:
         """Create search service with mocks."""
         return SearchService(
             vector_repository=mock_vector_repository,
             theory_repository=mock_theory_repository,
-            llm_adapter=mock_llm_adapter,
         )
 
     @pytest.mark.asyncio
@@ -67,10 +75,11 @@ class TestSearchService:
         mock_vector_repository: AsyncMock,
     ) -> None:
         """Test semantic search."""
-        results = await search_service.semantic_search("constructivism learning")
+        results = await search_service.search("constructivism learning", search_type="semantic")
 
         assert results is not None
-        mock_vector_repository.search.assert_called_once()
+        assert results.total_count >= 0
+        mock_vector_repository.semantic_search.assert_called_once()
 
     @pytest.mark.asyncio
     async def test_hybrid_search(
@@ -80,9 +89,10 @@ class TestSearchService:
         mock_theory_repository: AsyncMock,
     ) -> None:
         """Test hybrid search combining vector and keyword."""
-        results = await search_service.hybrid_search("constructivism")
+        results = await search_service.search("constructivism", search_type="hybrid")
 
         assert results is not None
+        mock_vector_repository.hybrid_search.assert_called_once()
 
     @pytest.mark.asyncio
     async def test_search_with_category_filter(
@@ -91,15 +101,11 @@ class TestSearchService:
         mock_vector_repository: AsyncMock,
     ) -> None:
         """Test search with category filter."""
-        from tenjin.domain.value_objects.category_type import CategoryType
-
-        query = SearchQuery(
-            text="learning",
-            category=CategoryType.LEARNING_THEORY,
+        results = await search_service.search(
+            query="learning",
+            categories=["learning_theory"],
             limit=10,
         )
-
-        results = await search_service.search(query)
 
         assert results is not None
 
@@ -115,6 +121,7 @@ class TestSearchService:
         similar = await search_service.find_similar("theory-001", limit=5)
 
         assert similar is not None
+        mock_vector_repository.similar_to.assert_called_once()
 
 
 class TestSearchQuery:
@@ -123,22 +130,19 @@ class TestSearchQuery:
     def test_create_search_query(self) -> None:
         """Test creating search query."""
         query = SearchQuery(
-            text="constructivism",
+            query="constructivism",
             limit=20,
-            offset=10,
         )
 
-        assert query.text == "constructivism"
+        assert query.query == "constructivism"
         assert query.limit == 20
-        assert query.offset == 10
 
     def test_search_query_defaults(self) -> None:
         """Test search query default values."""
-        query = SearchQuery(text="test")
+        query = SearchQuery(query="test")
 
         assert query.limit == 10
-        assert query.offset == 0
-        assert query.category is None
+        assert query.categories == ()
 
 
 class TestSearchResult:
@@ -147,24 +151,26 @@ class TestSearchResult:
     def test_create_search_result(self) -> None:
         """Test creating search result."""
         result = SearchResult(
-            theory_id=TheoryId("theory-001"),
+            id="theory-001",
+            entity_type="theory",
             name="Constructivism",
-            name_ja="構成主義",
             score=0.95,
-            highlights=["constructivism"],
+            snippet="Learning is active",
+            metadata={"name_ja": "構成主義"},
         )
 
-        assert str(result.theory_id) == "theory-001"
+        assert result.id == "theory-001"
         assert result.score == 0.95
-        assert len(result.highlights) == 1
+        assert result.entity_type == "theory"
 
     def test_search_result_optional_fields(self) -> None:
         """Test search result with optional fields."""
         result = SearchResult(
-            theory_id=TheoryId("theory-001"),
+            id="theory-001",
+            entity_type="theory",
             name="Test Theory",
-            name_ja="テスト理論",
             score=0.8,
         )
 
-        assert result.highlights is None or result.highlights == []
+        assert result.snippet == ""
+        assert result.metadata == {}
