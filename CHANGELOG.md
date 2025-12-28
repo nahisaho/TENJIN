@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2025-12-28
+
 ### Added
 - **synthesize_theoriesツール**: 複数理論の統合分析・比較
   - 統合フレームワークの生成
@@ -42,7 +44,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Docker SSEサービス**: `tenjin-sse` サービス追加
   - `docker-compose --profile sse` で起動
   - ポート8080で公開
-- **依存関係追加**: starlette, uvicorn, redis
+- **依存関係追加**: starlette, uvicorn, redis, websockets
+
+### Fixed
+- ユニットテストを現在の実装に合わせて修正（51件パス）
+
+### Tests
+- E2Eテスト: 10件パス
+- ユニットテスト: 51件パス
+- 合計: 61件パス
 
 ## [0.2.1] - 2025-12-28
 

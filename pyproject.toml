@@ -1,6 +1,6 @@
 [project]
 name = "tenjin"
-version = "0.2.2-dev"
+version = "0.2.2"
 description = "TENJIN - 教育理論GraphRAG MCPサーバー"
 readme = "README.md"
 license = { text = "MIT" }
