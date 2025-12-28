@@ -34,7 +34,8 @@ COPY pyproject.toml README.md ./
 COPY src/ ./src/
 
 # Install dependencies
-RUN uv pip install --system -e ".[dev]"
+RUN uv pip install --system -e ".[dev]" && \
+    find /app -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 
 # Copy remaining files
 COPY data/ ./data/

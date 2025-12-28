@@ -15,20 +15,27 @@ class ChromaDBAdapter:
     """Adapter for ChromaDB vector database operations.
 
     Provides interface for embedding storage and semantic search.
+    Supports both HTTP client (server mode) and PersistentClient (local mode).
     """
 
     def __init__(
         self,
+        host: str | None = None,
+        port: int | None = None,
         persist_dir: str | None = None,
         collection_name: str | None = None,
     ) -> None:
         """Initialize ChromaDB adapter.
 
         Args:
-            persist_dir: Directory for persistent storage.
+            host: ChromaDB server host (for HTTP mode). If set, uses HttpClient.
+            port: ChromaDB server port.
+            persist_dir: Directory for persistent storage (for local mode).
             collection_name: Name of the collection to use.
         """
         settings = get_settings()
+        self._host = host or settings.chromadb.host
+        self._port = port or settings.chromadb.port
         self._persist_dir = persist_dir or settings.chromadb.persist_dir
         self._collection_name = collection_name or settings.chromadb.collection_name
         self._client: chromadb.ClientAPI | None = None
@@ -37,14 +44,27 @@ class ChromaDBAdapter:
     def connect(self) -> None:
         """Initialize ChromaDB client and collection."""
         if self._client is None:
-            logger.info(f"Initializing ChromaDB at {self._persist_dir}")
-            self._client = chromadb.PersistentClient(
-                path=self._persist_dir,
-                settings=ChromaSettings(
-                    anonymized_telemetry=False,
-                    allow_reset=True,
-                ),
-            )
+            if self._host:
+                # HTTP client mode (Docker/server)
+                logger.info(f"Connecting to ChromaDB server at {self._host}:{self._port}")
+                self._client = chromadb.HttpClient(
+                    host=self._host,
+                    port=self._port,
+                    settings=ChromaSettings(
+                        anonymized_telemetry=False,
+                    ),
+                )
+            else:
+                # Persistent client mode (local)
+                logger.info(f"Initializing ChromaDB at {self._persist_dir}")
+                self._client = chromadb.PersistentClient(
+                    path=self._persist_dir,
+                    settings=ChromaSettings(
+                        anonymized_telemetry=False,
+                        allow_reset=True,
+                    ),
+                )
+            
             self._collection = self._client.get_or_create_collection(
                 name=self._collection_name,
                 metadata={"hnsw:space": "cosine"},

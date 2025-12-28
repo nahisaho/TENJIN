@@ -20,10 +20,17 @@ class Neo4jSettings(BaseSettings):
 class ChromaDBSettings(BaseSettings):
     """ChromaDB vector database settings."""
 
-    model_config = SettingsConfigDict(env_prefix="CHROMA_")
+    model_config = SettingsConfigDict(env_prefix="CHROMADB_")
 
-    persist_dir: str = Field(default="./data/chromadb", description="ChromaDB persistence directory")
+    host: str | None = Field(default=None, description="ChromaDB server host (for HTTP mode)")
+    port: int = Field(default=8000, description="ChromaDB server port")
+    persist_dir: str = Field(default="./data/chromadb", description="ChromaDB persistence directory (for local mode)")
     collection_name: str = Field(default="tenjin_theories", description="Default collection name")
+
+    @property
+    def use_http(self) -> bool:
+        """Whether to use HTTP client (server mode)."""
+        return self.host is not None
 
 
 class LLMSettings(BaseSettings):

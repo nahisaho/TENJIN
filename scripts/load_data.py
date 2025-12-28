@@ -106,7 +106,11 @@ async def main() -> int:
         user=settings.neo4j.user,
         password=settings.neo4j.password,
     )
-    chromadb_adapter = ChromaDBAdapter(persist_dir=settings.chromadb.persist_dir)
+    chromadb_adapter = ChromaDBAdapter(
+        host=settings.chromadb.host,
+        port=settings.chromadb.port,
+        persist_dir=settings.chromadb.persist_dir,
+    )
     embedding_adapter = EmbeddingAdapter(
         provider=settings.embedding.provider,
         model=settings.embedding.model,
